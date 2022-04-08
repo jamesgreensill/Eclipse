@@ -1,0 +1,41 @@
+﻿  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\framework.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImDouble.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImFloat.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiCall.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiRenderer.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImInt.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImRGBA.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImString.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImType.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImTypes.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImVec2.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImVec3.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImVec4.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\pch.h
+         15 file(s) copied.
+  ImDouble.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImFloat.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImGuiCall.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\Eclipse.h(8,10): fatal error C1083: Cannot open include file: 'glad/glad.h': No such file or directory
+  ImGuiHelper.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImGuiRenderer.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\Eclipse.h(8,10): fatal error C1083: Cannot open include file: 'glad/glad.h': No such file or directory
+  ImInt.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImRGBA.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImString.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImType.cpp
+  ImVec2.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImVec3.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  ImVec4.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseGui\include\ImGuiHelper.h(3,10): fatal error C1083: Cannot open include file: 'glm/fwd.hpp': No such file or directory
+  EclipseGui.cpp
+  pch.cpp

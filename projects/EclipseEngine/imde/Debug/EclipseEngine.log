@@ -1,0 +1,110 @@
+﻿  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Application.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\BaseModel.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\CameraController.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Component.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\DebugComponent.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\DemoApplication.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Eclipse.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\framework.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\ImGuiHierarchy.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\ImGuiInspector.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Object.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\ObjectFactory.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\ObjectRotator.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\pch.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Resources.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Serialization.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\System.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SystemManager.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Transform.h
+         22 file(s) copied.
+  Application.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  ApplicationDriver.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  BaseModel.cpp
+  CameraController.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  Component.cpp
+  DebugComponent.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  DemoApplication.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  Eclipse.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\src\Eclipse.cpp(2,10): fatal error C1083: Cannot open include file: 'imgui.h': No such file or directory
+  Engine.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\BaseModel.h(7,1): error C2011: 'BaseModel': 'class' type redefinition
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\BaseModel.h(6): message : see declaration of 'BaseModel'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(10,3): error C2504: 'BaseModel': base class undefined
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(13,9): error C3668: 'Eclipse::Engine::Engine::Created': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(14,9): error C3668: 'Eclipse::Engine::Engine::Awake': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(15,9): error C3668: 'Eclipse::Engine::Engine::Start': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(16,9): error C3668: 'Eclipse::Engine::Engine::Update': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(17,9): error C3668: 'Eclipse::Engine::Engine::LateUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(18,9): error C3668: 'Eclipse::Engine::Engine::FixedUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(19,9): error C3668: 'Eclipse::Engine::Engine::Draw': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(20,9): error C3668: 'Eclipse::Engine::Engine::Gui': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(21,9): error C3668: 'Eclipse::Engine::Engine::RetrieveGuiData': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(22,9): error C3668: 'Eclipse::Engine::Engine::Dispose': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Engine.h(23,9): error C3668: 'Eclipse::Engine::Engine::Deleted': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(26,4): error C2504: 'BaseModel': base class undefined
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(51,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Awake': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(52,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Start': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(53,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Update': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(54,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::LateUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(55,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::FixedUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(56,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Draw': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(57,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Dispose': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(58,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Created': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Scene.h(59,10): error C3668: 'Eclipse::Engine::SceneManagement::Scene::Deleted': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\System.h(8,16): error C2011: 'Eclipse::Engine::System': 'class' type redefinition
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\System.h(8): message : see declaration of 'Eclipse::Engine::System'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(23,4): error C2504: 'Eclipse::Engine::System': base class undefined
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(102,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Awake': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(103,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Start': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(104,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Update': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(105,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::LateUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(106,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::FixedUpdate': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(107,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Draw': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(108,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Dispose': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(109,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Created': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SceneManager.h(110,10): error C3668: 'Eclipse::Engine::SceneManagement::SceneManager::Deleted': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SystemManager.h(36,15): error C2027: use of undefined type 'Eclipse::Engine::System'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SystemManager.h(12): message : see declaration of 'Eclipse::Engine::System'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\SystemManager.h(21,14): message : This diagnostic occurred in the compiler generated function 'T *Eclipse::Engine::SystemManager::CreateSystem(void)'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\src\Engine.cpp(66,15): error C2027: use of undefined type 'BaseModel'
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\BaseModel.h(6): message : see declaration of 'BaseModel'
+  ImGuiHierarchy.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\src\ImGuiHierarchy.cpp(4,10): fatal error C1083: Cannot open include file: 'imgui.h': No such file or directory
+  ImGuiInspector.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  Object.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\src\Object.cpp(4,10): fatal error C1083: Cannot open include file: 'imgui.h': No such file or directory
+  ObjectFactory.cpp
+  ObjectRotator.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\BaseModel.h(7,1): error C2011: 'BaseModel': 'class' type redefinition
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\BaseModel.h(6): message : see declaration of 'BaseModel'
+D:\dev\C++\ComplexGameSystems\Eclipse\build\EclipseEngine\include\Component.h(15,19): error C2011: 'Eclipse::Components::Component': 'class' type redefinition
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Component.h(15): message : see declaration of 'Eclipse::Components::Component'
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Transform.h(20,3): error C2504: 'Eclipse::Components::Component': base class undefined
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Transform.h(54,9): error C3668: 'Eclipse::Components::Transform::RetrieveGuiData': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Transform.h(56,9): error C3668: 'Eclipse::Components::Transform::Created': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\include\Transform.h(57,9): error C3668: 'Eclipse::Components::Transform::Reset': method with override specifier 'override' did not override any base class methods
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\src\ObjectRotator.cpp(10,10): fatal error C1083: Cannot open include file: 'imgui/imgui.h': No such file or directory
+  Resources.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  Scene.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  SceneManager.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  Serialization.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory
+  EclipseEngine.cpp
+  pch.cpp
+  System.cpp
+  SystemManager.cpp
+  Transform.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseEngine\vendors\glad\glad.h(89,10): fatal error C1083: Cannot open include file: 'KHR/khrplatform.h': No such file or directory

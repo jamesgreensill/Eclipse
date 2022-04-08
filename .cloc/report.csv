@@ -1,0 +1,9 @@
+      11 text files.
+classified 11 files      11 unique files.                              
+      22 files ignored.
+
+language,filename,blank,comment,code,"http://cloc.sourceforge.net v 1.64  T=0.04 s (104.9 files/s, 812.8 lines/s)"
+C++,..\EclipseGraphics\src\EclipseGraphics.cpp,2,3,5
+C/C++ Header,..\EclipseGraphics\include\pch.h,3,6,4
+C/C++ Header,..\EclipseGraphics\include\framework.h,1,0,2
+C++,..\EclipseGraphics\src\pch.cpp,2,2,1

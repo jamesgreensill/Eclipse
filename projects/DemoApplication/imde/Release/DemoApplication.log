@@ -1,0 +1,8 @@
+﻿  DemoApplication.cpp
+  Generating code
+  65 of 81 functions (80.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+EclipseNetworking.lib(TestObject.obj) : warning LNK4099: PDB 'EclipseNetworking.pdb' was not found with 'EclipseNetworking.lib(TestObject.obj)' or at 'D:\dev\C++\ComplexGameSystems\Eclipse\projects\DemoApplication\build\Release\EclipseNetworking.pdb'; linking object as if no debug info
+  DemoApplication.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\projects\DemoApplication\build\Release\DemoApplication.exe

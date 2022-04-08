@@ -1,0 +1,12 @@
+﻿  EclipseNetworking.cpp
+  pch.cpp
+  TestObject.cpp
+  EclipseNetworking.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\build\Release\EclipseNetworking.lib
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\build\Release\\EclipseNetworking.lib
+  The process cannot access the file because it is being used by another process.
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\build\Release\\EclipseNetworking.pdb
+          1 file(s) copied.
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\include\framework.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\include\pch.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseNetworking\include\TestObject.h
+          3 file(s) copied.
