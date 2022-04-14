@@ -1,0 +1,53 @@
+﻿  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\framework.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImDouble.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImFloat.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiCall.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiRenderer.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImInt.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImRGBA.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImString.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImType.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImTypes.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImVec2.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImVec3.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImVec4.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\pch.h
+         15 file(s) copied.
+  ImDouble.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImFloat.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImGuiCall.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiCall.cpp(17,12): error C3083: 'Debug': the symbol to the left of a '::' must be a type
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiCall.cpp(17,19): error C2039: 'Error': is not a member of 'Eclipse::Core'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Core.h(40): message : see declaration of 'Eclipse::Core'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiCall.cpp(17,24): error C3861: 'Error': identifier not found
+  ImGuiHelper.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImGuiRenderer.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiRenderer.cpp(32,14): error C2065: 'ImGuiFail': undeclared identifier
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiRenderer.cpp(32,8): error C3861: 'DEBUG': identifier not found
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\src\ImGuiRenderer.cpp(33,7): error C2143: syntax error: missing ';' before '}'
+  ImInt.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImRGBA.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImString.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImVec2.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImVec3.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  ImVec4.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGui\include\ImGuiHelper.h(40,12): error C2039: 'AddComponent': is not a member of 'Eclipse::Object'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Object.h(17): message : see declaration of 'Eclipse::Object'
+  Generating Code...

@@ -1,9 +1,136 @@
-      11 text files.
-classified 11 files      11 unique files.                              
-      22 files ignored.
+     100 files     200 files     207 text files.
+classified 207 filesDuplicate file check 207 files (166 known unique)Unique:      100 files                                               171 unique files.                              
+Counting:  100     185 files ignored.
 
-language,filename,blank,comment,code,"http://cloc.sourceforge.net v 1.64  T=0.04 s (104.9 files/s, 812.8 lines/s)"
-C++,..\EclipseGraphics\src\EclipseGraphics.cpp,2,3,5
-C/C++ Header,..\EclipseGraphics\include\pch.h,3,6,4
-C/C++ Header,..\EclipseGraphics\include\framework.h,1,0,2
-C++,..\EclipseGraphics\src\pch.cpp,2,2,1
+language,filename,blank,comment,code,"http://cloc.sourceforge.net v 1.64  T=0.54 s (244.8 files/s, 22970.5 lines/s)"
+C/C++ Header,..\Engine\EclipseGraphics\include\glad.h,20,16,2093
+C,..\Engine\EclipseEngine\src\glad.c,47,21,1072
+C,..\Engine\EclipseGraphics\src\glad.c,47,21,1071
+C++,..\Engine\EclipseEngine\src\Core.cpp,123,73,503
+C++,..\Engine\EclipseGraphics\src\ShaderProgram.cpp,51,0,374
+C++,..\Engine\EclipseGui\src\ImGuiHelper.cpp,30,12,234
+C++,..\Engine\EclipseEngine\src\Scene.cpp,31,9,205
+C/C++ Header,..\Engine\EclipseEngine\include\Core.h,31,64,198
+C++,..\Engine\EclipseEngine\src\SceneManager.cpp,27,0,190
+C++,..\Engine\EclipseEngine\src\Engine.cpp,26,7,153
+C++,..\Engine\EclipseEngine\src\Transform.cpp,37,21,145
+C++,..\Engine\EclipseEngine\src\Resources.cpp,23,124,109
+C++,..\Engine\EclipseEngine\src\EngineModule.cpp,17,3,108
+C/C++ Header,..\Engine\EclipseEngine\include\EntityContainer.h,25,89,103
+C++,..\Engine\EclipseEngine\src\WindowModule.cpp,25,0,102
+C/C++ Header,..\Engine\EclipseEngine\include\EclipseEvent.h,15,0,99
+C++,..\Engine\EclipseGraphics\src\Shader.cpp,19,1,89
+C++,..\Engine\EclipseGraphics\src\Mesh.cpp,23,11,88
+C++,..\Engine\EclipseDebugging\src\DebugSystem.cpp,18,0,80
+C++,..\Engine\EclipseGraphics\src\Camera.cpp,17,15,77
+C/C++ Header,..\Engine\EclipseEngine\include\ObjectFactory.h,14,0,77
+C++,..\Engine\EclipseGraphics\src\Core.cpp,16,6,76
+C++,..\Engine\EclipseGraphics\src\Model.cpp,16,9,70
+C/C++ Header,..\Engine\EclipseGraphics\include\ShaderProgram.h,13,1,69
+C/C++ Header,..\Engine\EclipseEngine\include\SystemManager.h,16,18,69
+C++,..\Engine\EclipseEngine\src\SystemManager.cpp,9,0,66
+C/C++ Header,..\Engine\EclipseEngine\include\EngineModule.h,7,0,66
+C/C++ Header,..\Engine\EclipseEngine\include\EngineMacros.h,12,17,63
+C/C++ Header,..\Engine\EclipseEngine\include\Application.h,11,4,61
+C/C++ Header,..\Engine\EclipseEngine\include\Scene.h,18,0,58
+C++,..\Engine\EclipseEngine\src\BaseModel.cpp,18,0,58
+C++,..\Engine\EclipseGraphics\src\Renderer.cpp,17,8,58
+C/C++ Header,..\Engine\EclipseEngine\include\Transform.h,12,1,58
+C++,..\Engine\EclipseEngine\src\Object.cpp,16,23,57
+C/C++ Header,..\Engine\EclipseEngine\include\ResourceManager.h,7,8,53
+C/C++ Header,..\Engine\EclipseEngine\include\SceneManager.h,16,46,52
+C/C++ Header,..\Engine\EclipseGraphics\include\Light.h,11,0,49
+C++,..\Engine\EclipseGui\src\ImGuiRenderer.cpp,8,0,49
+C++,..\Engine\EclipseGraphics\src\Light.cpp,12,69,47
+C/C++ Header,..\Engine\EclipseEngine\include\Resources.h,11,5,47
+C/C++ Header,..\Engine\EclipseGraphics\include\Model.h,10,0,47
+C/C++ Header,..\Engine\EclipseEngine\include\Engine.h,3,0,45
+C++,..\Engine\EclipseEngine\src\Application.cpp,8,18,44
+C/C++ Header,..\Engine\EclipseEngine\include\Object.h,8,3,43
+C/C++ Header,..\Engine\EclipseGraphics\include\Camera.h,10,0,41
+C++,..\Engine\EclipseDebugging\src\Core.cpp,9,6,38
+C++,..\Engine\EclipseEngine\src\CameraController.cpp,6,8,38
+C++,..\Engine\EclipseEngine\src\Component.cpp,10,0,38
+C++,..\Engine\EclipseGraphics\src\MeshRenderer.cpp,7,16,38
+C++,..\Engine\EclipseEngine\src\Serialization.cpp,3,0,38
+C/C++ Header,..\Engine\EclipseEngine\include\WindowModule.h,1,0,37
+C/C++ Header,..\Engine\EclipseGraphics\include\Renderer.h,8,0,37
+C/C++ Header,..\Engine\EclipseGraphics\include\Mesh.h,10,0,36
+C/C++ Header,..\Engine\EclipseGraphics\include\Shader.h,11,2,36
+C/C++ Header,..\Engine\EclipseGui\include\ImGuiHelper.h,5,5,33
+C/C++ Header,..\Engine\EclipseEngine\include\BaseModel.h,6,9,33
+C/C++ Header,..\Engine\EclipseDebugging\include\DebugSystem.h,1,0,31
+C/C++ Header,..\Engine\EclipseGraphics\include\Material.h,8,2,31
+C++,..\Engine\EclipseGraphics\src\Material.cpp,5,2,30
+C/C++ Header,..\Engine\EclipseGui\include\ImGuiRenderer.h,4,0,29
+C/C++ Header,..\Engine\EclipseGui\include\ImRGBA.h,2,0,28
+C/C++ Header,..\Engine\EclipseGraphics\include\Texture.h,5,0,28
+C/C++ Header,..\Engine\EclipseGui\include\ImVec4.h,2,0,28
+C++,..\Engine\EclipseGui\src\ImType.cpp,5,0,28
+C/C++ Header,..\Engine\EclipseEngine\include\Component.h,8,12,28
+C++,..\Engine\EclipseGraphics\src\GraphicsModule.cpp,7,0,27
+C++,..\Engine\EclipseGui\src\ImGuiCall.cpp,4,0,26
+C/C++ Header,..\Engine\EclipseGui\include\ImVec3.h,3,0,26
+C/C++ Header,..\Engine\EclipseGui\include\ImVec2.h,3,0,25
+C++,..\Engine\EclipseEngine\src\CoreModule.cpp,4,0,25
+C/C++ Header,..\Engine\EclipseGraphics\include\Core.h,2,3,25
+C/C++ Header,..\Engine\EclipseEngine\include\AssetLoader.h,6,8,25
+C/C++ Header,..\Engine\EclipseGui\include\ImType.h,4,0,24
+C++,..\Engine\EclipseDebugging\src\DebugModule.cpp,5,1,24
+C++,..\Engine\EclipseGui\src\ImRGBA.cpp,2,0,24
+C++,..\Engine\EclipseEngine\src\ObjectRotator.cpp,6,11,23
+C++,..\Engine\EclipseGui\src\ImVec2.cpp,3,0,23
+C/C++ Header,..\Engine\EclipseGraphics\include\MeshRenderer.h,8,1,23
+C++,..\Engine\EclipseEngine\src\ResourceManager.cpp,5,5,22
+C++,..\Engine\EclipseEngine\src\DebugComponent.cpp,3,0,21
+C++,..\Engine\EclipseEngine\src\ObjectFactory.cpp,2,0,21
+C++,..\Engine\EclipseGui\src\ImFloat.cpp,2,0,21
+C++,..\Engine\EclipseGui\src\ImVec4.cpp,3,0,21
+C/C++ Header,..\Engine\EclipseEngine\include\ApiLoader.h,0,0,21
+C/C++ Header,..\Engine\EclipseEngine\include\ObjectRotator.h,2,0,21
+C/C++ Header,..\Engine\EclipseDebugging\include\Core.h,6,6,21
+C/C++ Header,..\Engine\EclipseGui\include\ImString.h,1,0,20
+C/C++ Header,..\Engine\EclipseGui\include\ImFloat.h,1,0,20
+C++,..\Engine\EclipseGui\src\ImDouble.cpp,3,0,20
+C/C++ Header,..\Engine\EclipseGui\include\ImGuiCall.h,4,0,20
+C++,..\Engine\EclipseGui\src\ImInt.cpp,2,0,20
+C/C++ Header,..\Engine\EclipseGui\include\ImInt.h,1,0,20
+C++,..\Engine\EclipseGui\src\ImVec3.cpp,3,0,20
+C/C++ Header,..\Engine\EclipseEngine\include\typedefs.h,1,7,20
+C++,..\Engine\EclipseEngine\src\AssetLoader.cpp,2,0,20
+C/C++ Header,..\Engine\EclipseGui\include\ImDouble.h,1,0,20
+C++,..\Engine\EclipseGui\src\ImString.cpp,3,0,18
+C/C++ Header,..\Engine\EclipseEngine\include\GuiModel.h,4,0,18
+C/C++ Header,..\Engine\EclipseDebugging\include\DebugModule.h,1,0,17
+C++,..\Engine\EclipseGraphics\src\Texture.cpp,3,0,17
+C/C++ Header,..\Engine\EclipseEngine\include\CoreModule.h,1,0,17
+C/C++ Header,..\Engine\EclipseGui\include\ImTypes.h,1,0,17
+C/C++ Header,..\Engine\EclipseGraphics\include\GraphicsModule.h,2,0,17
+C/C++ Header,..\Engine\EclipseEngine\include\CameraController.h,2,0,16
+C/C++ Header,..\Engine\EclipseGraphics\include\Vertex.h,2,0,16
+C/C++ Header,..\Engine\EclipseEngine\include\DebugComponent.h,2,0,15
+C/C++ Header,..\Engine\EclipseGraphics\include\GraphicsApi.h,4,0,15
+C++,..\Engine\EclipseDebugging\src\DebugApi.cpp,1,0,15
+C/C++ Header,..\Engine\EclipseEngine\include\Serialization.h,1,0,15
+C/C++ Header,..\Engine\EclipseEngine\include\System.h,0,0,14
+C++,..\Engine\EclipseGraphics\src\GraphicsApi.cpp,3,0,14
+C/C++ Header,..\Engine\EclipseDebugging\include\DebugApi.h,3,0,14
+C/C++ Header,..\Engine\EclipseEngine\include\Resource.h,2,0,13
+C/C++ Header,..\Engine\EclipseEngine\include\API.h,1,0,13
+C++,..\Engine\EclipseEngine\src\GuiModel.cpp,2,0,11
+C/C++ Header,..\Engine\EclipseNetworking\include\TestObject.h,2,0,7
+C++,..\Engine\EclipseNetworking\src\TestObject.cpp,1,0,6
+C++,..\Engine\EclipseGui\src\EclipseGui.cpp,2,3,5
+C++,..\Engine\EclipseScripting\src\EclipseScripting.cpp,2,3,5
+C++,..\Engine\EclipseNetworking\src\EclipseNetworking.cpp,1,3,5
+C++,..\Engine\EclipseEngine\src\EclipseEngine.cpp,1,3,5
+C++,..\Engine\EclipseDebugging\src\EclipseDebugging.cpp,2,3,5
+C++,..\Engine\EclipseEngine\src\ApplicationDriver.cpp,2,4,5
+C/C++ Header,..\Engine\EclipseScripting\include\pch.h,3,6,4
+C/C++ Header,..\Engine\EclipseScripting\include\framework.h,1,0,2
+C++,..\Engine\EclipseEngine\src\System.cpp,0,0,2
+C++,..\Engine\EclipseEngine\src\API.cpp,0,0,1
+C++,..\Engine\EclipseEngine\src\EntityContainer.cpp,0,0,1
+C++,..\Engine\EclipseScripting\src\pch.cpp,2,2,1
+C++,..\Engine\EclipseEngine\src\Resource.cpp,0,0,1
+C++,..\Engine\EclipseEngine\src\EclipseEvent.cpp,0,0,1

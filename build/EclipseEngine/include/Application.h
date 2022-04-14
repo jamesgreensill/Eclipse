@@ -1,6 +1,8 @@
 #pragma once
 #include <type_traits>
-#include "Eclipse.h"
+#include "Core.h"
+#include "Engine.h"
+#include "EclipseEvent.h"
 
 namespace Eclipse {
 	namespace Engine
@@ -23,76 +25,52 @@ namespace Eclipse {
 		class Application
 		{
 		public:
-			static Application* GetInstance()
-			{
-				return Instance;
-			}
-
-			template <typename T>
-			static Application* Create(ApplicationSettings settings);
-
-			static void Run();
-			static void Stop();
-
-			static void SetBackgroundColor(Core::Data::ECC color);
-
-		private:
-
 			static Application* Instance;
-			ApplicationSettings settings = {};
+			static EclipseEvent<> TestEvent;
+
 			Engine* m_Engine = nullptr;
+			ApplicationSettings settings;
 			bool m_shouldClose = false;
 
-			void Created();
-			void Awake() const;
-			void Start() const;
-			void Update() const;
-			void LateUpdate() const;
-			void FixedUpdate() const;
-			void Draw() const;
-			void Gui() const;
-			void Dispose() const;
-			void Deleted() const;
-
+			void Stop();
 			bool ShouldClose() const;
+			void SetBackgroundColor(Core::Data::ECC color);
 
-		protected:
-			virtual void OnCreated();
-			virtual void OnAwake();
-			virtual void OnStart();
-			virtual void OnUpdate();
-			virtual void OnLateUpdate();
-			virtual void OnFixedUpdate();
-			virtual void OnDraw();
-			virtual void OnGui();
-			virtual void OnDispose();
-			virtual void OnDeleted();
-
-			~Application();
-		};
-
-		template <typename T>
-		Application* Application::Create(ApplicationSettings settings)
-		{
-			static_assert(std::is_base_of<Application, T>::value, "T must be derived from base class Application.");
-
-			if (Instance)
+			static void Run(SceneManagement::Scene* mainScene = nullptr);
+			template<typename... Args>
+			static Application* Create(ApplicationSettings settings)
 			{
-				Core::Debug::Log("Instance is already defined.");
+				if (Instance)
+				{
+					// debug instance already defined.
+					return Instance;
+				}
+				Instance = new Application();
+
+				if (!Instance)
+				{
+					// debug failed to create instance.
+					return nullptr;
+				}
+
+				Instance->settings = settings;
+
+				CompositeCall(TypeList<Args...>(), *Instance);
 				return Instance;
 			}
+			Application();
+			~Application();
+		private:
+			template<typename...>
+			struct TypeList {};
 
-			Instance = new T();
-
-			if (!Instance)
+			template <typename T, typename ...TArgs>
+			static void CompositeCall(TypeList<T, TArgs...>, Application& application)
 			{
-				Core::Debug::Log("Instance failed to create.");
-				return nullptr;
+				Instance->m_Engine->m_ModuleContainer.AddComponent<T>();
+				CompositeCall(TypeList<TArgs...>(), application);
 			}
-
-			Instance->settings = settings;
-
-			return Instance;
-		}
+			static void CompositeCall(TypeList<>, Application& application) {}
+		};
 	}
 }

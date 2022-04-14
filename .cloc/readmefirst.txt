@@ -44,3 +44,5 @@
 
 ### Developer of Cloc.exe | AIDaniel. 
 ### https://github.com/AlDanial/cloc
+
+### Peace - Ryz/James

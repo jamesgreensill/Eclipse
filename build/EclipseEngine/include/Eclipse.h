@@ -5,10 +5,17 @@
 */
 #pragma once
 
-#include <glad/glad.h>
+
+/*
+ *
+ *	TODO: Move relevant vendors to EclipseGraphics.
+ *
+ */
+
+#include <../../EclipseEngine/vendors/glad/glad.h>
+#include <../../EclipseEngine/vendors/GLFW/glfw3.h>
 #include <string>
 #include <glm/glm.hpp>
-#include <GLFW/glfw3.h>
 
 #include <stdexcept>
 #include <vcruntime_typeinfo.h>
