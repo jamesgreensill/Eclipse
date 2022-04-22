@@ -61,7 +61,6 @@ namespace Eclipse
 
 		void WindowModule::OnFrameBegin()
 		{
-			Core::Window::ClearBackground(Application::Instance->settings.refreshColor);
 		}
 
 		void WindowModule::OnFixedUpdate()

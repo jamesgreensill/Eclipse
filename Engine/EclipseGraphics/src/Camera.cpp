@@ -89,7 +89,7 @@ namespace Eclipse
 		void Camera::Reset()
 		{
 			m_Name = "Camera";
-			viewDistance = 1000.0f;
+			viewDistance = 10000.0f;
 			fov = 45.0f;
 		}
 

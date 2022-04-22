@@ -13,15 +13,15 @@
 #include <ostream>
 #include <time.h>
 
-/*
-   *
-   *	Used for debugging purposes.
-   *
-   */
+#include "Application.h"
 
-   //#include <termcolor/termcolor.hpp>
+ /*
+	 *
+	 *	Used for debugging purposes.
+	 *
+	 */
 
-#define NOT_IMPLEMENTED(message) External::Debug::DebugAPI::Error((std::string("Not Implemented: message") + #message).c_str());
+	 //#include <termcolor/termcolor.hpp>
 
 namespace Eclipse
 {
@@ -36,7 +36,6 @@ namespace Eclipse
 		{
 			void BeginDrawing()
 			{
-				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 				glfwPollEvents();
 				//ImGui_ImplOpenGL3_NewFrame();
 				//ImGui_ImplGlfw_NewFrame();
@@ -87,21 +86,18 @@ namespace Eclipse
 				glfwMakeContextCurrent(Data::CORE.Window.currentContext);
 
 				//Debug::Log("Loading GLAD OpenGL loader.");
-				gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-
-				glEnable(GL_DEPTH_TEST);
 
 				/*
 				 *
 				 *	IMGUI
 				 *
 				 */
-				//IMGUI_CHECKVERSION();
-				//ImGui::CreateContext();
-				//ImGuiIO& io = ImGui::GetIO(); (void)io;
-				//ImGui_ImplGlfw_InitForOpenGL(CORE.Window.currentContext, true);
-				//ImGui_ImplOpenGL3_Init("#version 330");
-				//ImGui::StyleColorsDark();
+				 //IMGUI_CHECKVERSION();
+				 //ImGui::CreateContext();
+				 //ImGuiIO& io = ImGui::GetIO(); (void)io;
+				 //ImGui_ImplGlfw_InitForOpenGL(CORE.Window.currentContext, true);
+				 //ImGui_ImplOpenGL3_Init("#version 330");
+				 //ImGui::StyleColorsDark();
 
 				Data::CORE.Window.screenWidth = width;
 				Data::CORE.Window.screenHeight = height;
@@ -466,7 +462,7 @@ namespace Eclipse
 				Data::CORE.Window.screenWidth = width;
 				Data::CORE.Window.screenHeight = height;
 
-				//Rendering::Viewport(0, 0, width, height);
+				External::Graphics::GraphicsAPI::Viewport(0, 0, width, height);
 			}
 
 			auto WindowSizeCallback(GLFWwindow* window, int width, int height) -> void
@@ -518,9 +514,15 @@ namespace Eclipse
 			/// Checks if the Window should close via KeyPress & Or Error.
 			/// </summary>
 			/// <returns></returns>
-			bool WindowShouldTerminate()
+			bool WindowShouldTerminate(Engine::Application* application)
 			{
-				return (glfwWindowShouldClose(Data::CORE.Window.currentContext) && Data::CORE.Keyboard.exitKey != GLFW_PRESS);
+				// is there a window context?
+				if (Data::CORE.Window.currentContext)
+				{
+					return (glfwWindowShouldClose(Data::CORE.Window.currentContext) && Data::CORE.Keyboard.exitKey != GLFW_PRESS);
+				}
+				// return the application state.
+				return application->m_shouldClose;
 			}
 		}
 
@@ -667,6 +669,8 @@ namespace Eclipse
 				// I still have no clue why i wrote I C U - 3/17/2022 - james.
 				// Still have 0 recollection of why i commented I C U - 3/23/2022 - james.
 				// ¯\_(ツ)_/¯
+				// ¯\_(ツ)_/¯
+				// ¯\_(ツ)_/¯
 				time_t now = time(nullptr);
 				tm timeStruct{};
 				char buffer[80];
@@ -682,6 +686,7 @@ namespace Eclipse
 	{
 		namespace Graphics
 		{
+			std::function<void(int, int, unsigned, unsigned)> GraphicsAPI::Viewport_Pointer = nullptr;
 		}
 
 		namespace Debug

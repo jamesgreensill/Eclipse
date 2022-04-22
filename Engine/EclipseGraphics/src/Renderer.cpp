@@ -7,6 +7,8 @@
 #include "Camera.h"
 #include "Renderer.h"
 
+#include "EclipseEngine/include/ResourceManager.h"
+
 namespace Eclipse
 {
 	namespace Graphics
@@ -19,7 +21,7 @@ namespace Eclipse
 		void Renderer::Draw()
 		{
 			Camera* renderCamera = Camera::main;
-			const std::vector<Light*> lights = SceneManager::Instance->GetActiveScene()->GetLights();
+			std::vector<Light*> lights = Light::Lights;
 			while (!DrawCalls.empty())
 			{
 				const DrawCall call = DrawCalls.front();
@@ -32,30 +34,36 @@ namespace Eclipse
 				{
 					break;
 				}
+				// fetch shader program resource.
+				const auto shader = Engine::ResourceManager::Get<ShaderProgram>(call.mesh->material.shaderKey);
 
 				// warm the shader.
-				call.mesh->material->shader->Bind();
+				shader->Bind();
 
 				// Bind Camera.
-				renderCamera->Bind(call.mesh->material->shader);
+				renderCamera->Bind(shader);
 
 				// Bind Transform.
-				call.transform->Bind(call.mesh->material->shader);
+				//call.transform->Bind(call.mesh->material->shader);
+
+				// bind transform.
+				shader->BindUniform(
+					uniTransformModelMatrix, glm::translate(glm::mat4(1), call.transform->GetGlobalPosition()) * glm::mat4(call.transform->GetGlobalRotation()) * glm::scale(glm::mat4(1), call.transform->GetGlobalScale()));
 
 				// Bind Lights.
 				for (int i = 0; i < lights.size(); i++)
 				{
-					lights[i]->Bind(i, call.mesh->material->shader);
+					lights[i]->Bind(i, shader);
 				}
 
 				// Bind Mesh's Material
-				call.mesh->material->Bind();
+				call.mesh->material.Bind();
 
 				// Bind Global Ambiance Camera.
-				call.mesh->material->shader->BindUniform(uniRendererAmbientColor, rendererAmbientColor);
+				shader->BindUniform(uniRendererAmbientColor, rendererAmbientColor);
 
 				// Light Count.
-				call.mesh->material->shader->BindUniform(uniRendererLightCount, static_cast<int>(lights.size()));
+				shader->BindUniform(uniRendererLightCount, static_cast<int>(lights.size()));
 
 				// Draw Call.
 				call.mesh->Draw();

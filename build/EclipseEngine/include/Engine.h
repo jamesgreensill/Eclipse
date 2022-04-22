@@ -43,6 +43,14 @@ namespace Eclipse
 			void FrameEnd() override;
 			void Dispose() override;
 			void Deleted() override;
+
+			// TODO:
+			// convert to solid principles after submission
+			static bool GetCondition(const std::string& name);
+			static void SetCondition(const std::string& name, const bool& value);
+			static void AddCondition(const std::string& name, const bool& value);
+		private:
+			static std::unordered_map<std::string, bool> EngineConditions;
 		};
 	}
 }

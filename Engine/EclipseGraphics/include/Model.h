@@ -30,7 +30,7 @@ namespace Eclipse
 			auto Load(const Engine::ResourceDirectories& directories) -> bool override;
 			auto GetMaterial(size_t index) -> Material& { return m_Materials.at(index); }
 
-			auto Setup() -> void;
+			auto Setup() -> bool override;
 
 			GET(MaterialCount, return m_Materials.size(););
 			GET(FileName, return m_FileName;);

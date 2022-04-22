@@ -4,6 +4,7 @@
 #include "Application.h"
 #include "glm/gtx/matrix_decompose.hpp"
 //#include "imgui/imgui.h"
+#include "Object.h"
 #include "glm/gtc/type_ptr.hpp"
 
 //#include "ImGuiHelper.h"
@@ -174,8 +175,8 @@ namespace Eclipse
 
 		void Transform::Created()
 		{
-			//object->transform = this;
-			//Reset();
+			object->transform = this;
+			Reset();
 		}
 
 		void Transform::Reset()
@@ -195,9 +196,8 @@ namespace Eclipse
 
 		void Transform::Bind(Graphics::ShaderProgram* shader)
 		{
-			// Model Matrix
-			//shader->BindUniform(
-			//	uniTransformModelMatrix, translate(glm::mat4(1), GetGlobalPosition()) * glm::mat4(GetGlobalRotation()) * glm::scale(glm::mat4(1), GetGlobalScale()));
+			//Model Matrix
+			
 		}
 	}
 }

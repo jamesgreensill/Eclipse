@@ -29,7 +29,7 @@ namespace Eclipse
 						}
 						catch (...)
 						{
-							DEBUG(ImGuiFail)
+						//	DEBUG(ImGuiFail)
 						}
 					}
 

@@ -3,27 +3,19 @@
 #include <glad/glad.h>
 
 #include "Core.h"
+#include "EclipseEngine/include/ResourceManager.h"
 
 namespace Eclipse
 {
 	namespace Graphics
 	{
-		Mesh::Mesh() : Mesh({}, {}) {}
 		Mesh::~Mesh()
 			= default;
-		Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned> indices)
-		{
-			material = new Material("defaultShader");
-			triCount = 0;
-			vao = 0;
-			vbo = 0;
-			ibo = 0;
-			m_Vertices = vertices;
-			m_Indices = indices;
-		}
 
 		void Mesh::Setup()
 		{
+			if (vao > 0)
+				return;
 			assert(vao == 0);
 
 			Graphics::GenBuffer(1, &vbo);
@@ -57,13 +49,13 @@ namespace Eclipse
 			Graphics::EnableVertexAttributeArray(2);
 			Graphics::VertexAttributePointer(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, textureCoordinate));
 
-			// Tangents.
-			Graphics::EnableVertexAttributeArray(3);
-			Graphics::VertexAttributePointer(3, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, tangent));
-
-			// biTangents
-			Graphics::EnableVertexAttributeArray(4);
-			Graphics::VertexAttributePointer(4, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, biTangent));
+			//// Tangents.
+			//Graphics::EnableVertexAttributeArray(3);
+			//Graphics::VertexAttributePointer(3, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, tangent));
+			//
+			//// biTangents
+			//Graphics::EnableVertexAttributeArray(4);
+			//Graphics::VertexAttributePointer(4, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, biTangent));
 
 			/// <summary>
 			/// Unbind

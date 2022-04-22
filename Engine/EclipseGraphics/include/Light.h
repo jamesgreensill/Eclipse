@@ -1,8 +1,10 @@
 #pragma once
+#include <vector>
 #include <glm/vec4.hpp>
 
 #include <EclipseEngine/include/Component.h>
 
+#include <EclipseEngine/include/EngineMacros.h>
 
 namespace Eclipse
 {
@@ -35,26 +37,40 @@ namespace Eclipse
 				COUNT,
 			};
 
+			static std::vector<Light*> Lights;
+
+			GET(Type, return m_Type; );
+			SET(Type, LightType, m_Type = value; );
+			GET(AmbientColor, return m_AmbientColor; );
+			SET(AmbientColor, glm::vec4, m_AmbientColor = value; );
+			GET(SpecularColor, return m_SpecularColor; );
+			SET(SpecularColor, glm::vec4, m_SpecularColor = value; );
+			GET(DiffuseColor, return m_DiffuseColor; );
+			SET(DiffuseColor, glm::vec4, m_DiffuseColor = value; );
+			GET(Intensity, return m_Intensity; );
+			SET(Intensity, float, m_Intensity = value; );
+
+
+
 			auto Bind(unsigned int index, Graphics::ShaderProgram* shader) const -> void;
-			Light();
+		private:
+			auto RetrieveGuiData() -> void override;
+			auto Created() -> void override;
+			auto Awake() -> void override;
+			auto Dispose() -> void override;
 
-			LightType Type;
-			glm::vec4 AmbientColor{};
-			glm::vec4 DiffuseColor{};
-			glm::vec4 SpecularColor{};
+			auto Deleted() -> void override;
+			auto Reset() -> void override;
 
-			float Intensity{};
+			LightType m_Type = LightType::Directional;
+			glm::vec4 m_AmbientColor = glm::vec4(1);
+			glm::vec4 m_DiffuseColor = glm::vec4(1);
+			glm::vec4 m_SpecularColor = glm::vec4(1);
+			float m_Intensity = 1;
+
+			// not sure if these will be used.
 			float Linear{};
 			float Quadratic{};
-		private:
-
-			int lightIndex = 0;
-
-			auto RetrieveGuiData() -> void override;
-
-			void Created() override;
-			void Deleted() override;
-			void Reset() override;
 		};
 	}
 }

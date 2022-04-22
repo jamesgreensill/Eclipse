@@ -16,6 +16,7 @@ namespace Eclipse
 			Graphics::Model* modelReference = nullptr;
 
 		public:
+			
 			void Awake() override;
 
 			void Draw() override;
@@ -24,7 +25,9 @@ namespace Eclipse
 
 			void Reset() override;
 
-			auto SetModel(Engine::ResourceKey& key) -> void;
+			void Update() override;
+
+			auto SetModel(Engine::ResourceKey key) -> void;
 
 			Graphics::Model* GetModel() const;
 		};

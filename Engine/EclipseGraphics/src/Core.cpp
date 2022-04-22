@@ -1,9 +1,32 @@
 #include "Core.h"
 
+#include <GLFW/glfw3.h>
+
+#include "GraphicsModule.h"
+#include "EclipseEngine/include/Engine.h"
+
 namespace Eclipse
 {
 	namespace Graphics
 	{
+		auto StartOpenGLInitialization() -> void
+		{
+			gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+			glEnable(GL_DEPTH_TEST);
+		}
+
+		auto EndOpenGLInitialization() -> void
+		{
+			Engine::Engine::SetCondition("OpenGL.Load", true);
+			GraphicsModule::OnOpenGLLoad.Invoke();
+		}
+
+		auto ClearScreen(unsigned int bitField)-> void
+		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		}
+
 		/*
 		 *	To future james, I am sure you will forget this.
 		 *	I think openGL is not being initalized properly.

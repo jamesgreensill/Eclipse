@@ -17,6 +17,10 @@
 #define ECAPI
 #endif
 
+
+#define NOT_IMPLEMENTED(message) External::Debug::DebugAPI::Error((std::string("Not Implemented: message") + #message).c_str());
+
+
 /*
  *
  *	Used for external api linking.

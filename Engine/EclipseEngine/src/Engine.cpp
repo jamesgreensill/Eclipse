@@ -9,6 +9,8 @@ namespace Eclipse
 {
 	namespace Engine
 	{
+		std::unordered_map<std::string, bool> Engine::EngineConditions = {};
+
 		void Engine::Run(SceneManagement::Scene* mainScene)
 		{
 			Created();
@@ -181,6 +183,31 @@ namespace Eclipse
 
 		void Engine::Deleted()
 		{
+		}
+
+		bool Engine::GetCondition(const std::string& name)
+		{
+			const auto it = EngineConditions.find(name);
+			if(it != EngineConditions.end())
+			{
+				return it->second;
+			}
+			return false;
+		}
+
+		void Engine::SetCondition(const std::string& name, const bool& value)
+		{
+			const auto it = EngineConditions.find(name);
+			if (it != EngineConditions.end())
+			{
+				EngineConditions[name] = value;
+			}
+			AddCondition(name, value);
+		}
+
+		void Engine::AddCondition(const std::string& name, const bool& value)
+		{
+			EngineConditions.emplace(name, value);
 		}
 	}
 }

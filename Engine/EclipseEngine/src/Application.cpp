@@ -7,7 +7,7 @@ namespace Eclipse
 	namespace Engine
 	{
 		Application* Application::Instance = nullptr;
-		EclipseEvent<> Application::TestEvent{};
+
 
 		auto Application::Run(SceneManagement::Scene* mainScene) -> void
 		{
@@ -17,27 +17,7 @@ namespace Eclipse
 			{
 				// TODO: Debug: Failed To Run Engine.
 			}
-			// Engine.run.
 
-			/*Core::Window::InitWindow(Instance->settings.windowWidth, Instance->settings.windowHeight, Instance->settings.windowTitle.c_str());
-
-			Instance->Created();
-			Instance->Awake();
-			Instance->Start();
-
-			while (!Instance->ShouldClose())
-			{
-				Instance->Update();
-				Instance->LateUpdate();
-
-				Core::Rendering::BeginDrawing();
-				Core::Rendering::ClearBackground(Instance->settings.refreshColor);
-				Instance->Draw();
-				Instance->Gui();
-				Core::Rendering::EndDrawing();
-			}
-			Instance->Dispose();
-			Instance->Deleted();*/
 		}
 		auto Application::Stop() -> void
 		{
@@ -47,7 +27,7 @@ namespace Eclipse
 		{
 			if (!Instance)
 				return true;
-			return m_shouldClose;
+			return Core::Window::WindowShouldTerminate(Instance);
 		}
 		auto Application::SetBackgroundColor(Core::Data::ECC color) -> void
 		{

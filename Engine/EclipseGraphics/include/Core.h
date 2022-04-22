@@ -7,6 +7,11 @@ namespace Eclipse
 {
 	namespace Graphics
 	{
+		ECAPI auto StartOpenGLInitialization() -> void;
+		ECAPI auto EndOpenGLInitialization() -> void;
+
+		ECAPI auto ClearScreen(unsigned int) -> void;
+
 		/// <summary>
 		/// Drawing Functions
 		/// </summary>

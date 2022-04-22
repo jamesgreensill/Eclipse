@@ -19,15 +19,18 @@ namespace Eclipse
 
 		struct Texture : Engine::Resource
 		{
-			std::string m_fileName;
-			unsigned int m_width;
-			unsigned int m_height;
-			unsigned int m_handle;
-			unsigned int m_format;
-			unsigned char* m_loadedPixels;
+			std::string m_fileName = "none";
+			unsigned int m_width = 0;
+			unsigned int m_height = 0;
+			unsigned int m_handle = 0;
+			unsigned int m_format = 0;
+			unsigned char* m_loadedPixels = nullptr;
+			int m_composition = -1;
+
 			void Bind(ShaderProgram* shader, unsigned int slot);
 
 			bool Load(const Engine::ResourceDirectories& directories) override;
+			bool Setup() override;
 		};
 	}
 }

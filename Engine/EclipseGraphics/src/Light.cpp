@@ -27,6 +27,8 @@ namespace Eclipse
 {
 	namespace Components
 	{
+		std::vector<Light*> Light::Lights = {};
+
 		void Light::Bind(unsigned int index, Graphics::ShaderProgram* shader) const
 		{
 			Transform* transform = object->transform;
@@ -36,32 +38,31 @@ namespace Eclipse
 
 			shader->BindUniform(prefix + uniLightDirection, transform->GetForward());
 			shader->BindUniform(prefix + uniLightPosition, transform->GetGlobalPosition());
-			shader->BindUniform(prefix + uniAmbientLightColor, AmbientColor);
-			shader->BindUniform(prefix + uniDiffuseLightColor, DiffuseColor);
-			shader->BindUniform(prefix + uniSpecularLightColor, SpecularColor);
-			shader->BindUniform(prefix + uniLightIntensity, Intensity);
+			shader->BindUniform(prefix + uniAmbientLightColor, m_AmbientColor);
+			shader->BindUniform(prefix + uniDiffuseLightColor, m_DiffuseColor);
+			shader->BindUniform(prefix + uniSpecularLightColor, m_SpecularColor);
+			shader->BindUniform(prefix + uniLightIntensity, m_Intensity);
 			shader->BindUniform(prefix + uniLightLinear, Linear);
 			shader->BindUniform(prefix + uniLightQuadratic, Quadratic);
-			shader->BindUniform(prefix + uniLightType, static_cast<int>(Type));
+			shader->BindUniform(prefix + uniLightType, static_cast<int>(m_Type));
 		}
 
-		Light::Light() { Reset(); }
 
 		void Light::RetrieveGuiData()
 		{
 			//call.Push(new Engine::ImGuiTypes::ImString(&m_Name));
-			//call.Push(new Engine::ImGuiTypes::ImRGBA("Ambient Color", &AmbientColor.x, &AmbientColor.y, //&AmbientColor.z, &AmbientColor.w));
-			//call.Push(new Engine::ImGuiTypes::ImRGBA("Diffuse Color", &DiffuseColor.x, &DiffuseColor.y, //&DiffuseColor.z, &DiffuseColor.w));
-			//call.Push(new Engine::ImGuiTypes::ImRGBA("Specular Color", &SpecularColor.x, &SpecularColor.y, //&SpecularColor.z, &SpecularColor.w));
-			//call.Push(new Engine::ImGuiTypes::ImFloat("Intensity", &Intensity));
+			//call.Push(new Engine::ImGuiTypes::ImRGBA("Ambient Color", &m_AmbientColor.x, &m_AmbientColor.y, //&m_AmbientColor.z, &m_AmbientColor.w));
+			//call.Push(new Engine::ImGuiTypes::ImRGBA("Diffuse Color", &m_DiffuseColor.x, &m_DiffuseColor.y, //&m_DiffuseColor.z, &m_DiffuseColor.w));
+			//call.Push(new Engine::ImGuiTypes::ImRGBA("Specular Color", &m_SpecularColor.x, &m_SpecularColor.y, //&m_SpecularColor.z, &m_SpecularColor.w));
+			//call.Push(new Engine::ImGuiTypes::ImFloat("m_Intensity", &m_Intensity));
 			//call.Push(new Engine::ImGuiTypes::ImFloat("Linear", &Linear));
 			//call.Push(new Engine::ImGuiTypes::ImFloat("Quadratic", &Quadratic));
 			//
 			//call.Push(new Engine::ImGuiTypes::ImType([=]
 			//	{
-			//		ImGui::Text("Light Type");
+			//		ImGui::Text("Light m_Type");
 			//
-			//		if (ImGui::BeginTable("Type", 3))
+			//		if (ImGui::BeginTable("m_Type", 3))
 			//		{
 			//			ImGui::TableNextColumn();
 			//			if (ImGui::Button("-"))
@@ -70,10 +71,10 @@ namespace Eclipse
 			//				if (lightIndex < 0)
 			//					lightIndex = static_cast<int>(LightType::COUNT) - 1;
 			//
-			//				Type = static_cast<LightType>(lightIndex);
+			//				m_Type = static_cast<LightType>(lightIndex);
 			//			}
 			//			ImGui::TableNextColumn();
-			//			switch (Type)
+			//			switch (m_Type)
 			//			{
 			//			case LightType::Directional:
 			//				ImGui::Text("Directional");
@@ -96,7 +97,7 @@ namespace Eclipse
 			//				if (lightIndex > static_cast<int>(LightType::COUNT) - 1)
 			//					lightIndex = 0;
 			//
-			//				Type = static_cast<LightType>(lightIndex);
+			//				m_Type = static_cast<LightType>(lightIndex);
 			//			}
 			//
 			//			ImGui::EndTable();
@@ -106,21 +107,33 @@ namespace Eclipse
 
 		void Light::Created()
 		{
-			Engine::SceneManagement::SceneManager::Instance->GetActiveScene()->AddLight(this);
+		}
+
+		void Light::Awake()
+		{
+			Lights.emplace_back(this);
+		}
+
+		void Light::Dispose()
+		{
+			const auto& it = std::find(Lights.begin(), Lights.end(), this);
+			if (it != Lights.end())
+			{
+				Lights.erase(it);
+			}
 		}
 
 		void Light::Deleted()
 		{
-			Engine::SceneManagement::SceneManager::Instance->GetActiveScene()->RemoveLight(this);
 		}
 
 		void Light::Reset()
 		{
-			Type = LightType::Directional;
-			//AmbientColor = glm::vec4(0.2f);
-			//DiffuseColor = glm::vec4(0.2f);
-			//SpecularColor = glm::vec4(0.2f);
-			Intensity = 1;
+			m_Type = LightType::Directional;
+			//m_AmbientColor = glm::vec4(0.2f);
+			//m_DiffuseColor = glm::vec4(0.2f);
+			//m_SpecularColor = glm::vec4(0.2f);
+			m_Intensity = 1;
 			Linear = 1;
 			Quadratic = 1;
 		}

@@ -19,7 +19,7 @@ namespace Eclipse {
 			int minWindowHeight = 100;
 
 			// Rendering
-			Core::Data::ECC refreshColor = { 1,1,1,1 };
+			Core::Data::ECC refreshColor = { 0,0,0,1 };
 		};
 
 		class Application

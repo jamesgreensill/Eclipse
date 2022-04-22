@@ -26,7 +26,7 @@
 struct GLFWwindow;
 struct GLFWmonitor;
 
-// Type Definitions for GLFW
+// m_Type Definitions for GLFW
 
 /*
 
@@ -37,6 +37,11 @@ struct GLFWmonitor;
 */
 
 namespace Eclipse {
+	namespace Engine
+	{
+		class Application;
+	}
+
 	namespace Core
 	{
 		namespace Data
@@ -104,7 +109,7 @@ namespace Eclipse {
 			/// <summary>
 			/// Returns true if the Window should close.
 			/// </summary>
-			ECAPI auto WindowShouldTerminate(void) -> bool;
+			ECAPI auto WindowShouldTerminate(Engine::Application*) -> bool;
 			/// <summary>
 			/// Initializes and creates a new Window.
 			/// </summary>
@@ -256,6 +261,16 @@ namespace Eclipse {
 
 	namespace External
 	{
+		namespace Graphics
+		{
+			class GraphicsAPI
+			{
+			public:
+				static ECAPI std::function<void(int, int, unsigned int, unsigned int)> Viewport_Pointer;
+				static inline ECAPI void Viewport(int x, int y, unsigned int width, unsigned int height) { if (Viewport_Pointer) { Viewport_Pointer(x,y,width,height); } }
+			};
+		}
+
 		namespace Debug
 		{
 			class DebugAPI

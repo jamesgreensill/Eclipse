@@ -7,7 +7,33 @@ namespace Eclipse
 {
 	namespace Engine
 	{
-		auto Serialization::LoadRawData(const std::string& name) -> std::vector<char>
+		auto Serialization::LoadRawData(const std::string& name) -> const char*
+		{
+			FILE* fp;
+			char* content = NULL;
+
+			int count = 0;
+
+			if (name.c_str() != NULL) {
+				fopen_s(&fp, name.c_str(), "rt");
+
+				if (fp != NULL) {
+					fseek(fp, 0, SEEK_END);
+					count = ftell(fp);
+					rewind(fp);
+
+					if (count > 0) {
+						content = (char*)malloc(sizeof(char) * (count + 1));
+						count = fread(content, sizeof(char), count, fp);
+						content[count] = '\0';
+					}
+					fclose(fp);
+				}
+			}
+			return content;
+		}
+
+		auto Serialization::LoadData(const std::string& name) -> std::vector<char>
 		{
 			std::ifstream file(name, std::ios::binary | std::ios::ate);
 			std::streamsize size = file.tellg();
@@ -24,7 +50,7 @@ namespace Eclipse
 			return buffer;
 		}
 
-		auto Serialization::SaveRawData(const std::string& name, const std::vector<char*>& data) -> void
+		auto Serialization::SaveData(const std::string& name, const std::vector<char*>& data) -> void
 		{
 			std::ofstream file(name, std::ios::out | std::ios::binary);
 			if (file)

@@ -41,12 +41,13 @@ namespace Eclipse
 			return true;
 		}
 
-		auto Model::Setup() -> void
+		auto Model::Setup() -> bool
 		{
 			for (auto& mesh : m_Meshes)
 			{
 				mesh.Setup();
 			}
+			return true;
 		}
 
 		void Model::ProcessNode(aiNode* node, const aiScene* scene)
@@ -89,7 +90,11 @@ namespace Eclipse
 			aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
 
 			// return a mesh object created from the extracted mesh data
-			return Mesh(vertices, indices);
+			Mesh returnMesh = {};
+			returnMesh.SetIndices(indices);
+			returnMesh.SetVertices(vertices);
+
+			return returnMesh;
 		}
 	}
 }

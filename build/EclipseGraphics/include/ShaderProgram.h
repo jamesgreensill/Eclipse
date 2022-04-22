@@ -10,20 +10,17 @@ namespace Eclipse
 	namespace Graphics
 	{
 		class Shader;
-		class ShaderProgram
+		class ShaderProgram : public Engine::Resource
 		{
 		public:
-			static std::unordered_map<std::string, ShaderProgram*> ShaderPrograms;
-			static ShaderProgram* LoadShaderProgram(const char* vertex, const char* fragment, const char* shaderProgramName);
-			static ShaderProgram* GetShaderProgram(const char* shaderProgramName);
 
-			ShaderProgram() : program(0), lastError(nullptr) {
-				shaders[0] = shaders[1] = shaders[2] = shaders[3] = nullptr;
-			}
-			~ShaderProgram();
-			bool LoadShader(unsigned int stage, const char* filename);
-			bool CreateShader(unsigned int stage, const char* string);
-			void AttachShader(const std::shared_ptr<Shader>& shader);
+			
+			bool Load(const Engine::ResourceDirectories& directories) override;
+			bool Setup() override;
+
+
+			void LoadShader(unsigned int stage, const char* filename);
+			void AttachShader(const Engine::ResourceKey& shaderKey);
 
 			bool Link();
 
@@ -69,14 +66,20 @@ namespace Eclipse
 			bool BindUniform(std::string name, int count, const glm::mat2* value);
 			bool BindUniform(std::string name, int count, const glm::mat3* value);
 			bool BindUniform(std::string name, int count, const glm::mat4* value);
-			std::string shaderProgramName;
 
-			unsigned int GetProgram() { return program; };
+			unsigned int GetProgram() const { return program; }
+
+			ShaderProgram() : program(0), lastError(nullptr) {}
+			~ShaderProgram();
 
 		private:
+			void VerifyProgram(int ID);
+			auto VerifyProgram(const std::string&, int& uniformLocation) -> bool;
 
+			Engine::ResourceKey shaderKeys[SHADER_STAGE_COUNT];
+
+			//std::shared_ptr<Shader> shaders[SHADER_STAGE_COUNT];
 			unsigned int program;
-			std::shared_ptr<Shader> shaders[SHADER_STAGE_Count];
 			char* lastError;
 		};
 	}

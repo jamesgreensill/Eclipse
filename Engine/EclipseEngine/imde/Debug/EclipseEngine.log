@@ -32,21 +32,22 @@
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\typedefs.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\WindowModule.h
          33 file(s) copied.
-  AssetLoader.cpp
-  ResourceManager.cpp
-  CoreModule.cpp
-  EngineModule.cpp
   Application.cpp
+  AssetLoader.cpp
   CameraController.cpp
-  DebugComponent.cpp
   Core.cpp
+  CoreModule.cpp
+  DebugComponent.cpp
   Engine.cpp
+  EngineModule.cpp
   Object.cpp
+  ResourceManager.cpp
   Resources.cpp
   Scene.cpp
   SceneManager.cpp
 D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\SceneManager.cpp(145,32): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
   Serialization.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\Serialization.cpp(27,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Transform.cpp
   WindowModule.cpp
   Generating Code...

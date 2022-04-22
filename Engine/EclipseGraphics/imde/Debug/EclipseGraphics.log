@@ -14,13 +14,10 @@
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\include\Texture.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\include\Vertex.h
          15 file(s) copied.
-  Camera.cpp
-  GraphicsApi.cpp
   Light.cpp
-  MeshRenderer.cpp
-  Model.cpp
-  Shader.cpp
-  ShaderProgram.cpp
+  Renderer.cpp
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\include\Renderer.h(20,13): warning C4099: 'Eclipse::Graphics::Mesh': type name first seen using 'struct' now seen using 'class'
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\include\Mesh.h(22): message : see declaration of 'Eclipse::Graphics::Mesh'
   Generating Code...
   EclipseGraphics.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\build\Debug\EclipseGraphics.lib
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseGraphics\build\Debug\\EclipseGraphics.idb

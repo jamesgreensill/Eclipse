@@ -2,9 +2,13 @@
 #include <EclipseEngine/include/Object.h>
 
 #include "MeshRenderer.h"
+
+#include "GraphicsModule.h"
 #include "Renderer.h"
 #include "Model.h"
+#include "EclipseEngine/include/Engine.h"
 #include "EclipseEngine/include/ResourceManager.h"
+#include "EclipseEngine/include/Transform.h"
 
 namespace Eclipse
 {
@@ -18,26 +22,33 @@ namespace Eclipse
 
 		void MeshRenderer::Awake()
 		{
-			if (modelReference)
-				modelReference->Setup();
+			
 		}
 
 		// Queue meshes to the global renderer.
 		void MeshRenderer::Draw()
 		{
-			//if (!m_Model)
-			//{
-			//	External::Debug::DebugAPI::Error("Mesh is not set");
-			//	return;
-			//}
-			//for (auto& mesh : m_Model->m_Meshes)
-			//{
-			//	Graphics::Renderer::Instance->QueueCall
-			//	(
-			//		{ &mesh, object->transform }
-			//	);
-			//}
+			if (!modelReference)
+			{
+				External::Debug::DebugAPI::Error("Mesh is not set");
+				return;
+			}
+			for (auto& mesh : modelReference->m_Meshes)
+			{
+				if(Graphics::Renderer::Instance)
+				{
+					Graphics::Renderer::Instance->QueueCall
+					(
+						{ &mesh, object->transform }
+					);
+				}
+			}
 		}
+
+		void MeshRenderer::Update()
+		{
+		}
+
 
 		void MeshRenderer::Reset()
 		{
@@ -45,11 +56,20 @@ namespace Eclipse
 		}
 
 		// Set the rendered model.
-		void MeshRenderer::SetModel(Engine::ResourceKey& model)
+		void MeshRenderer::SetModel(Engine::ResourceKey model)
 		{
 			m_ModelKey = model;
 			modelReference = Engine::ResourceManager::Get<Graphics::Model>(m_ModelKey);
-			modelReference->Setup();
+
+			if(!Engine::Engine::GetCondition("OpenGL.Load"))
+			{
+				Graphics::GraphicsModule::OnOpenGLLoad += [=]()
+				{
+					modelReference->Setup();
+				};
+			}
+			else
+				modelReference->Setup();
 		}
 
 		// Get the rendered model.

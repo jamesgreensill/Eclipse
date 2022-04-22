@@ -14,7 +14,7 @@ namespace Eclipse {
 			GEOMETRY,
 			FRAGMENT,
 
-			SHADER_STAGE_Count,
+			SHADER_STAGE_COUNT,
 		};
 
 		// individual sharable shader stages
@@ -29,8 +29,7 @@ namespace Eclipse {
 			}
 			~Shader();
 
-			bool LoadShader(unsigned int stage, const char* path);
-			bool CreateShader(unsigned int stage, const char* string);
+			void LoadShader(unsigned int stage, const char* path);
 
 			unsigned int GetStage() const { return shaderStage; }
 			unsigned int GetHandle() const { return shaderHandle; }
@@ -39,11 +38,17 @@ namespace Eclipse {
 			std::string shaderName;
 
 			bool Load(const Engine::ResourceDirectories& directories) override;
+			bool Setup() override;
 
 		protected:
 			unsigned int shaderStage;
 			unsigned int shaderHandle;
 			char* lastShaderError;
+
+		private:
+
+			const char* data = nullptr;
+			//std::vector<char> data = {};
 		};
 	}
 }

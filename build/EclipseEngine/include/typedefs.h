@@ -8,8 +8,7 @@ namespace Eclipse
 {
 	namespace Engine
 	{
-		// Invalid Resource Code.
-#define INVALID_RESOURCE static_cast<ResourceID>(-1)
+
 // Resource Identifier
 		typedef unsigned int ResourceID;
 		// Batch Identifier
@@ -17,6 +16,10 @@ namespace Eclipse
 		// Directories Parameter for Resource Loading.
 		typedef std::vector<std::string> ResourceDirectories;
 		// Resource Access Key.
+
+// Invalid Resource Code.
+#define INVALID_RESOURCE (Eclipse::Engine::ResourceID)-1
+
 		typedef struct ResourceKey
 		{
 			// Batch Identifier
@@ -24,5 +27,7 @@ namespace Eclipse
 			// Resource Identifier
 			ResourceID resourceId = INVALID_RESOURCE;
 		}ResourceKey;
+#define INVALID_RESOURCE_KEY Eclipse::Engine::ResourceKey({typeid(this), INVALID_RESOURCE})
 	}
+
 }
