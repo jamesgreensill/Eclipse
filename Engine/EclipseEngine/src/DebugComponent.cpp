@@ -7,6 +7,9 @@ namespace Eclipse
 {
 	namespace Components
 	{
+
+		// Deprecated.
+		
 		void DebugComponent::Created()
 		{
 			m_Name = "Debug Component";

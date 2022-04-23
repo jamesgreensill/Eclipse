@@ -10,6 +10,8 @@ namespace Eclipse
 {
 	namespace Debug
 	{
+
+		// Returns the current time in a Y-M-D-H-M-S format.
 		std::string GetTime()
 		{
 			// I C U

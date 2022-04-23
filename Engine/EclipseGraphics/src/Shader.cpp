@@ -20,6 +20,8 @@ namespace Eclipse
 
 		void Shader::LoadShader(unsigned int stage, const char* path)
 		{
+			// deprecated but used for reference.
+
 			//// open file
 			//FILE* file = nullptr;
 			//fopen_s(&file, path, "rb");
@@ -34,6 +36,7 @@ namespace Eclipse
 
 		bool Shader::Setup()
 		{
+			// create shader based on stage.
 			switch (shaderStage)
 			{
 			case VERTEX: shaderHandle = glCreateShader(GL_VERTEX_SHADER);
@@ -45,6 +48,7 @@ namespace Eclipse
 			default: break;
 			}
 
+			// set shader data.
 			glShaderSource(shaderHandle, 1, (const char**)&data, nullptr);
 			glCompileShader(shaderHandle);
 

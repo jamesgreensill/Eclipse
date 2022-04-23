@@ -32,13 +32,15 @@ namespace Eclipse
 
 		bool ShaderProgram::Setup()
 		{
+			// loop through every shader stage.
 			for (int i = 1; i <= SHADER_STAGE_COUNT; i++)
 			{
+				// get the shader at i-1
 				auto shader = Engine::ResourceManager::Get<Shader>(shaderKeys[i - 1]);
 				if (shader)
 					shader->Setup();
 			}
-
+			
 			if (!this->Link())
 			{
 				External::Debug::DebugAPI::Debug(this->GetLastError());

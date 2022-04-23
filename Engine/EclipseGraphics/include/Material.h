@@ -30,6 +30,12 @@ namespace Eclipse
 		{
 			auto Bind() const ->void;
 
+			/*
+			
+				Getter & Setter Wrappers.
+
+			*/
+
 			GET(AmbientColor, return ambientColor;);
 			SET(AmbientColor, glm::vec4, ambientColor = value; );
 			GET(DiffuseColor, return diffuseColor;);
@@ -50,6 +56,7 @@ namespace Eclipse
 			/**
 			 * \brief Constructor
 			 */
+		private:
 			Engine::ResourceKey shaderKey = INVALID_RESOURCE_KEY;
 			Engine::ResourceKey albedoTextureKey = INVALID_RESOURCE_KEY;
 			Engine::ResourceKey specularTextureKey = INVALID_RESOURCE_KEY;

@@ -6,6 +6,12 @@
 
 #include "typedefs.h"
 
+/*
+
+	DEPRECATED.
+
+*/
+
 namespace Eclipse
 {
 	namespace Engine

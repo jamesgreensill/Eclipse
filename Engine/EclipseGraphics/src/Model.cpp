@@ -66,7 +66,10 @@ namespace Eclipse
 
 			const aiVector3D Zero3D(0.0f, 0.0f, 0.0f);
 
+			// loop through every vertex
 			for (unsigned int i = 0; i < mesh->mNumVertices; i++) {
+
+				// create stack allocation for vertex.
 				Vertex vertex =
 				{
 					{mesh->mVertices[i].x, mesh->mVertices[i].y,mesh->mVertices[i].z},
@@ -77,6 +80,7 @@ namespace Eclipse
 				if (mesh->mTextureCoords[0])
 					vertex.textureCoordinate = { mesh->mTextureCoords[0][i].x,mesh->mTextureCoords[0][i].y };
 
+				// emplace vertex into vertices.
 				vertices.emplace_back(vertex);
 			}
 

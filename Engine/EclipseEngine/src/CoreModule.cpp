@@ -10,6 +10,7 @@ namespace Eclipse
 	{
 		void CoreModule::Boot()
 		{
+			// Add SceneManager.
 			m_SystemsContainer.AddComponent<SceneManagement::SceneManager>();
 		}
 

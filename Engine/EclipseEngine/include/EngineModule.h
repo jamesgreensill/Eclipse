@@ -16,6 +16,10 @@ namespace Eclipse
 			friend class Engine;
 
 		public:
+			
+			/// <summary>
+			/// ECS container following the modified ECS pattern.
+			/// </summary>
 			EntityContainer<System> m_SystemsContainer = EntityContainer<System>
 				(
 					[&](System* system)
@@ -28,13 +32,15 @@ namespace Eclipse
 						system->Deleted();
 					}
 					);
-
 			virtual void PreEngineInit();
 			virtual void EngineInit();
 			virtual void PostEngineInit();
 			virtual void PostBoot();
 			virtual void Boot() = 0;
 
+			/*
+				Event functions.
+			*/
 			virtual void OnAwake();
 			virtual void OnStart();
 			virtual void OnLateStart();
@@ -52,6 +58,9 @@ namespace Eclipse
 			virtual void OnFrameEnd();
 			virtual void OnDispose();
 
+			/*
+				Final overrides to prevent further derrivitations.
+			*/
 			void Awake() final;
 			void Start() final;
 			void LateStart() final;

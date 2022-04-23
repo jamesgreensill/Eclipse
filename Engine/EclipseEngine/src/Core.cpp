@@ -15,13 +15,13 @@
 
 #include "Application.h"
 
- /*
-	 *
-	 *	Used for debugging purposes.
-	 *
-	 */
-
-	 //#include <termcolor/termcolor.hpp>
+/*
+ *
+ *	Used for debugging purposes.
+ *
+ *
+ */
+ //#include <termcolor/termcolor.hpp>
 
 namespace Eclipse
 {
@@ -36,6 +36,10 @@ namespace Eclipse
 		{
 			void BeginDrawing()
 			{
+				/*
+					TODO: Merge GUI calls to EclipseGUI.
+				*/
+
 				glfwPollEvents();
 				//ImGui_ImplOpenGL3_NewFrame();
 				//ImGui_ImplGlfw_NewFrame();
@@ -44,6 +48,11 @@ namespace Eclipse
 
 			void  EndDrawing()
 			{
+
+				/*
+					TODO: Merge GUI calls to EclipseGUI.
+				*/
+				
 				//ImGui::Render();
 				//ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 				glfwSwapBuffers(Data::CORE.Window.currentContext);
@@ -63,6 +72,7 @@ namespace Eclipse
 			GLFWwindow* InitWindow(int width, int height, const char* title, GLFWmonitor* monitor,
 				GLFWwindow* window)
 			{
+				// Initialize GLFW.
 				if (!glfwInit())
 				{
 					//Debug::Log("GLFW failed to initialize.");
@@ -70,8 +80,10 @@ namespace Eclipse
 				}
 				//Debug::Log("GLFW initialized successfully.");
 
+				// Initialize window transparency
 				glfwInitHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
 
+				// create window context.
 				Data::CORE.Window.currentContext = glfwCreateWindow(width, height, title, nullptr, nullptr);
 
 				if (Data::CORE.Window.currentContext == nullptr)
@@ -80,11 +92,16 @@ namespace Eclipse
 					return nullptr;
 				}
 
+				// load window callbacks
 				LoadCallbacks(Data::CORE.Window.currentContext);
 
 				//Debug::Log("Setting to the current context.");
 				glfwMakeContextCurrent(Data::CORE.Window.currentContext);
 
+
+				/*
+					TODO: Merge GUI calls to EclipseGUI.
+				*/
 				//Debug::Log("Loading GLAD OpenGL loader.");
 
 				/*
@@ -99,6 +116,7 @@ namespace Eclipse
 				 //ImGui_ImplOpenGL3_Init("#version 330");
 				 //ImGui::StyleColorsDark();
 
+				// Set window data.
 				Data::CORE.Window.screenWidth = width;
 				Data::CORE.Window.screenHeight = height;
 
@@ -107,10 +125,14 @@ namespace Eclipse
 
 			void CloseWindow()
 			{
+				/*
+					TODO: Merge GUI calls to EclipseGUI.
+				*/
 				//ImGui_ImplOpenGL3_Shutdown();
 				//ImGui_ImplGlfw_Shutdown();
 				//ImGui::DestroyContext();
 
+				// destroy window context
 				glfwDestroyWindow(Data::CORE.Window.currentContext);
 				glfwTerminate();
 			}
@@ -179,17 +201,23 @@ namespace Eclipse
 			{
 				if (flag)
 				{
+					// check if the current window not fullscreened.
 					if (!Data::CORE.Window.fullscreen)
 					{
+						// get the window position
 						glfwGetWindowPos(Data::CORE.Window.currentContext, &Data::CORE.Window.screenPosX, &Data::CORE.Window.screenPosY);
 
+						// get the monitor count & monitors
 						int monitorCount = 0;
 						GLFWmonitor** monitors = glfwGetMonitors(&monitorCount);
 
+						// get the current monitor index.
 						const int monitorIndex = GetCurrentMonitor();
 
+						// get the current monitor pointer.
 						GLFWmonitor* monitor = monitorIndex < monitorCount ? monitors[monitorIndex] : nullptr;
 
+						// if there is no monitor, recall the function with the false parameter to set window to windowed.
 						if (!monitor)
 						{
 							SetFullscreen(false);
@@ -338,7 +366,10 @@ namespace Eclipse
 
 			int GetCurrentMonitor()
 			{
+				// create stack allocation
 				int monitorCount;
+
+				// get pointers to monitors
 				GLFWmonitor** monitors = glfwGetMonitors(&monitorCount);
 				GLFWmonitor* monitor = nullptr;
 
@@ -346,6 +377,7 @@ namespace Eclipse
 				if (monitorCount == 1)
 					return 0;
 
+				// if the window is fullscreen then check which monitor the window is on.
 				if (IsWindowFullscreen())
 				{
 					monitor = glfwGetWindowMonitor(Data::CORE.Window.currentContext);
@@ -359,6 +391,7 @@ namespace Eclipse
 
 				int x = 0, y = 0;
 
+				// get the window position
 				glfwGetWindowPos(Data::CORE.Window.currentContext, &x, &y);
 
 				// do AABB to determine if the window is on a monitor.
@@ -411,6 +444,7 @@ namespace Eclipse
 
 			void ShowCursor(bool show)
 			{
+				// show or hide cursor based on show boolean.
 				glfwSetInputMode(Data::CORE.Window.currentContext, GLFW_CURSOR, show ? GLFW_CURSOR_NORMAL : GLFW_CURSOR_DISABLED);
 
 				Data::CORE.Mouse.cursorHidden = !show;

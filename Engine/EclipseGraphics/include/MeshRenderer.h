@@ -17,6 +17,12 @@ namespace Eclipse
 
 		public:
 			
+			/*
+			
+				Base class overrides.
+
+			*/
+
 			void Awake() override;
 
 			void Draw() override;
@@ -27,6 +33,9 @@ namespace Eclipse
 
 			void Update() override;
 
+			/// <summary>
+			///	Set the current model of this meshRenderer.
+			/// </summary>
 			auto SetModel(Engine::ResourceKey key) -> void;
 
 			Graphics::Model* GetModel() const;

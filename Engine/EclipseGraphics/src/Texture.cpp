@@ -60,6 +60,9 @@ namespace Eclipse
 			{
 				glGenTextures(1, &m_handle);
 				glBindTexture(GL_TEXTURE_2D, m_handle);
+
+
+				// determine format value and load into openGL.
 				switch (m_composition) {
 				case STBI_grey:
 					m_format = RED;

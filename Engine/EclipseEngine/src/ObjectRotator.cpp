@@ -13,6 +13,13 @@ namespace Eclipse
 {
 	namespace Components
 	{
+
+
+	
+		/*
+			DEPRECATED.		
+		*/
+
 		void ObjectRotator::Update()
 		{
 			if (running)

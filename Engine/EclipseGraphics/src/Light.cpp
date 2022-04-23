@@ -47,6 +47,7 @@ namespace Eclipse
 			shader->BindUniform(prefix + uniLightType, static_cast<int>(m_Type));
 		}
 
+		// Deprecated but needed for reference.
 
 		void Light::RetrieveGuiData()
 		{
@@ -111,11 +112,13 @@ namespace Eclipse
 
 		void Light::Awake()
 		{
+			// emplace light into lights array.
 			Lights.emplace_back(this);
 		}
 
 		void Light::Dispose()
 		{
+			// remove this light from lights array.
 			const auto& it = std::find(Lights.begin(), Lights.end(), this);
 			if (it != Lights.end())
 			{

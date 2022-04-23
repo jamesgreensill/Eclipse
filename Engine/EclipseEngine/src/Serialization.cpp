@@ -9,24 +9,30 @@ namespace Eclipse
 	{
 		auto Serialization::LoadRawData(const std::string& name) -> const char*
 		{
+			// file pointer
 			FILE* fp;
-			char* content = NULL;
+			// file content.
+			char* content = nullptr;
 
 			int count = 0;
 
-			if (name.c_str() != NULL) {
+			if (name.c_str() != nullptr) {
+				// open file
 				fopen_s(&fp, name.c_str(), "rt");
 
-				if (fp != NULL) {
+				if (fp != nullptr) {
+					// seek to the end.
 					fseek(fp, 0, SEEK_END);
 					count = ftell(fp);
 					rewind(fp);
 
 					if (count > 0) {
+						// create the correct buffer size
 						content = (char*)malloc(sizeof(char) * (count + 1));
 						count = fread(content, sizeof(char), count, fp);
 						content[count] = '\0';
 					}
+					// close the file
 					fclose(fp);
 				}
 			}

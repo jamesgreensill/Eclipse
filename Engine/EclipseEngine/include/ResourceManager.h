@@ -100,10 +100,16 @@ namespace Eclipse
 				return {};
 			}
 
+
+			/// <summary>
+			/// This function will return the default resource for type T if one exists.
+			/// </summary>
 			template<typename T>
 			static ResourceKey GetDefault()
 			{
+				// Get a type_id
 				std::type_index id = typeid(T);
+				// Find the id in the default resources.
 				const auto it = m_DefaultResources.find(id);
 				if (it != m_DefaultResources.end())
 				{

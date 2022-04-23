@@ -8,6 +8,9 @@
 #include <map>
 #include <string>
 
+
+// DEPRECATED
+
 namespace Eclipse
 {
 	namespace Graphics

@@ -5,6 +5,9 @@ namespace Eclipse
 {
 	namespace Debug
 	{
+		/*
+			This module is what connects the DebugAPI to the main engine.
+		*/
 		class DebugModule :
 			public Engine::EngineModule
 		{

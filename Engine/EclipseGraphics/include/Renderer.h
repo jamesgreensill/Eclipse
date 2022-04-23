@@ -29,10 +29,21 @@ namespace Eclipse
 				Components::Transform* transform;
 			};
 
+
+			/// <summary>
+			///	Queue a call to the renderer.
+			/// </summary>
 			auto QueueCall(DrawCall) -> void;
 			static Renderer* Instance;
 
 		private:
+
+
+			/*
+			
+				Base class overrides.
+			
+			*/	
 			auto Draw() -> void override;
 			auto Created() -> void override;
 			auto Deleted() -> void override;

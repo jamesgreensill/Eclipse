@@ -10,8 +10,8 @@ namespace Eclipse
 	{
 		void DebugModule::Boot()
 		{
+			// Loads the Debug API.
 			Engine::ApiLoader::Load<DebugApi>();
-			//m_SystemsContainer.AddComponent<DebugSystem>();
 		}
 
 		void DebugModule::Created()

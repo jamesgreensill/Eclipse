@@ -48,6 +48,9 @@ namespace Eclipse
 
 	void Object::RetrieveGuiData()
 	{
+
+		// DEPRECATED
+
 		//for (const auto& pair : m_Components)
 		//{
 		//	if (pair.second)

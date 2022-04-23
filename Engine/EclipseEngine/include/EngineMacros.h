@@ -67,7 +67,11 @@
 
 #include <iostream>
 
+/*
+	Custom to string wrapper.
+*/
 #define TO_STRING(message) #message
+#define TOSTRING(message) std::string(#message)
 
 #ifndef NDEBUG
 #   define ASSERT(Expr, Msg) \

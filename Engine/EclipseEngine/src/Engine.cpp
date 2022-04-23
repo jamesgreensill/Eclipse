@@ -187,6 +187,7 @@ namespace Eclipse
 
 		bool Engine::GetCondition(const std::string& name)
 		{
+			// iterate over map to get condition.
 			const auto it = EngineConditions.find(name);
 			if(it != EngineConditions.end())
 			{
@@ -197,6 +198,7 @@ namespace Eclipse
 
 		void Engine::SetCondition(const std::string& name, const bool& value)
 		{
+			// iterate over map to set condition.
 			const auto it = EngineConditions.find(name);
 			if (it != EngineConditions.end())
 			{

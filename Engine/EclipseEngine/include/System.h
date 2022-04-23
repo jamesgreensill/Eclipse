@@ -8,6 +8,10 @@ namespace Eclipse
 		class System :
 			public BaseModel {
 		public:
+
+			/// <summary>
+			/// Pointer to the module this system is linked too.
+			/// </summary>
 			EngineModule* engineModule = nullptr;
 		};
 	}

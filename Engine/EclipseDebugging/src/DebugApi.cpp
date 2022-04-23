@@ -8,8 +8,11 @@ namespace Eclipse
 	{
 		void DebugApi::LoadInterface()
 		{
+			// Links Debug Callback to the main engine.
 			External::Debug::DebugAPI::Debug_Pointer = Debug;
+			// Links Error Callback to the main engine.
 			External::Debug::DebugAPI::Error_Pointer = Error;
+			// Links Log Callback to the main engine.
 			External::Debug::DebugAPI::Log_Pointer = Log;
 		}
 	}

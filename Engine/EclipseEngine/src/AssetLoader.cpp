@@ -8,6 +8,7 @@ namespace Eclipse
 		
 		void AssetLoader::Awake()
 		{
+			// loop through the queue until it is empty.
 			while (!AssetCalls.empty())
 			{
 				const auto call = AssetCalls.front();

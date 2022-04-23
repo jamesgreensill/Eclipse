@@ -95,6 +95,7 @@ namespace Eclipse
 
 		auto Camera::FindNextCamera() -> Camera*
 		{
+			// loop through all cameras to find an enabled one.
 			for (const auto camera : cameras)
 			{
 				if (camera->enabled)

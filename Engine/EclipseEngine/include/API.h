@@ -8,6 +8,7 @@ namespace Eclipse
 		{
 		public:
 			virtual ~API() = default;
+			// Abstract function for API's to implement functionality.
 			virtual void LoadInterface() = 0;
 		};
 	}

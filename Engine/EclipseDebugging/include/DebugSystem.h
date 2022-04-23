@@ -5,6 +5,9 @@ namespace Eclipse
 {
 	namespace Debug
 	{
+		/*
+			Basic Frame Debugger class.
+		*/
 		class DebugSystem :
 			public Engine::System
 		{

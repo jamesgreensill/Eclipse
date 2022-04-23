@@ -6,6 +6,9 @@ namespace Eclipse
 {
 	namespace Engine
 	{
+
+// deprecated
+
 		std::unordered_map<std::type_index, System*> SystemManager::systems = {};
 
 		void SystemManager::Awake()

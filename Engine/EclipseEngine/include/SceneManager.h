@@ -19,6 +19,7 @@ namespace Eclipse
 			class Application;
 			class Scene;
 
+			// TODO: Refactor SceneManager.h & SceneManager.cpp
 			class SceneManager : public System
 			{
 			public:
@@ -98,7 +99,9 @@ namespace Eclipse
 				int currentSceneIndex;
 
 				void SetScene();
-
+				/*
+					Same comments as base class, re-commenting would be boilerplate.
+				*/
 				void Awake() override;
 				void Start() override;
 				void Update() override;

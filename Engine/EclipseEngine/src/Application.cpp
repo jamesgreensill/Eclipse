@@ -35,6 +35,7 @@ namespace Eclipse
 		}
 		Application::Application()
 		{
+			// singleton pattern.
 			if (!m_Engine)
 				m_Engine = new Engine();
 			if (!Instance)

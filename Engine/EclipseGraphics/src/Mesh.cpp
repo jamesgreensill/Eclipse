@@ -49,6 +49,8 @@ namespace Eclipse
 			Graphics::EnableVertexAttributeArray(2);
 			Graphics::VertexAttributePointer(2, 2, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, textureCoordinate));
 
+			// Deprecated, but needed for reference.
+
 			//// Tangents.
 			//Graphics::EnableVertexAttributeArray(3);
 			//Graphics::VertexAttributePointer(3, 3, GL_FLOAT, false, sizeof(Vertex), (void*)offsetof(Vertex, tangent));
@@ -74,6 +76,7 @@ namespace Eclipse
 			unsigned int heightNr = 1;
 
 			Graphics::BindVertexArray(vao);
+			// If this mesh has indices, use indices, otherwise use raw vertices to draw.
 			if (ibo == 0)
 			{
 				Graphics::DrawArrays(GL_TRIANGLES, 0, static_cast<int>(floor(m_Indices.size())));

@@ -25,17 +25,28 @@ namespace Eclipse {
 		class Application
 		{
 		public:
+		// Singleton Reference to application.
 			static Application* Instance;
 
 			Engine* m_Engine = nullptr;
 			ApplicationSettings settings;
 			bool m_shouldClose = false;
 
+		// Stops the application and Engine.
 			void Stop();
+		// Checks if the application should close.
 			bool ShouldClose() const;
+		// Sets the application's refresh color.
 			void SetBackgroundColor(Core::Data::ECC color);
 
+		/*
+			Run the Application and Engine.
+		*/
 			static void Run(SceneManagement::Scene* mainScene = nullptr);
+
+		/*
+			Use variadic templates to load Engine Modules and External API's.
+		*/
 			template<typename... Args>
 			static Application* Create(ApplicationSettings settings)
 			{
@@ -62,7 +73,9 @@ namespace Eclipse {
 		private:
 			template<typename...>
 			struct TypeList {};
-
+			/*
+				Composite call for module loading.
+			*/
 			template <typename T, typename ...TArgs>
 			static void CompositeCall(TypeList<T, TArgs...>, Application& application)
 			{

@@ -26,10 +26,13 @@ namespace Eclipse
 			{
 				const DrawCall call = DrawCalls.front();
 
+
+				// if there is no camera then find an avaliable camera.
 				if (!renderCamera)
 				{
 					renderCamera = Camera::FindNextCamera();
 				}
+				// if there is no camera, then break out of this loop.
 				if (!renderCamera)
 				{
 					break;
@@ -68,12 +71,14 @@ namespace Eclipse
 				// Draw Call.
 				call.mesh->Draw();
 
+				// remove draw call from drawCalls.
 				DrawCalls.pop();
 			}
 		}
 
 		void Renderer::Created()
 		{
+			// Singleton reference.
 			if (!Instance)
 				Instance = this;
 		}
