@@ -1,0 +1,62 @@
+\hypertarget{Camera_8h_source}{}\doxysection{Camera.\+h}
+\label{Camera_8h_source}\index{EclipseGraphics/include/Camera.h@{EclipseGraphics/include/Camera.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/mat4x4.hpp>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <EclipseEngine/include/Component.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{12         \textcolor{keyword}{class }Renderer;}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Camera}} :}
+\DoxyCodeLine{17             \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}}}
+\DoxyCodeLine{18         \{}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define uniCameraViewMatrix "{}viewMatrix"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define uniCameraProjectionMatrix "{}projectionMatrix"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define uniCameraPosition "{}cameraPosition"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23             \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Renderer}{Graphics::Renderer}};}
+\DoxyCodeLine{24         \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{29             \textcolor{keyword}{static} \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Camera}}* \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera_a3351f193a3b87a0caa777672dc751aed}{current}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34             \textcolor{keyword}{static} \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Camera}}* \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera_a6ff7f9c0dfd2af7310ed53a5e18e6202}{main}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39             \textcolor{keyword}{static} std::vector<Camera*> \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera_a510b31da886e6aaa2555a9cfeabf09a7}{cameras}};}
+\DoxyCodeLine{40             }
+\DoxyCodeLine{44             glm::mat4 \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera_ab9ebb8a51993025e1a394286e3c34068}{ViewMatrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{48             glm::mat4 \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera_aaba81f49186f8bb5c66e616cda886dda}{ProjectionMatrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50             \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Camera}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{51         \textcolor{keyword}{private}:}
+\DoxyCodeLine{52             \textcolor{comment}{/*}}
+\DoxyCodeLine{53 \textcolor{comment}{                Base class overrides.}}
+\DoxyCodeLine{54 \textcolor{comment}{            */}}
+\DoxyCodeLine{55             \textcolor{keywordtype}{void} Awake() \textcolor{keyword}{override};}
+\DoxyCodeLine{56             \textcolor{keywordtype}{void} Dispose() \textcolor{keyword}{override};}
+\DoxyCodeLine{57             \textcolor{keywordtype}{void} Created() \textcolor{keyword}{override};}
+\DoxyCodeLine{58             \textcolor{keywordtype}{void} Deleted() \textcolor{keyword}{override};}
+\DoxyCodeLine{59             \textcolor{keywordtype}{void} RetrieveGuiData() \textcolor{keyword}{override};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64             \textcolor{keywordtype}{void} Bind(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Graphics::ShaderProgram}}* shader);}
+\DoxyCodeLine{65             \textcolor{keywordtype}{void} Reset() \textcolor{keyword}{override};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71             \textcolor{keyword}{static} \textcolor{keyword}{auto} FindNextCamera()-\/>Camera*;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73             \textcolor{keywordtype}{float} fov\{\};}
+\DoxyCodeLine{74             \textcolor{keywordtype}{float} viewDistance\{\};}
+\DoxyCodeLine{75         \};}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}

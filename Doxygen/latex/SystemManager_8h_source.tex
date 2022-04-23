@@ -1,0 +1,110 @@
+\hypertarget{SystemManager_8h_source}{}\doxysection{System\+Manager.\+h}
+\label{SystemManager_8h_source}\index{EclipseEngine/include/SystemManager.h@{EclipseEngine/include/SystemManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}System.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{class }Application;}
+\DoxyCodeLine{12         \textcolor{keyword}{class }System;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         \textcolor{comment}{// DEPRECATED}}
+\DoxyCodeLine{15         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1SystemManager}{SystemManager}}}
+\DoxyCodeLine{16         \{}
+\DoxyCodeLine{17             \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1Engine}{Engine}};}
+\DoxyCodeLine{18             \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1System}{System}};}
+\DoxyCodeLine{19         \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21             \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{22             \textcolor{keyword}{static} T* CreateSystem()}
+\DoxyCodeLine{23             \{}
+\DoxyCodeLine{24                 \textcolor{comment}{/*}}
+\DoxyCodeLine{25 \textcolor{comment}{                 *}}
+\DoxyCodeLine{26 \textcolor{comment}{                 *  TODO: Assert type is of System.}}
+\DoxyCodeLine{27 \textcolor{comment}{                 *}}
+\DoxyCodeLine{28 \textcolor{comment}{                 */}}
+\DoxyCodeLine{29                 std::type\_index type = \textcolor{keyword}{typeid}(T);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31                 \mbox{\hyperlink{classEclipse_1_1Engine_1_1System}{System}}* instance;}
+\DoxyCodeLine{32                 instance = GetSystem<T>(\textcolor{keyword}{true});}
+\DoxyCodeLine{33                 \textcolor{keywordflow}{if} (instance)}
+\DoxyCodeLine{34                     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(instance);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36                 instance = \textcolor{keyword}{new} T();}
+\DoxyCodeLine{37                 instance-\/>\mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a47d18b0bc0b0db57e960ac3e131a7e9c}{Created}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39                 systems.emplace(type, instance);}
+\DoxyCodeLine{40                 \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(instance);}
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43             \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{44             \textcolor{keyword}{static} T* GetSystem(\textcolor{keywordtype}{bool} checkInheritedClasses = \textcolor{keyword}{false})}
+\DoxyCodeLine{45             \{}
+\DoxyCodeLine{46                 \textcolor{comment}{/*}}
+\DoxyCodeLine{47 \textcolor{comment}{                 *}}
+\DoxyCodeLine{48 \textcolor{comment}{                 *  TODO: Assert type is of System.}}
+\DoxyCodeLine{49 \textcolor{comment}{                 *}}
+\DoxyCodeLine{50 \textcolor{comment}{                 */}}
+\DoxyCodeLine{51                 std::type\_index type = \textcolor{keyword}{typeid}(T);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& it = systems.find(type);}
+\DoxyCodeLine{54                 \textcolor{keywordflow}{if} (it != systems.end())}
+\DoxyCodeLine{55                     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(it-\/>second);}
+\DoxyCodeLine{56                 \textcolor{keywordflow}{if} (!checkInheritedClasses)}
+\DoxyCodeLine{57                     \textcolor{comment}{/*}}
+\DoxyCodeLine{58 \textcolor{comment}{                     * TODO: Add debug to possibly do an inheritance check}}
+\DoxyCodeLine{59 \textcolor{comment}{                     */}}
+\DoxyCodeLine{60                     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& pair : systems)}
+\DoxyCodeLine{63                 \{}
+\DoxyCodeLine{64                     T* instance = \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(pair.second);}
+\DoxyCodeLine{65                     \textcolor{keywordflow}{if} (instance)}
+\DoxyCodeLine{66                         \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{67                 \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69                 \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{70             \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{73             \textcolor{keyword}{static} \textcolor{keywordtype}{void} RemoveSystem()}
+\DoxyCodeLine{74             \{}
+\DoxyCodeLine{75                 \textcolor{comment}{/*}}
+\DoxyCodeLine{76 \textcolor{comment}{                 *}}
+\DoxyCodeLine{77 \textcolor{comment}{                 *  TODO: Assert type is of System.}}
+\DoxyCodeLine{78 \textcolor{comment}{                 *}}
+\DoxyCodeLine{79 \textcolor{comment}{                 */}}
+\DoxyCodeLine{80                 \textcolor{keyword}{const} std::type\_index type = \textcolor{keyword}{typeid}(T);}
+\DoxyCodeLine{81                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& it = systems.find(type);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83                 \textcolor{keywordflow}{if} (it == systems.end())}
+\DoxyCodeLine{84                     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86                 it-\/>second-\/>Deleted();}
+\DoxyCodeLine{87                 \textcolor{keyword}{delete} it-\/>second;}
+\DoxyCodeLine{88                 systems.erase(it);}
+\DoxyCodeLine{89             \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{keyword}{private}:}
+\DoxyCodeLine{92             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Awake();}
+\DoxyCodeLine{93             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Start();}
+\DoxyCodeLine{94             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Update();}
+\DoxyCodeLine{95             \textcolor{keyword}{static} \textcolor{keywordtype}{void} LateUpdate();}
+\DoxyCodeLine{96             \textcolor{keyword}{static} \textcolor{keywordtype}{void} FixedUpdate();}
+\DoxyCodeLine{97             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Draw();}
+\DoxyCodeLine{98             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Gui();}
+\DoxyCodeLine{99             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Dispose();}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101             \textcolor{keyword}{static} std::unordered\_map<std::type\_index, System*> systems;}
+\DoxyCodeLine{102         \};}
+\DoxyCodeLine{103     \}}
+\DoxyCodeLine{104 \}}
+
+\end{DoxyCode}

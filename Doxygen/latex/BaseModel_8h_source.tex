@@ -1,0 +1,60 @@
+\hypertarget{BaseModel_8h_source}{}\doxysection{Base\+Model.\+h}
+\label{BaseModel_8h_source}\index{EclipseEngine/include/BaseModel.h@{EclipseEngine/include/BaseModel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel}{BaseModel}}}
+\DoxyCodeLine{9         \{}
+\DoxyCodeLine{10         \textcolor{keyword}{public}:}
+\DoxyCodeLine{11             \textcolor{keyword}{virtual} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel}{\string~BaseModel}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a4b8705e9b3108cc22634cb53ae610365}{Awake}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a65dad4983ab4e689342c4d20cb9b584b}{Start}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{26             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a2e7c8eb07c4e26c7b55ef42e28436f93}{LateStart}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{31             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_aaf3068bf680c71992a50da06a0d836ba}{FrameBegin}}();}
+\DoxyCodeLine{32             }
+\DoxyCodeLine{36             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a5cf66e213c22d0bca712a9794014c460}{FixedUpdate}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a313860d0e40bc21aad7f26ff533c74e7}{Update}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{46             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_afce41d3ab8b518bae350a03e763f041f}{LateUpdate}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{51             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a19bf2b3a1c6ef7d5e689b134e593b116}{PreDraw}}();}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a0e4030afdd6cded85bac39ae629c2688}{Draw}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{61             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a9c1a86396c5e8238949609bacbdb738b}{PostDraw}}();}
+\DoxyCodeLine{62             }
+\DoxyCodeLine{66             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a2ac9406491ac6e61c9ae3f5f6a6f5ecd}{Gizmos}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{71             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a74781800b31397a7fdc739165d451fee}{PreGui}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a7355e094103b2c2130e1a796f1ff4275}{Gui}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a5ea17e3d49c121775941fde9f90e4e38}{PostGui}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{86             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a990da17a9ec02d94700edfffb8954845}{FrameEnd}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{91             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a74b3a65cc7a83a729b900b3f7503f745}{Dispose}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{96             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a47d18b0bc0b0db57e960ac3e131a7e9c}{Created}}() = 0;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{101             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a849e1148a92da5699a5d3870dc81b5c9}{Deleted}}() = 0;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{106             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_abd00a90a44282e4198afe19472731780}{RetrieveGuiData}}();}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108             std::string m\_Name = \textcolor{stringliteral}{"{}BaseModel."{}};}
+\DoxyCodeLine{109         \};}
+\DoxyCodeLine{110     \}}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}

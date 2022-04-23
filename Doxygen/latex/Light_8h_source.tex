@@ -1,0 +1,91 @@
+\hypertarget{Light_8h_source}{}\doxysection{Light.\+h}
+\label{Light_8h_source}\index{EclipseGraphics/include/Light.h@{EclipseGraphics/include/Light.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <glm/vec4.hpp>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <EclipseEngine/include/Component.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <EclipseEngine/include/EngineMacros.h>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define uniLightDirection "{}lightDirection"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define uniLightPosition "{}lightPosition"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define uniAmbientLightColor "{}lightAmbientColor"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define uniDiffuseLightColor "{}lightDiffuseColor"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define uniSpecularLightColor "{}lightSpecularColor"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define uniLightLinear "{}lightLinear"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define uniLightQuadratic "{}lightQuadratic"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define uniLightIntensity "{}lightIntensity"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define uniLightType "{}lightType"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Components_1_1Light}{Light}} final :}
+\DoxyCodeLine{29             \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}}}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31         \textcolor{keyword}{public}:}
+\DoxyCodeLine{32             \textcolor{keyword}{enum class} LightType}
+\DoxyCodeLine{33             \{}
+\DoxyCodeLine{34                 Point,}
+\DoxyCodeLine{35                 Directional,}
+\DoxyCodeLine{36                 Spot,}
+\DoxyCodeLine{37                 COUNT,}
+\DoxyCodeLine{38             \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40             \textcolor{keyword}{static} std::vector<Light*> Lights;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43             \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{            }}
+\DoxyCodeLine{45 \textcolor{comment}{                Getter \& Setter wrappers.}}
+\DoxyCodeLine{46 \textcolor{comment}{            }}
+\DoxyCodeLine{47 \textcolor{comment}{            */}}
+\DoxyCodeLine{48             GET(Type, \textcolor{keywordflow}{return} m\_Type; );}
+\DoxyCodeLine{49             SET(Type, LightType, m\_Type = value; );}
+\DoxyCodeLine{50             GET(AmbientColor, \textcolor{keywordflow}{return} m\_AmbientColor; );}
+\DoxyCodeLine{51             SET(AmbientColor, glm::vec4, m\_AmbientColor = value; );}
+\DoxyCodeLine{52             GET(SpecularColor, \textcolor{keywordflow}{return} m\_SpecularColor; );}
+\DoxyCodeLine{53             SET(SpecularColor, glm::vec4, m\_SpecularColor = value; );}
+\DoxyCodeLine{54             GET(DiffuseColor, \textcolor{keywordflow}{return} m\_DiffuseColor; );}
+\DoxyCodeLine{55             SET(DiffuseColor, glm::vec4, m\_DiffuseColor = value; );}
+\DoxyCodeLine{56             GET(Intensity, \textcolor{keywordflow}{return} m\_Intensity; );}
+\DoxyCodeLine{57             SET(Intensity, \textcolor{keywordtype}{float}, m\_Intensity = value; );}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59             \textcolor{keyword}{auto} Bind(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index, \mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Graphics::ShaderProgram}}* shader) \textcolor{keyword}{const} -\/> void;}
+\DoxyCodeLine{60         \textcolor{keyword}{private}:}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62             \textcolor{comment}{/*}}
+\DoxyCodeLine{63 \textcolor{comment}{            }}
+\DoxyCodeLine{64 \textcolor{comment}{                Base class overrides.}}
+\DoxyCodeLine{65 \textcolor{comment}{            }}
+\DoxyCodeLine{66 \textcolor{comment}{            */}}
+\DoxyCodeLine{67             \textcolor{keyword}{auto} RetrieveGuiData() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{68             \textcolor{keyword}{auto} Created() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{69             \textcolor{keyword}{auto} Awake() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{70             \textcolor{keyword}{auto} Dispose() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{71             \textcolor{keyword}{auto} Deleted() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{72             \textcolor{keyword}{auto} Reset() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74             LightType m\_Type = LightType::Directional;}
+\DoxyCodeLine{75             glm::vec4 m\_AmbientColor = glm::vec4(1);}
+\DoxyCodeLine{76             glm::vec4 m\_DiffuseColor = glm::vec4(1);}
+\DoxyCodeLine{77             glm::vec4 m\_SpecularColor = glm::vec4(1);}
+\DoxyCodeLine{78             \textcolor{keywordtype}{float} m\_Intensity = 1;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \textcolor{comment}{// not sure if these will be used.}}
+\DoxyCodeLine{81             \textcolor{keywordtype}{float} Linear\{\};}
+\DoxyCodeLine{82             \textcolor{keywordtype}{float} Quadratic\{\};}
+\DoxyCodeLine{83         \};}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}

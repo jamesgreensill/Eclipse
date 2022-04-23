@@ -1,0 +1,59 @@
+\hypertarget{Object_8h_source}{}\doxysection{Object.\+h}
+\label{Object_8h_source}\index{EclipseEngine/include/Object.h@{EclipseEngine/include/Object.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}BaseModel.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}EntityContainer.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keyword}{class }Transform;}
+\DoxyCodeLine{15     \}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Object}{Object}} : \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel}{Engine::BaseModel}}}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{23     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \mbox{\hyperlink{structEntityContainer}{EntityContainer<Components::Component>}} \mbox{\hyperlink{classEclipse_1_1Object_a5e4ad75bd6d4ba7e83bb9e27fed7595a}{m\_ComponentContainer}} = \mbox{\hyperlink{structEntityContainer}{EntityContainer<Components::Component>}}}
+\DoxyCodeLine{27             (}
+\DoxyCodeLine{28                 [\&](\mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Components::Component}}* component)}
+\DoxyCodeLine{29                 \{}
+\DoxyCodeLine{30                     component-\/>\mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a05be3e654ba71c1a2276d02bc0fc8995}{object}} = \textcolor{keyword}{this};}
+\DoxyCodeLine{31                     component-\/>\mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a923ba03aca489caa7f774ee8ed3b10a5}{Created}}();}
+\DoxyCodeLine{32                 \},}
+\DoxyCodeLine{33                 [\&](\mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Components::Component}}* component)}
+\DoxyCodeLine{34                 \{}
+\DoxyCodeLine{35                     component-\/>\mbox{\hyperlink{classEclipse_1_1Components_1_1Component_aa07ccbc2ffda2ed5a05236d0a4eab435}{Deleted}}();}
+\DoxyCodeLine{36                 \}}
+\DoxyCodeLine{37                 );}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         Components::Transform* transform;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{comment}{/*}}
+\DoxyCodeLine{42 \textcolor{comment}{            Same comments as base. Re-\/Commenting would be boilerplate.}}
+\DoxyCodeLine{43 \textcolor{comment}{        */}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_ad16cb7e6bbc9a19576c3426fc04d4e7a}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_aaa32b4a77d49fde80faff5bb529708f8}{LateUpdate}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_ace821578fed1c1bbf28327d88539d081}{FixedUpdate}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{47         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_acc92676ac57df844db0f1c6a804882e1}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_a477078ecd3995be539045a4f2fe53416}{RetrieveGuiData}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_a4aafdf53309d547ffcce4ab476fac043}{Dispose}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_a351b7241a64801272b9fd8ab608aa0c5}{Created}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_a53a4aa45536eaadd5c42797d0ad1e2a2}{Deleted}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Object_a187bdcd52292a5b074cf87f6f60c11fe}{Awake}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{53         \textcolor{keywordtype}{void} Reset() \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         Object(Object* parent);}
+\DoxyCodeLine{56         Object();}
+\DoxyCodeLine{57         \string~Object() \textcolor{keyword}{override};}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}

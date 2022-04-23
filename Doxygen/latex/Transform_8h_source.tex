@@ -1,0 +1,71 @@
+\hypertarget{Transform_8h_source}{}\doxysection{Transform.\+h}
+\label{Transform_8h_source}\index{EclipseEngine/include/Transform.h@{EclipseEngine/include/Transform.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{comment}{//\#include <EclipseEngine/include/Component.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <glm/vec4.hpp>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <glm/vec3.hpp>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <glm/gtx/quaternion.hpp>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Transform}} :}
+\DoxyCodeLine{21             \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}}}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define uniTransformModelMatrix "{}modelMatrix"{}}}
+\DoxyCodeLine{24         \textcolor{keyword}{public}:}
+\DoxyCodeLine{25             glm::vec3 scale\{\};}
+\DoxyCodeLine{26             glm::quat rotation\{\};}
+\DoxyCodeLine{27             glm::vec3 position\{\};}
+\DoxyCodeLine{28             glm::vec3 skew\{\};}
+\DoxyCodeLine{29             glm::vec4 perspective\{\};}
+\DoxyCodeLine{30             std::vector<Transform*> children\{\};}
+\DoxyCodeLine{31             \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Transform}}* parent = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a7c474c54316d7c4df42d2f79a9afa4a0}{Rotate}}(glm::vec3 rotations) -\/> void;}
+\DoxyCodeLine{40             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a26a4a95c57dcfa8a2d8aba18f592fdfc}{Translate}}(glm::vec3 translation) -\/> void;}
+\DoxyCodeLine{44             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a901b4ed4da9d6d77a72cf2c912045e25}{Scale}}(glm::vec3 scale) -\/> void;}
+\DoxyCodeLine{48             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_aebf54d7e5d61aa1cf185681ec90a367d}{SetRotation}}(glm::vec3 rotations) -\/> void;}
+\DoxyCodeLine{52             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a3af3bca9b7ac91c53efd0867bf355fdd}{SetTranslation}}(glm::vec3 translation) -\/> void;}
+\DoxyCodeLine{56             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a5b6afe14c250290447f31ce75fd31889}{SetScale}}(glm::vec3 scale) -\/> void;}
+\DoxyCodeLine{60             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_ae009d5cdaa53b2dd2e61ea078db11a08}{AddChild}}(\mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Transform}}* child) -\/> void;}
+\DoxyCodeLine{64             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a9bad681a95658de14c11e22edb5ee159}{RemoveChild}}(\mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Transform}}* child) -\/> void;}
+\DoxyCodeLine{68             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a08edd192e1abb6bae72df8771c5c3ee9}{RemoveChild}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index) -\/> void;}
+\DoxyCodeLine{72             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_adb0540e52b0c5c586818610a7573e468}{GetGlobalRotation}}() const-\/>glm::quat;}
+\DoxyCodeLine{76             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_aa2c3c4bc46b9da1b73ee143ffefe3b10}{GetGlobalPosition}}() const-\/>glm::vec3;}
+\DoxyCodeLine{80             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a68175c125f463c396f2d36ca05a83bbf}{GetGlobalScale}}() const-\/>glm::vec3;}
+\DoxyCodeLine{84             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_af0cc1d15cb05bae4c3e273cb74123d8f}{GetForward}}() const -\/> glm::vec3;}
+\DoxyCodeLine{88             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_aefad464a9f4fa8e6d4c07c56b52d9a0b}{GetBack}}() const-\/>glm::vec3;}
+\DoxyCodeLine{92             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_adc820dfa08a7e643fc83d69e7c70310a}{GetRight}}()-\/>glm::vec3;}
+\DoxyCodeLine{96             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a930c26029720d8373c38d63893a10f34}{GetLeft}}()-\/>glm::vec3;}
+\DoxyCodeLine{100             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_af0889c980a30eeeb88f464953b010c30}{GetUp}}()-\/>glm::vec3;}
+\DoxyCodeLine{104             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a6659cdce28fc8a54f5dfb7845ffbce4b}{GetDown}}()-\/>glm::vec3;}
+\DoxyCodeLine{108             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a99c51e70175e9d9f9ca60f648535739d}{Bind}}(Graphics::ShaderProgram* shader) -\/> \textcolor{keywordtype}{void};}
+\DoxyCodeLine{112             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_aba18a1508622e94693c4ef9fda6d3d54}{RetrieveGuiData}}() -\/> \textcolor{keywordtype}{void} override;}
+\DoxyCodeLine{113             \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{114             auto \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a7a9c6127fed6b905fa59691f942e60f1}{Created}}() -\/> \textcolor{keywordtype}{void} override;}
+\DoxyCodeLine{115             auto Reset() -\/> \textcolor{keywordtype}{void} override;}
+\DoxyCodeLine{116             \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Transform}}() = default;}
+\DoxyCodeLine{117         private:}
+\DoxyCodeLine{118             glm::mat4 transformationMatrix = glm::mat4(1.0f);}
+\DoxyCodeLine{119             glm::vec3 forward = \{ 0,0,1 \};}
+\DoxyCodeLine{120             glm::vec3 right = \{ 1,0,0 \};}
+\DoxyCodeLine{121             glm::vec3 up = \{ 0,1,0 \};}
+\DoxyCodeLine{122             glm::vec3 eulerRotation\{\};}
+\DoxyCodeLine{123         \};}
+\DoxyCodeLine{124     \}}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}

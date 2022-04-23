@@ -1,0 +1,230 @@
+\hypertarget{structEntityContainer}{}\doxysection{Entity\+Container\texorpdfstring{$<$}{<} TBase\+Class \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structEntityContainer}\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structEntityContainer_a2224a60c117c0b184ddda421eb20ecda}{Entity\+Container}} (std\+::function$<$ void(TBase\+Class $\ast$)$>$ creation\+Callback, std\+::function$<$ void(TBase\+Class $\ast$)$>$ deletion\+Callback)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structEntityContainer}{Entity\+Container}} constructor that takes 2 callbacks. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{structEntityContainer_ae334377f9e268ae077aae3002c4347af}{Add\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Adds an instance of type T if it does not already exist. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{structEntityContainer_abadd6ed2dfc752f765e0de09e77d19ae}{Remove\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Removes a valid instance of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{structEntityContainer_aa520bd8fba10a6ffa34459129a6946f6}{Get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Returns a valid instance of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $\ast$ $>$ \mbox{\hyperlink{structEntityContainer_aa2a2942abf7ca07538fe604d440d9d0d}{Get\+Components}} ()
+\begin{DoxyCompactList}\small\item\em Returns all valid instances of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{structEntityContainer_a1bebbd2f3101ce948a128e3ee24a84dc}{Get\+Component\+In\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first valid instance of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $\ast$ $>$ \mbox{\hyperlink{structEntityContainer_a3612462ed3456b4c3175f0534845c928}{Get\+Components\+In\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Returns all valid instances of type T in children and this object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structEntityContainer_abf41d8c7c0c06af014c882a3683bcdf6}\label{structEntityContainer_abf41d8c7c0c06af014c882a3683bcdf6}} 
+{\footnotesize template$<$typename T $>$ }\\void {\bfseries Get\+Components\+In\+Children} (std\+::vector$<$ T $\ast$ $>$ \&output)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{structEntityContainer_acb078fc35f8b85faa9fba05495a2229c}{Has\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the Object has a component of type T. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structEntityContainer_a3fd4bd70381b127b6ed8dfa5e2cc0643}\label{structEntityContainer_a3fd4bd70381b127b6ed8dfa5e2cc0643}} 
+void {\bfseries Remove\+Component} (std\+::type\+\_\+index type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structEntityContainer_a5d1e61d9b4bcb67e5830a9287fc57552}\label{structEntityContainer_a5d1e61d9b4bcb67e5830a9287fc57552}} 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, TBase\+Class $\ast$ $>$ {\bfseries m\+\_\+\+Components} \{\}
+\item 
+\mbox{\Hypertarget{structEntityContainer_a32006f799885ab3d9978d8397aaf79ff}\label{structEntityContainer_a32006f799885ab3d9978d8397aaf79ff}} 
+std\+::function$<$ void(TBase\+Class $\ast$)$>$ {\bfseries m\+\_\+\+Creation\+Callback} = nullptr
+\item 
+\mbox{\Hypertarget{structEntityContainer_a22ab29283e20baffeb78f2e118ed515c}\label{structEntityContainer_a22ab29283e20baffeb78f2e118ed515c}} 
+std\+::function$<$ void(TBase\+Class $\ast$)$>$ {\bfseries m\+\_\+\+Deletion\+Callback} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structEntityContainer_a2224a60c117c0b184ddda421eb20ecda}\label{structEntityContainer_a2224a60c117c0b184ddda421eb20ecda}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!EntityContainer@{EntityContainer}}
+\index{EntityContainer@{EntityContainer}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{EntityContainer()}{EntityContainer()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+\mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\mbox{\hyperlink{structEntityContainer}{\+::\+Entity\+Container}} (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(TBase\+Class $\ast$)$>$}]{creation\+Callback,  }\item[{std\+::function$<$ void(TBase\+Class $\ast$)$>$}]{deletion\+Callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{structEntityContainer}{Entity\+Container}} constructor that takes 2 callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creation\+Callback} & This action will be called upon TBase\+Class creation. \\
+\hline
+{\em deletion\+Callback} & This action will be called upon TBase\+Class deletion. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structEntityContainer_ae334377f9e268ae077aae3002c4347af}\label{structEntityContainer_ae334377f9e268ae077aae3002c4347af}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an instance of type T if it does not already exist. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Created Instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_aa520bd8fba10a6ffa34459129a6946f6}\label{structEntityContainer_aa520bd8fba10a6ffa34459129a6946f6}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a valid instance of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Inherited\+Classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_a1bebbd2f3101ce948a128e3ee24a84dc}\label{structEntityContainer_a1bebbd2f3101ce948a128e3ee24a84dc}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!GetComponentInChildren@{GetComponentInChildren}}
+\index{GetComponentInChildren@{GetComponentInChildren}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{GetComponentInChildren()}{GetComponentInChildren()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Get\+Component\+In\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the first valid instance of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Inherited\+Classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_aa2a2942abf7ca07538fe604d440d9d0d}\label{structEntityContainer_aa2a2942abf7ca07538fe604d440d9d0d}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!GetComponents@{GetComponents}}
+\index{GetComponents@{GetComponents}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{GetComponents()}{GetComponents()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+std\+::vector$<$ T $\ast$ $>$ \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Get\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns all valid instances of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Inherited\+Classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_a3612462ed3456b4c3175f0534845c928}\label{structEntityContainer_a3612462ed3456b4c3175f0534845c928}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!GetComponentsInChildren@{GetComponentsInChildren}}
+\index{GetComponentsInChildren@{GetComponentsInChildren}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{GetComponentsInChildren()}{GetComponentsInChildren()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+std\+::vector$<$ T $\ast$ $>$ \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Get\+Components\+In\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns all valid instances of type T in children and this object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Inherited\+Classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_acb078fc35f8b85faa9fba05495a2229c}\label{structEntityContainer_acb078fc35f8b85faa9fba05495a2229c}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+bool \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Has\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if the Object has a component of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em check\+Inherited\+Classes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structEntityContainer_abadd6ed2dfc752f765e0de09e77d19ae}\label{structEntityContainer_abadd6ed2dfc752f765e0de09e77d19ae}} 
+\index{EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!EntityContainer$<$ TBaseClass $>$@{EntityContainer$<$ TBaseClass $>$}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily template$<$class TBase\+Class $>$ \\
+template$<$typename T $>$ \\
+void \mbox{\hyperlink{structEntityContainer}{Entity\+Container}}$<$ TBase\+Class $>$\+::\+Remove\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a valid instance of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Eclipse\+Engine/include/Entity\+Container.\+h\end{DoxyCompactItemize}

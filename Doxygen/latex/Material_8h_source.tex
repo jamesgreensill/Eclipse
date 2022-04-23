@@ -1,0 +1,73 @@
+\hypertarget{Material_8h_source}{}\doxysection{Material.\+h}
+\label{Material_8h_source}\index{EclipseGraphics/include/Material.h@{EclipseGraphics/include/Material.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}ShaderProgram.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}glm/glm.hpp"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}assimp/texture.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Texture.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <EclipseEngine/include/EngineMacros.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{comment}{// TODO:}}
+\DoxyCodeLine{15     \textcolor{comment}{// convert to resource and create custom .mat file type}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{keyword}{struct }Texture;}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define uniMatAmbientColor "{}materialAmbientColor"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define uniMatDiffuseColor "{}materialDiffuseColor"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define uniMatSpecularColor "{}materialSpecularColor"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define uniMatSpecularPower "{}materialSpecularPower"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define uniMatAlbedoTexture "{}materialAlbedoTexture"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define uniMatDiffuseTexture "{}materialDiffuseTexture"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define uniMatSpecularTexture "{}materialSpecularTexture"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{29         \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Graphics_1_1Material}{Material}}}
+\DoxyCodeLine{30         \{}
+\DoxyCodeLine{31             \textcolor{keyword}{auto} Bind() \textcolor{keyword}{const} -\/>void;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33             \textcolor{comment}{/*}}
+\DoxyCodeLine{34 \textcolor{comment}{            }}
+\DoxyCodeLine{35 \textcolor{comment}{                Getter \& Setter Wrappers.}}
+\DoxyCodeLine{36 \textcolor{comment}{}}
+\DoxyCodeLine{37 \textcolor{comment}{            */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39             GET(AmbientColor, \textcolor{keywordflow}{return} ambientColor;);}
+\DoxyCodeLine{40             SET(AmbientColor, glm::vec4, ambientColor = value; );}
+\DoxyCodeLine{41             GET(DiffuseColor, \textcolor{keywordflow}{return} diffuseColor;);}
+\DoxyCodeLine{42             SET(DiffuseColor, glm::vec4, diffuseColor = value; );}
+\DoxyCodeLine{43             GET(SpecularColor, \textcolor{keywordflow}{return} specularColor;);}
+\DoxyCodeLine{44             SET(SpecularColor, glm::vec4, specularColor = value; );}
+\DoxyCodeLine{45             GET(SpecularPower, \textcolor{keywordflow}{return} specularPower; );}
+\DoxyCodeLine{46             SET(SpecularPower, \textcolor{keywordtype}{float}, specularPower = value; );}
+\DoxyCodeLine{47             GET(AlbedoTexture, \textcolor{keywordflow}{return} albedoTextureKey;);}
+\DoxyCodeLine{48             SET(AlbedoTexture, \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}}, albedoTextureKey = value;);}
+\DoxyCodeLine{49             GET(SpecularTexture, \textcolor{keywordflow}{return} specularTextureKey;);}
+\DoxyCodeLine{50             SET(SpecularTexture, \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}}, specularTextureKey = value;);}
+\DoxyCodeLine{51             GET(DiffuseTexture, \textcolor{keywordflow}{return} diffuseTextureKey;);}
+\DoxyCodeLine{52             SET(DiffuseTexture, \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}}, diffuseTextureKey = value;);}
+\DoxyCodeLine{53             GET(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Shader}}, \textcolor{keywordflow}{return} shaderKey;);}
+\DoxyCodeLine{54             SET(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Shader}}, \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}}, shaderKey = value;);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{59         \textcolor{keyword}{private}:}
+\DoxyCodeLine{60             \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}} shaderKey = INVALID\_RESOURCE\_KEY;}
+\DoxyCodeLine{61             \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}} albedoTextureKey = INVALID\_RESOURCE\_KEY;}
+\DoxyCodeLine{62             \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}} specularTextureKey = INVALID\_RESOURCE\_KEY;}
+\DoxyCodeLine{63             \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Engine::ResourceKey}} diffuseTextureKey = INVALID\_RESOURCE\_KEY;}
+\DoxyCodeLine{64             glm::vec4 specularColor = \{ 1,1,1,1 \};}
+\DoxyCodeLine{65             glm::vec4 ambientColor = \{ 1,1,1,1 \};}
+\DoxyCodeLine{66             glm::vec4 diffuseColor = \{ 1,1,1,1 \};}
+\DoxyCodeLine{67             \textcolor{keywordtype}{float} specularPower = 1.0f;}
+\DoxyCodeLine{68         \};}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70 \}}
+
+\end{DoxyCode}

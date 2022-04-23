@@ -1,0 +1,47 @@
+\hypertarget{EclipseDebugging_2include_2Core_8h_source}{}\doxysection{Core.\+h}
+\label{EclipseDebugging_2include_2Core_8h_source}\index{EclipseDebugging/include/Core.h@{EclipseDebugging/include/Core.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}EclipseEngine/include/EngineMacros.h"{}}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{5 \{}
+\DoxyCodeLine{6     \textcolor{keyword}{namespace }Debug}
+\DoxyCodeLine{7     \{}
+\DoxyCodeLine{8         \textcolor{comment}{// Sends a formated log message to the console.}}
+\DoxyCodeLine{9         ECAPI \textcolor{keyword}{auto} Log(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str) -\/> void;}
+\DoxyCodeLine{10         \textcolor{comment}{// Sends a formated debug log message to the console.}}
+\DoxyCodeLine{11         ECAPI \textcolor{keyword}{auto} Debug(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str) -\/> void;}
+\DoxyCodeLine{12         \textcolor{comment}{// Sends a formated error log message to the console.}}
+\DoxyCodeLine{13         ECAPI \textcolor{keyword}{auto} Error(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str) -\/> void;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{/*}}
+\DoxyCodeLine{16 \textcolor{comment}{         *}}
+\DoxyCodeLine{17 \textcolor{comment}{         *  Chosen convention}}
+\DoxyCodeLine{18 \textcolor{comment}{         *  "{}FUNCTION NAME has not been implemented."{}}}
+\DoxyCodeLine{19 \textcolor{comment}{         *}}
+\DoxyCodeLine{20 \textcolor{comment}{         */}}
+\DoxyCodeLine{21         ECAPI \textcolor{keyword}{auto} NotImplemented(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* functionName) -\/> void;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#pragma region MACROS}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{// Static Assert to ensure a function that is not implemented is not called.}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define NOT\_IMPLEMENTED(x) Core::Debug::NotImplemented(\#x);}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{// Static Error Wrapper}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define E\_ERROR(x) Core::Debug::Error(\#x);}}
+\DoxyCodeLine{30 \textcolor{comment}{// Static Log Wrapper}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define LOG(x) Core::Debug::Log(\#x);}}
+\DoxyCodeLine{32 \textcolor{comment}{// Static Debug Wrapper}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define DEBUG(x) Core::Debug::Debug(\#x);}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{// Common Errors.}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define INDEX\_OUT\_OF\_BOUNDS() E\_ERROR(Index is out of bounds.)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define NULL\_REF() E\_ERROR(Instance is nullptr.)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define MAP\_EMPLACE\_FAIL(x) E\_ERROR(\#x Instance is nullptr.)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define NO\_ACTIVE\_CAMERAS() E\_ERROR(There are no active cameras in this scene.);}}
+\DoxyCodeLine{40     \}}
+\DoxyCodeLine{41 \}}
+
+\end{DoxyCode}

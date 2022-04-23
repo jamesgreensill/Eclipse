@@ -1,0 +1,89 @@
+\hypertarget{Scene_8h_source}{}\doxysection{Scene.\+h}
+\label{Scene_8h_source}\index{EclipseEngine/include/Scene.h@{EclipseEngine/include/Scene.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}BaseModel.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }Object;}
+\DoxyCodeLine{11 \}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keyword}{class }Light;}
+\DoxyCodeLine{18         \textcolor{keyword}{class }Camera;}
+\DoxyCodeLine{19     \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23         \textcolor{keyword}{namespace }SceneManagement}
+\DoxyCodeLine{24         \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26             \textcolor{comment}{/*}}
+\DoxyCodeLine{27 \textcolor{comment}{                TODO: Refactor Scene.h \& Scene.cpp}}
+\DoxyCodeLine{28 \textcolor{comment}{            */}}
+\DoxyCodeLine{29             \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene}{Scene}} : \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel}{BaseModel}}}
+\DoxyCodeLine{30             \{}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32             \textcolor{keyword}{private}:}
+\DoxyCodeLine{33                 \textcolor{keywordtype}{bool} hasAwoken = \textcolor{keyword}{false};}
+\DoxyCodeLine{34                 \textcolor{keywordtype}{bool} hasStarted = \textcolor{keyword}{false};}
+\DoxyCodeLine{35             \textcolor{keyword}{public}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{40                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_ae5ea08ba43a40d690d77970c0c58c1db}{AddObject}}(\mbox{\hyperlink{classEclipse_1_1Object}{Object}}* \textcolor{keywordtype}{object})-\/> void;}
+\DoxyCodeLine{44                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a94b61b2af53969888de04bd256f864ef}{RemoveObject}}(\mbox{\hyperlink{classEclipse_1_1Object}{Object}}* \textcolor{keywordtype}{object}) -\/> void;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a94b61b2af53969888de04bd256f864ef}{RemoveObject}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index) -\/> void;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a47239da67d7295eca08fd0ff86d3000a}{GetObject}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} index) \textcolor{keyword}{const} -\/> \mbox{\hyperlink{classEclipse_1_1Object}{Object}}*;}
+\DoxyCodeLine{58                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a1e622dc6184057dc6b0140263af0ae5c}{GetObjects}}()-\/>std::vector<\mbox{\hyperlink{classEclipse_1_1Object}{Object}}*>*;}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60                 }
+\DoxyCodeLine{64                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_afa320201e1b3e074b5e5e6234108c8ed}{AddCamera}}(\mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Components::Camera}}* camera)-\/> void;}
+\DoxyCodeLine{68                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a605a6d7984617b1c0fc1d660ecd32483}{RemoveCamera}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Components::Camera}}* camera)-\/> void;}
+\DoxyCodeLine{72                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_ae139d5f304d87820efb9605e688a1a04}{AddLight}}(\mbox{\hyperlink{classEclipse_1_1Components_1_1Light}{Components::Light}}* light)-\/> void;}
+\DoxyCodeLine{76                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_aefbbc796ae428abe5e100d50dc55a6ae}{RemoveLight}}(\textcolor{keyword}{const} \mbox{\hyperlink{classEclipse_1_1Components_1_1Light}{Components::Light}}* light)-\/> void;}
+\DoxyCodeLine{80                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_addbebad2d7b6f96b59783d1f2a8b3ce2}{GetLights}}() -\/>std::vector<\mbox{\hyperlink{classEclipse_1_1Components_1_1Light}{Components::Light}}*>\&;}
+\DoxyCodeLine{84                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_ad30df97124c0dd2b79a45670bbd6eb22}{GetCameras}}() -\/>std::vector<\mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Components::Camera}}*>\&;}
+\DoxyCodeLine{88                 \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1Scene_a71955187f9230d178f2fb9ee98e8bf24}{FindNextCamera}}() \textcolor{keyword}{const} -\/> \mbox{\hyperlink{classEclipse_1_1Components_1_1Camera}{Components::Camera}}*;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91                 }
+\DoxyCodeLine{92                 \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1SceneManagement_1_1SceneManager}{SceneManager}};}
+\DoxyCodeLine{93             \textcolor{keyword}{private}:}
+\DoxyCodeLine{94                 \textcolor{comment}{/*}}
+\DoxyCodeLine{95 \textcolor{comment}{                    Same comments as base, re-\/commenting would be boilerplate.}}
+\DoxyCodeLine{96 \textcolor{comment}{                */}}
+\DoxyCodeLine{97                 \textcolor{keywordtype}{void} Awake() \textcolor{keyword}{override};}
+\DoxyCodeLine{98                 \textcolor{keywordtype}{void} Start() \textcolor{keyword}{override};}
+\DoxyCodeLine{99                 \textcolor{keywordtype}{void} Update() \textcolor{keyword}{override};}
+\DoxyCodeLine{100                 \textcolor{keywordtype}{void} LateUpdate() \textcolor{keyword}{override};}
+\DoxyCodeLine{101                 \textcolor{keywordtype}{void} FixedUpdate() \textcolor{keyword}{override};}
+\DoxyCodeLine{102                 \textcolor{keywordtype}{void} Draw() \textcolor{keyword}{override};}
+\DoxyCodeLine{103                 \textcolor{keywordtype}{void} Dispose() \textcolor{keyword}{override};}
+\DoxyCodeLine{104                 \textcolor{keywordtype}{void} Created() \textcolor{keyword}{override};}
+\DoxyCodeLine{105                 \textcolor{keywordtype}{void} Deleted() \textcolor{keyword}{override};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{111                 \textcolor{keywordtype}{void} ManageQueues();}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113                 std::queue<Object*> removalObjects\{\};}
+\DoxyCodeLine{114                 std::queue<Object*> additionalObjects\{\};}
+\DoxyCodeLine{115                 std::vector<Object*> objects\{\};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117                 std::vector<Components::Light*> lights\{\};}
+\DoxyCodeLine{118                 std::vector<Components::Camera*> cameras\{\};}
+\DoxyCodeLine{119             \};}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122 \}}
+
+\end{DoxyCode}

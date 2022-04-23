@@ -1,0 +1,79 @@
+\hypertarget{structEclipse_1_1Graphics_1_1Texture}{}\doxysection{Eclipse\+::Graphics\+::Texture Struct Reference}
+\label{structEclipse_1_1Graphics_1_1Texture}\index{Eclipse::Graphics::Texture@{Eclipse::Graphics::Texture}}
+Inheritance diagram for Eclipse\+::Graphics\+::Texture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structEclipse_1_1Graphics_1_1Texture}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_ad23708ad7134ff48ef149d3097d8bb82}\label{structEclipse_1_1Graphics_1_1Texture_ad23708ad7134ff48ef149d3097d8bb82}} 
+void {\bfseries Bind} (\mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Shader\+Program}} $\ast$shader, unsigned int slot)
+\begin{DoxyCompactList}\small\item\em Bind this texture to the render pipeline\textquotesingle{}s shader. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture_a7d4927554080c9276b499c9061f5719d}{Load}} (const Engine\+::\+Resource\+Directories \&directories) override
+\begin{DoxyCompactList}\small\item\em Load \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture}{Texture}} from file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture_a1ef18bf2109ebd49642e89e426979e5e}{Setup}} () override
+\begin{DoxyCompactList}\small\item\em Link the \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture}{Texture}} to Open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_a79ff3a813d1cec54f6068631dde95eb7}\label{structEclipse_1_1Graphics_1_1Texture_a79ff3a813d1cec54f6068631dde95eb7}} 
+std\+::string {\bfseries m\+\_\+file\+Name} = \char`\"{}none\char`\"{}
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_aadb96d746b60f18f18ed659f3db2c182}\label{structEclipse_1_1Graphics_1_1Texture_aadb96d746b60f18f18ed659f3db2c182}} 
+unsigned int {\bfseries m\+\_\+width} = 0
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_a943d56c96f5434526850c72328503648}\label{structEclipse_1_1Graphics_1_1Texture_a943d56c96f5434526850c72328503648}} 
+unsigned int {\bfseries m\+\_\+height} = 0
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_aeefda89070bb8ea038cbd73dbf40b4aa}\label{structEclipse_1_1Graphics_1_1Texture_aeefda89070bb8ea038cbd73dbf40b4aa}} 
+unsigned int {\bfseries m\+\_\+handle} = 0
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_ac2732248843b29e01c423baf6d445077}\label{structEclipse_1_1Graphics_1_1Texture_ac2732248843b29e01c423baf6d445077}} 
+unsigned int {\bfseries m\+\_\+format} = 0
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_accc97b2614fa917251a5cc0d15f2e3e9}\label{structEclipse_1_1Graphics_1_1Texture_accc97b2614fa917251a5cc0d15f2e3e9}} 
+unsigned char $\ast$ {\bfseries m\+\_\+loaded\+Pixels} = nullptr
+\item 
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_a14fe0f0797f0762ac10ce90631571f66}\label{structEclipse_1_1Graphics_1_1Texture_a14fe0f0797f0762ac10ce90631571f66}} 
+int {\bfseries m\+\_\+composition} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_a7d4927554080c9276b499c9061f5719d}\label{structEclipse_1_1Graphics_1_1Texture_a7d4927554080c9276b499c9061f5719d}} 
+\index{Eclipse::Graphics::Texture@{Eclipse::Graphics::Texture}!Load@{Load}}
+\index{Load@{Load}!Eclipse::Graphics::Texture@{Eclipse::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool Eclipse\+::\+Graphics\+::\+Texture\+::\+Load (\begin{DoxyParamCaption}\item[{const Engine\+::\+Resource\+Directories \&}]{directories }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture}{Texture}} from file. 
+
+
+
+Implements \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource_a5929499b079dbcde79bcb929b7ba0f2e}{Eclipse\+::\+Engine\+::\+Resource}}.
+
+\mbox{\Hypertarget{structEclipse_1_1Graphics_1_1Texture_a1ef18bf2109ebd49642e89e426979e5e}\label{structEclipse_1_1Graphics_1_1Texture_a1ef18bf2109ebd49642e89e426979e5e}} 
+\index{Eclipse::Graphics::Texture@{Eclipse::Graphics::Texture}!Setup@{Setup}}
+\index{Setup@{Setup}!Eclipse::Graphics::Texture@{Eclipse::Graphics::Texture}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily bool Eclipse\+::\+Graphics\+::\+Texture\+::\+Setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Link the \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture}{Texture}} to Open\+GL. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource_a01d07653565319b09992c01e76d7540e}{Eclipse\+::\+Engine\+::\+Resource}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Eclipse\+Graphics/include/Texture.\+h\item 
+Eclipse\+Graphics/src/Texture.\+cpp\end{DoxyCompactItemize}

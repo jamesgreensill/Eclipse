@@ -1,0 +1,85 @@
+\hypertarget{classEclipse_1_1Graphics_1_1Shader}{}\doxysection{Eclipse\+::Graphics\+::Shader Class Reference}
+\label{classEclipse_1_1Graphics_1_1Shader}\index{Eclipse::Graphics::Shader@{Eclipse::Graphics::Shader}}
+Inheritance diagram for Eclipse\+::Graphics\+::Shader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEclipse_1_1Graphics_1_1Shader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_ab15ef220d12c68c8063895444c57dbe6}\label{classEclipse_1_1Graphics_1_1Shader_ab15ef220d12c68c8063895444c57dbe6}} 
+{\bfseries Shader} (unsigned int stage, const char $\ast$filename)
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a9a6be1dd5395e1cac9cefb560025dee0}\label{classEclipse_1_1Graphics_1_1Shader_a9a6be1dd5395e1cac9cefb560025dee0}} 
+void {\bfseries Load\+Shader} (unsigned int stage, const char $\ast$path)
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a3f8143e9b37e4a8e5a6bba52ab94eaa0}\label{classEclipse_1_1Graphics_1_1Shader_a3f8143e9b37e4a8e5a6bba52ab94eaa0}} 
+unsigned int {\bfseries Get\+Stage} () const
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_af3c28af0ecca8950d5afebf7ea0761e2}\label{classEclipse_1_1Graphics_1_1Shader_af3c28af0ecca8950d5afebf7ea0761e2}} 
+unsigned int {\bfseries Get\+Handle} () const
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a07f3a10cb434623104f305de02937425}\label{classEclipse_1_1Graphics_1_1Shader_a07f3a10cb434623104f305de02937425}} 
+const char $\ast$ {\bfseries Get\+Last\+Error} () const
+\item 
+bool \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader_a4ebebf53f7968b417ffdb3ea8e8f52a7}{Load}} (const Engine\+::\+Resource\+Directories \&directories) override
+\begin{DoxyCompactList}\small\item\em Load shader from file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader_a5f0690a66d595c153a7441d7a90aaa90}{Setup}} () override
+\begin{DoxyCompactList}\small\item\em Link shader with open\+GL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a50d4d86226ccb9fb40d3de382bda1d12}\label{classEclipse_1_1Graphics_1_1Shader_a50d4d86226ccb9fb40d3de382bda1d12}} 
+std\+::string {\bfseries shader\+Name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_ac12a3c510db377f9385105784f5cbc56}\label{classEclipse_1_1Graphics_1_1Shader_ac12a3c510db377f9385105784f5cbc56}} 
+unsigned int {\bfseries shader\+Stage}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_aff67019980f0f6a1e20a6b637c51d8ea}\label{classEclipse_1_1Graphics_1_1Shader_aff67019980f0f6a1e20a6b637c51d8ea}} 
+unsigned int {\bfseries shader\+Handle}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a1ea1dd36040879f6f1b872b9b5b0239b}\label{classEclipse_1_1Graphics_1_1Shader_a1ea1dd36040879f6f1b872b9b5b0239b}} 
+char $\ast$ {\bfseries last\+Shader\+Error}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a4ebebf53f7968b417ffdb3ea8e8f52a7}\label{classEclipse_1_1Graphics_1_1Shader_a4ebebf53f7968b417ffdb3ea8e8f52a7}} 
+\index{Eclipse::Graphics::Shader@{Eclipse::Graphics::Shader}!Load@{Load}}
+\index{Load@{Load}!Eclipse::Graphics::Shader@{Eclipse::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool Eclipse\+::\+Graphics\+::\+Shader\+::\+Load (\begin{DoxyParamCaption}\item[{const Engine\+::\+Resource\+Directories \&}]{directories }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Load shader from file. 
+
+
+
+Implements \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource_a5929499b079dbcde79bcb929b7ba0f2e}{Eclipse\+::\+Engine\+::\+Resource}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Graphics_1_1Shader_a5f0690a66d595c153a7441d7a90aaa90}\label{classEclipse_1_1Graphics_1_1Shader_a5f0690a66d595c153a7441d7a90aaa90}} 
+\index{Eclipse::Graphics::Shader@{Eclipse::Graphics::Shader}!Setup@{Setup}}
+\index{Setup@{Setup}!Eclipse::Graphics::Shader@{Eclipse::Graphics::Shader}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily bool Eclipse\+::\+Graphics\+::\+Shader\+::\+Setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Link shader with open\+GL. 
+
+
+
+Reimplemented from \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource_a01d07653565319b09992c01e76d7540e}{Eclipse\+::\+Engine\+::\+Resource}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Eclipse\+Graphics/include/Shader.\+h\item 
+Eclipse\+Graphics/src/Shader.\+cpp\end{DoxyCompactItemize}

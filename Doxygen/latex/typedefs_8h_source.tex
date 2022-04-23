@@ -1,0 +1,39 @@
+\hypertarget{typedefs_8h_source}{}\doxysection{typedefs.\+h}
+\label{typedefs_8h_source}\index{EclipseEngine/include/typedefs.h@{EclipseEngine/include/typedefs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <typeindex>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// Resource Identifier}}
+\DoxyCodeLine{13         \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} ResourceID;}
+\DoxyCodeLine{14         \textcolor{comment}{// Batch Identifier}}
+\DoxyCodeLine{15         \textcolor{keyword}{typedef} std::type\_index BatchID;}
+\DoxyCodeLine{16         \textcolor{comment}{// Directories Parameter for Resource Loading.}}
+\DoxyCodeLine{17         \textcolor{keyword}{typedef} std::vector<std::string> ResourceDirectories;}
+\DoxyCodeLine{18         \textcolor{comment}{// Resource Access Key.}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// Invalid Resource Code.}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define INVALID\_RESOURCE (Eclipse::Engine::ResourceID)-\/1}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{ResourceKey}}}
+\DoxyCodeLine{24         \{}
+\DoxyCodeLine{25             \textcolor{comment}{// Batch Identifier}}
+\DoxyCodeLine{26             BatchID batchId = \textcolor{keyword}{typeid}(\textcolor{keyword}{this});}
+\DoxyCodeLine{27             \textcolor{comment}{// Resource Identifier}}
+\DoxyCodeLine{28             ResourceID resourceId = INVALID\_RESOURCE;}
+\DoxyCodeLine{29         \}\mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{ResourceKey}};}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define INVALID\_RESOURCE\_KEY Eclipse::Engine::ResourceKey(\{typeid(this), INVALID\_RESOURCE\})}}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}

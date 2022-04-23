@@ -1,0 +1,43 @@
+\hypertarget{Texture_8h_source}{}\doxysection{Texture.\+h}
+\label{Texture_8h_source}\index{EclipseGraphics/include/Texture.h@{EclipseGraphics/include/Texture.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <EclipseEngine/include/Resource.h>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}ShaderProgram.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12         \textcolor{keyword}{enum} Format : \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}}
+\DoxyCodeLine{13         \{}
+\DoxyCodeLine{14             RED = 1,}
+\DoxyCodeLine{15             RG,}
+\DoxyCodeLine{16             RGB,}
+\DoxyCodeLine{17             RGBA}
+\DoxyCodeLine{18         \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture}{Texture}} : \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource}{Engine::Resource}}}
+\DoxyCodeLine{21         \{}
+\DoxyCodeLine{22             std::string m\_fileName = \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{23             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_width = 0;}
+\DoxyCodeLine{24             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_height = 0;}
+\DoxyCodeLine{25             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_handle = 0;}
+\DoxyCodeLine{26             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_format = 0;}
+\DoxyCodeLine{27             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* m\_loadedPixels = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{28             \textcolor{keywordtype}{int} m\_composition = -\/1;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34             \textcolor{keywordtype}{void} \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture_ad23708ad7134ff48ef149d3097d8bb82}{Bind}}(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{ShaderProgram}}* shader, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} slot);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39             \textcolor{keywordtype}{bool} \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture_a7d4927554080c9276b499c9061f5719d}{Load}}(\textcolor{keyword}{const} Engine::ResourceDirectories\& directories) \textcolor{keyword}{override};}
+\DoxyCodeLine{43             \textcolor{keywordtype}{bool} \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Texture_a1ef18bf2109ebd49642e89e426979e5e}{Setup}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{44         \};}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}

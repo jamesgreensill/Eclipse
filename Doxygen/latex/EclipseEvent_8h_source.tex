@@ -1,0 +1,129 @@
+\hypertarget{EclipseEvent_8h_source}{}\doxysection{Eclipse\+Event.\+h}
+\label{EclipseEvent_8h_source}\index{EclipseEngine/include/EclipseEvent.h@{EclipseEngine/include/EclipseEvent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <forward\_list>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <future>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keyword}{template}<\textcolor{keyword}{typename}... TArgs>}
+\DoxyCodeLine{15         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent}{EclipseEvent}}}
+\DoxyCodeLine{16         \{}
+\DoxyCodeLine{17         \textcolor{keyword}{public}:}
+\DoxyCodeLine{18             \textcolor{keyword}{typedef} std::function<void(TArgs...)> EventAction;}
+\DoxyCodeLine{19             \textcolor{keyword}{typedef} EventAction* EventHandle;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24             \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a1ba5fd3968b11b30b740c3e6dc072567}{AddListener}}(std::string\&\& name, EventAction callback)}
+\DoxyCodeLine{25             \{}
+\DoxyCodeLine{26                 std::lock\_guard<std::mutex> lock(m\_eventLock);}
+\DoxyCodeLine{27                 namedEventHandles[name] = AddCallback(callback);}
+\DoxyCodeLine{28             \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33             EventHandle \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a6b48eca863240af824730eace79c019e}{AddListener}}(EventAction callback)}
+\DoxyCodeLine{34             \{}
+\DoxyCodeLine{35                 \textcolor{keywordflow}{return} AddCallback(callback);}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{41             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_acdd1db4547fab8139623ccf6c13075af}{RemoveListener}}(\textcolor{keyword}{const} std::string\& name)}
+\DoxyCodeLine{42             \{}
+\DoxyCodeLine{43                 std::lock\_guard<std::mutex> lock(m\_eventLock);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45                 \textcolor{keyword}{auto} it = namedEventHandles.find(name);}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{if} (it == namedEventHandles.end())}
+\DoxyCodeLine{47                 \{}
+\DoxyCodeLine{48                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{49                 \}}
+\DoxyCodeLine{50                 EventHandle handle = it-\/>second;}
+\DoxyCodeLine{51                 \textcolor{keyword}{auto} pos = std::find\_if(EventListeners.begin(), EventListeners.end(), [\&](EventHandle handleRef) \{ return handleRef == handle; \});}
+\DoxyCodeLine{52                 \textcolor{keywordflow}{if} (pos != EventListeners.end())}
+\DoxyCodeLine{53                 \{}
+\DoxyCodeLine{54                     EventListeners.erase(pos);}
+\DoxyCodeLine{55                     namedEventHandles.erase(it);}
+\DoxyCodeLine{56                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{57                 \}}
+\DoxyCodeLine{58                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{59             \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 }
+\DoxyCodeLine{65             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a28a1c9984124f45dbda4aa77fdbcce6d}{RemoveListener}}(\textcolor{keyword}{const} EventHandle\& handle)}
+\DoxyCodeLine{66             \{}
+\DoxyCodeLine{67                 std::lock\_guard<std::mutex> lock(m\_eventLock);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69                 \textcolor{keyword}{auto} pos = std::find\_if(EventListeners.begin(), EventListeners.end(), [handle](EventHandle handleRef)}
+\DoxyCodeLine{70                     \{}
+\DoxyCodeLine{71                         return handleRef == handle;}
+\DoxyCodeLine{72                     \});}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{if} (pos != EventListeners.end())}
+\DoxyCodeLine{74                 \{}
+\DoxyCodeLine{75                     EventListeners.erase(pos);}
+\DoxyCodeLine{76                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{77                 \}}
+\DoxyCodeLine{78                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{79             \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{85             \textcolor{keywordtype}{void} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a538e4f672f046495fa0374f982a6019b}{Invoke}}(TArgs ... args)}
+\DoxyCodeLine{86             \{}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{for} (EventHandle handle : EventListeners)}
+\DoxyCodeLine{88                 \{}
+\DoxyCodeLine{89                     (*handle)(args...);}
+\DoxyCodeLine{90                 \}}
+\DoxyCodeLine{91             \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97             std::future<void> \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a21ab1fb8cfecb9ca855fc18b7bb969f6}{InvokeAsync}}(TArgs... args)}
+\DoxyCodeLine{98             \{}
+\DoxyCodeLine{99                 \textcolor{keywordflow}{return} std::async(std::launch::async, [\textcolor{keyword}{this}](TArgs... asyncParams)}
+\DoxyCodeLine{100                     \{Invoke(asyncParams); \}, args...);}
+\DoxyCodeLine{101             \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103             \textcolor{comment}{/*}}
+\DoxyCodeLine{104 \textcolor{comment}{            }}
+\DoxyCodeLine{105 \textcolor{comment}{                OPERATOR OVERLOADS.}}
+\DoxyCodeLine{106 \textcolor{comment}{            }}
+\DoxyCodeLine{107 \textcolor{comment}{            */}}
+\DoxyCodeLine{108             \textcolor{keywordtype}{void} operator()(TArgs ... args)}
+\DoxyCodeLine{109             \{}
+\DoxyCodeLine{110                 \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a538e4f672f046495fa0374f982a6019b}{Invoke}}(args...);}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113             EventHandle operator+=(\textcolor{keyword}{const} EventAction\& callback)}
+\DoxyCodeLine{114             \{}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_a1ba5fd3968b11b30b740c3e6dc072567}{AddListener}}(callback);}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118             \textcolor{keywordtype}{bool} operator-\/=(\textcolor{keyword}{const} EventHandle\& handle)}
+\DoxyCodeLine{119             \{}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_acdd1db4547fab8139623ccf6c13075af}{RemoveListener}}(handle);}
+\DoxyCodeLine{121             \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123             \textcolor{keywordtype}{bool} operator-\/=(\textcolor{keyword}{const} std::string\& named)}
+\DoxyCodeLine{124             \{}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent_acdd1db4547fab8139623ccf6c13075af}{RemoveListener}}(named);}
+\DoxyCodeLine{126             \}}
+\DoxyCodeLine{127         \textcolor{keyword}{private}:}
+\DoxyCodeLine{128             std::vector<EventHandle> EventListeners = std::vector<EventHandle>();}
+\DoxyCodeLine{129             std::unordered\_map<std::string, EventHandle> namedEventHandles = std::unordered\_map<std::string, EventHandle>();}
+\DoxyCodeLine{130             \textcolor{keyword}{mutable} std::mutex m\_eventLock;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132             EventHandle AddCallback(EventAction\& callback)}
+\DoxyCodeLine{133             \{}
+\DoxyCodeLine{134                 std::lock\_guard<std::mutex> lock(m\_eventLock);}
+\DoxyCodeLine{135                 \textcolor{keyword}{auto} eventType = \textcolor{keyword}{new} EventAction(callback);}
+\DoxyCodeLine{136                 EventListeners.emplace\_back(eventType);}
+\DoxyCodeLine{137                 \textcolor{keywordflow}{return} eventType;}
+\DoxyCodeLine{138             \}}
+\DoxyCodeLine{139         \};}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141 \}}
+
+\end{DoxyCode}

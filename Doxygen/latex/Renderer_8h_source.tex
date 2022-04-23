@@ -1,0 +1,59 @@
+\hypertarget{Renderer_8h_source}{}\doxysection{Renderer.\+h}
+\label{Renderer_8h_source}\index{EclipseGraphics/include/Renderer.h@{EclipseGraphics/include/Renderer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <EclipseEngine/include/System.h>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{namespace }Components}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11         \textcolor{keyword}{class }Transform;}
+\DoxyCodeLine{12     \}}
+\DoxyCodeLine{13     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define uniRendererCameraPosition   "{}cameraPosition"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define uniRendererAmbientColor     "{}rendererAmbientColor"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define uniRendererModelMatrix      "{}modelMatrix"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define uniRendererLightCount       "{}lightCount"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{class }Mesh;}
+\DoxyCodeLine{21         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Renderer}{Renderer}} :}
+\DoxyCodeLine{22             \textcolor{keyword}{public} \mbox{\hyperlink{classEclipse_1_1Engine_1_1System}{Engine::System}}}
+\DoxyCodeLine{23         \{}
+\DoxyCodeLine{24         \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26             \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Graphics_1_1Renderer_1_1DrawCall}{DrawCall}}}
+\DoxyCodeLine{27             \{}
+\DoxyCodeLine{28                 \mbox{\hyperlink{structEclipse_1_1Graphics_1_1Mesh}{Mesh}}* mesh;}
+\DoxyCodeLine{29                 \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform}{Components::Transform}}* transform;}
+\DoxyCodeLine{30             \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36             \textcolor{keyword}{auto} \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Renderer_ac29fc3520b657791d48a178c80a0f45e}{QueueCall}}(\mbox{\hyperlink{structEclipse_1_1Graphics_1_1Renderer_1_1DrawCall}{DrawCall}}) -\/> void;}
+\DoxyCodeLine{37             \textcolor{keyword}{static} \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Renderer}{Renderer}}* Instance;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keyword}{private}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{comment}{/*}}
+\DoxyCodeLine{43 \textcolor{comment}{            }}
+\DoxyCodeLine{44 \textcolor{comment}{                Base class overrides.}}
+\DoxyCodeLine{45 \textcolor{comment}{            }}
+\DoxyCodeLine{46 \textcolor{comment}{            */}  }
+\DoxyCodeLine{47             \textcolor{keyword}{auto} Draw() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{48             \textcolor{keyword}{auto} Created() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{49             \textcolor{keyword}{auto} Deleted() -\/> \textcolor{keywordtype}{void} \textcolor{keyword}{override};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             std::queue<DrawCall> DrawCalls\{\};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             glm::vec4 rendererAmbientColor = \{ 1,1,1,1 \};}
+\DoxyCodeLine{54         \};}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56 \}}
+
+\end{DoxyCode}

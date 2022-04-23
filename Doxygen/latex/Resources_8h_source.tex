@@ -1,0 +1,72 @@
+\hypertarget{Resources_8h_source}{}\doxysection{Resources.\+h}
+\label{Resources_8h_source}\index{EclipseEngine/include/Resources.h@{EclipseEngine/include/Resources.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ *  Used for resource collections.}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ */}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{// DEPRECATED}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{17     \{}
+\DoxyCodeLine{18         \textcolor{keyword}{struct }Texture;}
+\DoxyCodeLine{19         \textcolor{keyword}{class }Model;}
+\DoxyCodeLine{20         \textcolor{keyword}{class }Shader;}
+\DoxyCodeLine{21         \textcolor{keyword}{class }ShaderProgram;}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Engine_1_1Directories}{Directories}}}
+\DoxyCodeLine{27         \{}
+\DoxyCodeLine{28             std::string shaderDir;}
+\DoxyCodeLine{29             std::string dataDir;}
+\DoxyCodeLine{30         \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1Resources}{Resources}}}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34         \textcolor{keyword}{public}:}
+\DoxyCodeLine{35             \textcolor{keyword}{static} \textcolor{keyword}{auto} LoadShaderProgram(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* vertex, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* fragment, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* shaderProgramName)-\/>Graphics::ShaderProgram*;}
+\DoxyCodeLine{36             \textcolor{keyword}{static} \textcolor{keyword}{auto} AddShaderProgram(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Graphics::ShaderProgram}}* program) -\/> void;}
+\DoxyCodeLine{37             \textcolor{keyword}{static} \textcolor{keyword}{auto} UnloadShaderProgram(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Graphics::ShaderProgram}}* program) -\/>void;}
+\DoxyCodeLine{38             \textcolor{keyword}{static} \textcolor{keyword}{auto} UnloadShaderProgram(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* program) -\/>void;}
+\DoxyCodeLine{39             \textcolor{keyword}{static} \textcolor{keyword}{auto} GetShaderProgram(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* shaderProgramName)-\/>Graphics::ShaderProgram*;}
+\DoxyCodeLine{40             \textcolor{keyword}{static} \textcolor{keyword}{auto} GetDefaultShaderProgram()-\/>Graphics::ShaderProgram*;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{keyword}{static} \textcolor{keyword}{auto} AddShader(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Graphics::Shader}}* shader) -\/> void;}
+\DoxyCodeLine{43             \textcolor{keyword}{static} \textcolor{keyword}{auto} UnloadShader(\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Graphics::Shader}}* shader) -\/> void;}
+\DoxyCodeLine{44             \textcolor{keyword}{static} \textcolor{keyword}{auto} GetShader(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* shaderName)-\/>Graphics::Shader*;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46             \textcolor{keyword}{static} \textcolor{keyword}{auto} SetDirPrefix(\textcolor{keyword}{const} std::string\& key, \textcolor{keyword}{const}  std::string\& value) -\/> void;}
+\DoxyCodeLine{47             \textcolor{keyword}{static} \textcolor{keyword}{auto} GetDirPrefix(\textcolor{keyword}{const} std::string\& key)-\/>std::string;}
+\DoxyCodeLine{48             \textcolor{keyword}{static} \textcolor{keyword}{auto} AddDirPrefix(\textcolor{keyword}{const} std::string\& key, std::string value)-\/>std::string;}
+\DoxyCodeLine{49             \textcolor{keyword}{static} \textcolor{keyword}{auto} RemoveDirPrefix(\textcolor{keyword}{const} std::string\& key)-\/>void;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \textcolor{keyword}{static} \textcolor{keyword}{auto} LoadModel(\textcolor{keyword}{const} std::string\& path)-\/>Graphics::Model*;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             \textcolor{keyword}{static} \textcolor{keyword}{auto} LoadDefaultDirectories() -\/> void;}
+\DoxyCodeLine{54             \textcolor{keyword}{static} \textcolor{keyword}{auto} LoadDefaultResources() -\/> void;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56             \textcolor{keyword}{static} \textcolor{keyword}{auto} LoadTexture(std::string path)-\/>Graphics::Texture*;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keyword}{private}:}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60             \textcolor{keyword}{static} \mbox{\hyperlink{classEclipse_1_1Graphics_1_1ShaderProgram}{Graphics::ShaderProgram}}* defaultShaderProgram;}
+\DoxyCodeLine{61             \textcolor{keyword}{static} std::map<std::string, std::string> defaultDirectories;}
+\DoxyCodeLine{62             \textcolor{keyword}{static} std::map<std::string, Graphics::ShaderProgram*> shaderPrograms;}
+\DoxyCodeLine{63             \textcolor{keyword}{static} std::map<std::string, Graphics::Shader*> shaders;}
+\DoxyCodeLine{64         \};}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}

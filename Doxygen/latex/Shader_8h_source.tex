@@ -1,0 +1,63 @@
+\hypertarget{Shader_8h_source}{}\doxysection{Shader.\+h}
+\label{Shader_8h_source}\index{EclipseGraphics/include/Shader.h@{EclipseGraphics/include/Shader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <EclipseEngine/include/Resource.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }Eclipse \{}
+\DoxyCodeLine{7     \textcolor{keyword}{namespace }Graphics}
+\DoxyCodeLine{8     \{}
+\DoxyCodeLine{9         \textcolor{comment}{// simplified render pipeline shader stages}}
+\DoxyCodeLine{10         \textcolor{keyword}{enum} ShaderStage : \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \{}
+\DoxyCodeLine{11             UNDEFINED = 0,}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13             VERTEX,}
+\DoxyCodeLine{14             GEOMETRY,}
+\DoxyCodeLine{15             FRAGMENT,}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17             SHADER\_STAGE\_COUNT,}
+\DoxyCodeLine{18         \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{comment}{// individual sharable shader stages}}
+\DoxyCodeLine{21         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Shader}} : \textcolor{keyword}{public} \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource}{Engine::Resource}}}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23         \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25             \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Shader}}() : shaderStage(0), shaderHandle(0), lastShaderError(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{26             \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{Shader}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} stage, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* filename)}
+\DoxyCodeLine{27                 : shaderStage(0), shaderHandle(0), lastShaderError(\textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{28                 LoadShader(stage, filename);}
+\DoxyCodeLine{29             \}}
+\DoxyCodeLine{30             \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader}{\string~Shader}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32             \textcolor{comment}{// deprecated.}}
+\DoxyCodeLine{33             \textcolor{keywordtype}{void} LoadShader(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} stage, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* path);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetStage()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shaderStage; \}}
+\DoxyCodeLine{36             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GetHandle()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} shaderHandle; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* GetLastError()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} lastShaderError; \}}
+\DoxyCodeLine{39             std::string shaderName;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41             }
+\DoxyCodeLine{45             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader_a4ebebf53f7968b417ffdb3ea8e8f52a7}{Load}}(\textcolor{keyword}{const} Engine::ResourceDirectories\& directories) \textcolor{keyword}{override};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{50             \textcolor{keywordtype}{bool} \mbox{\hyperlink{classEclipse_1_1Graphics_1_1Shader_a5f0690a66d595c153a7441d7a90aaa90}{Setup}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{53             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} shaderStage;}
+\DoxyCodeLine{54             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} shaderHandle;}
+\DoxyCodeLine{55             \textcolor{keywordtype}{char}* lastShaderError;}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keyword}{private}:}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59             \textcolor{keyword}{const} \textcolor{keywordtype}{char}* data = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{60             \textcolor{comment}{//std::vector<char> data = \{\};}}
+\DoxyCodeLine{61         \};}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,81 @@
+\hypertarget{namespaceEclipse_1_1Engine}{}\doxysection{Eclipse\+::Engine Namespace Reference}
+\label{namespaceEclipse_1_1Engine}\index{Eclipse::Engine@{Eclipse::Engine}}
+
+
+THIS SYSTEM FOLLOWS THE SINGLETON PATTERN.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1API}{API}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1ApiLoader}{Api\+Loader}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1Application}{Application}}
+\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1ApplicationSettings}{Application\+Settings}}
+\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1AssetCall}{Asset\+Call}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1AssetLoader}{Asset\+Loader}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel}{Base\+Model}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1CoreModule}{Core\+Module}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEclipse_1_1Engine_1_1CoreModule}{Core\+Module}} is the base class for engine modules. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1CreatorEntry}{Creator\+Entry}}
+\begin{DoxyCompactList}\small\item\em Entries for the creator list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1Directories}{Directories}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1EclipseEvent}{Eclipse\+Event}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1Engine}{Engine}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1EngineModule}{Engine\+Module}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1GuiModel}{Gui\+Model}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1ObjectFactory}{Object\+Factory}}
+\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource}{Resource}}
+\item 
+struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Resource\+Key}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1ResourceManager}{Resource\+Manager}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1Resources}{Resources}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1Serialization}{Serialization}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1System}{System}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1SystemManager}{System\+Manager}}
+\item 
+class \mbox{\hyperlink{classEclipse_1_1Engine_1_1WindowModule}{Window\+Module}}
+\begin{DoxyCompactList}\small\item\em This class provides window support to the engine. This is a wrapper around majority of GLFW and is used for ease access to choose if the engine should be window\textquotesingle{}d or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_aedab4a73270d94c666528ddd71d4ba6c}\label{namespaceEclipse_1_1Engine_aedab4a73270d94c666528ddd71d4ba6c}} 
+typedef std\+::unordered\+\_\+map$<$ Resource\+ID, \mbox{\hyperlink{structEclipse_1_1Engine_1_1Resource}{Resource}} $\ast$ $>$ {\bfseries Resource\+Container}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_a7f1111dd1f226f0b2fd9a4a7ae9de0ef}\label{namespaceEclipse_1_1Engine_a7f1111dd1f226f0b2fd9a4a7ae9de0ef}} 
+typedef std\+::unordered\+\_\+map$<$ Batch\+ID, Resource\+Container $>$ {\bfseries Batch\+Container}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_ad40ce932a58a41c4d176efe553d2afa4}\label{namespaceEclipse_1_1Engine_ad40ce932a58a41c4d176efe553d2afa4}} 
+typedef unsigned int {\bfseries Resource\+ID}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_a89c9429ae4286f3130b65642d79d3a48}\label{namespaceEclipse_1_1Engine_a89c9429ae4286f3130b65642d79d3a48}} 
+typedef std\+::type\+\_\+index {\bfseries Batch\+ID}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_a752cc441b525a35265a394432411cc23}\label{namespaceEclipse_1_1Engine_a752cc441b525a35265a394432411cc23}} 
+typedef std\+::vector$<$ std\+::string $>$ {\bfseries Resource\+Directories}
+\item 
+\mbox{\Hypertarget{namespaceEclipse_1_1Engine_a53dd4d31593ea27c3751db301c014d18}\label{namespaceEclipse_1_1Engine_a53dd4d31593ea27c3751db301c014d18}} 
+typedef struct \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{Eclipse\+::\+Engine\+::\+Resource\+Key}} {\bfseries Resource\+Key}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+THIS SYSTEM FOLLOWS THE SINGLETON PATTERN. 

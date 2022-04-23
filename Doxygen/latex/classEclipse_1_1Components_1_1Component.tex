@@ -1,0 +1,246 @@
+\hypertarget{classEclipse_1_1Components_1_1Component}{}\doxysection{Eclipse\+::Components\+::Component Class Reference}
+\label{classEclipse_1_1Components_1_1Component}\index{Eclipse::Components::Component@{Eclipse::Components::Component}}
+
+
+\mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}} Class. The \mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}} class is the base class for all behaviours. It allows for easy object creation and composition and follows the ECS paradigm  
+
+
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+Inheritance diagram for Eclipse\+::Components\+::Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.991736cm]{classEclipse_1_1Components_1_1Component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_aaa93105b168913ea339c38860ab5cfee}\label{classEclipse_1_1Components_1_1Component_aaa93105b168913ea339c38860ab5cfee}} 
+bool {\bfseries enabled} = true
+\item 
+\mbox{\hyperlink{classEclipse_1_1Object}{Object}} $\ast$ \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a05be3e654ba71c1a2276d02bc0fc8995}{object}} = nullptr
+\begin{DoxyCompactList}\small\item\em Returns the object this component is attached too. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_ada4346642ec10185c4ba77236f81e6ee}{Dispose}} () override
+\begin{DoxyCompactList}\small\item\em Called at the end of the objects lifecycle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a1ab1d887cbd7379aa30531a61ac28821}{Update}} () override
+\begin{DoxyCompactList}\small\item\em Called every frame prior to the render pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a58a881b7c76a5db1242b1376ddf91b10}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em Called for rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a7abff0eebb4563a6b8999715ff1df3c1}{Late\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called every frame prior to the render pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_ab15be7ef33f6effb949d0717f6186740}{Fixed\+Update}} () override
+\begin{DoxyCompactList}\small\item\em Called on a serpate physics thread at a fixed timestep. \texorpdfstring{$<$}{<}-- Thread not implemented yet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a24a3067525807a7c880538ba3d5b868d}{Awake}} () override
+\begin{DoxyCompactList}\small\item\em Called prior to the first frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a41ae33c5db832354281eeddaec388695}{Retrieve\+Gui\+Data}} () override
+\begin{DoxyCompactList}\small\item\em DEPRECATED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a751f290ae46651b29a546dca6ae21db5}{Start}} () override
+\begin{DoxyCompactList}\small\item\em Called on the first frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_aa07ccbc2ffda2ed5a05236d0a4eab435}{Deleted}} () override
+\begin{DoxyCompactList}\small\item\em Destructor Wrapper. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a923ba03aca489caa7f774ee8ed3b10a5}{Created}} () override
+\begin{DoxyCompactList}\small\item\em Constructor Wrapper. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a10c6491dcbeeb09567972295b6fe4c17}\label{classEclipse_1_1Components_1_1Component_a10c6491dcbeeb09567972295b6fe4c17}} 
+virtual void {\bfseries Reset} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a93cd99329d77b52bdb012594abeea27a}\label{classEclipse_1_1Components_1_1Component_a93cd99329d77b52bdb012594abeea27a}} 
+class \mbox{\hyperlink{classEclipse_1_1Components_1_1Component_a93cd99329d77b52bdb012594abeea27a}{Eclipse\+::\+Object}}
+\begin{DoxyCompactList}\small\item\em Parent \mbox{\hyperlink{classEclipse_1_1Object}{Object}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}} Class. The \mbox{\hyperlink{classEclipse_1_1Components_1_1Component}{Component}} class is the base class for all behaviours. It allows for easy object creation and composition and follows the ECS paradigm 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a24a3067525807a7c880538ba3d5b868d}\label{classEclipse_1_1Components_1_1Component_a24a3067525807a7c880538ba3d5b868d}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Awake@{Awake}}
+\index{Awake@{Awake}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called prior to the first frame. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a4b8705e9b3108cc22634cb53ae610365}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEclipse_1_1Components_1_1MeshRenderer_a0701e4bff94c86bc2a9bd53648755c55}{Eclipse\+::\+Components\+::\+Mesh\+Renderer}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a923ba03aca489caa7f774ee8ed3b10a5}\label{classEclipse_1_1Components_1_1Component_a923ba03aca489caa7f774ee8ed3b10a5}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Created@{Created}}
+\index{Created@{Created}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Created()}{Created()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Created (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Constructor Wrapper. 
+
+
+
+Implements \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a47d18b0bc0b0db57e960ac3e131a7e9c}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_a7a9c6127fed6b905fa59691f942e60f1}{Eclipse\+::\+Components\+::\+Transform}}, and \mbox{\hyperlink{classEclipse_1_1Components_1_1MeshRenderer_addd8139fa6436edda192829ed2e28d2d}{Eclipse\+::\+Components\+::\+Mesh\+Renderer}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_aa07ccbc2ffda2ed5a05236d0a4eab435}\label{classEclipse_1_1Components_1_1Component_aa07ccbc2ffda2ed5a05236d0a4eab435}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Deleted@{Deleted}}
+\index{Deleted@{Deleted}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Deleted()}{Deleted()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Deleted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Destructor Wrapper. 
+
+
+
+Implements \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a849e1148a92da5699a5d3870dc81b5c9}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_ada4346642ec10185c4ba77236f81e6ee}\label{classEclipse_1_1Components_1_1Component_ada4346642ec10185c4ba77236f81e6ee}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called at the end of the objects lifecycle. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a74b3a65cc7a83a729b900b3f7503f745}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a58a881b7c76a5db1242b1376ddf91b10}\label{classEclipse_1_1Components_1_1Component_a58a881b7c76a5db1242b1376ddf91b10}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Draw@{Draw}}
+\index{Draw@{Draw}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called for rendering. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a0e4030afdd6cded85bac39ae629c2688}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEclipse_1_1Components_1_1MeshRenderer_a6bfd93ae5fa29986ade404cf3a5a98aa}{Eclipse\+::\+Components\+::\+Mesh\+Renderer}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_ab15be7ef33f6effb949d0717f6186740}\label{classEclipse_1_1Components_1_1Component_ab15be7ef33f6effb949d0717f6186740}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called on a serpate physics thread at a fixed timestep. \texorpdfstring{$<$}{<}-- Thread not implemented yet. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a5cf66e213c22d0bca712a9794014c460}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a7abff0eebb4563a6b8999715ff1df3c1}\label{classEclipse_1_1Components_1_1Component_a7abff0eebb4563a6b8999715ff1df3c1}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!LateUpdate@{LateUpdate}}
+\index{LateUpdate@{LateUpdate}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{LateUpdate()}{LateUpdate()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame prior to the render pipeline. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_afce41d3ab8b518bae350a03e763f041f}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a41ae33c5db832354281eeddaec388695}\label{classEclipse_1_1Components_1_1Component_a41ae33c5db832354281eeddaec388695}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!RetrieveGuiData@{RetrieveGuiData}}
+\index{RetrieveGuiData@{RetrieveGuiData}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{RetrieveGuiData()}{RetrieveGuiData()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Retrieve\+Gui\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+DEPRECATED. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_abd00a90a44282e4198afe19472731780}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEclipse_1_1Components_1_1Transform_aba18a1508622e94693c4ef9fda6d3d54}{Eclipse\+::\+Components\+::\+Transform}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a751f290ae46651b29a546dca6ae21db5}\label{classEclipse_1_1Components_1_1Component_a751f290ae46651b29a546dca6ae21db5}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Start@{Start}}
+\index{Start@{Start}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called on the first frame. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a65dad4983ab4e689342c4d20cb9b584b}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a1ab1d887cbd7379aa30531a61ac28821}\label{classEclipse_1_1Components_1_1Component_a1ab1d887cbd7379aa30531a61ac28821}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!Update@{Update}}
+\index{Update@{Update}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Eclipse\+::\+Components\+::\+Component\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame prior to the render pipeline. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classEclipse_1_1Engine_1_1BaseModel_a313860d0e40bc21aad7f26ff533c74e7}{Eclipse\+::\+Engine\+::\+Base\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classEclipse_1_1Components_1_1MeshRenderer_a66a93517bc95175377ac9ddb0e759629}{Eclipse\+::\+Components\+::\+Mesh\+Renderer}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEclipse_1_1Components_1_1Component_a05be3e654ba71c1a2276d02bc0fc8995}\label{classEclipse_1_1Components_1_1Component_a05be3e654ba71c1a2276d02bc0fc8995}} 
+\index{Eclipse::Components::Component@{Eclipse::Components::Component}!object@{object}}
+\index{object@{object}!Eclipse::Components::Component@{Eclipse::Components::Component}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEclipse_1_1Object}{Object}}$\ast$ Eclipse\+::\+Components\+::\+Component\+::object = nullptr}
+
+
+
+Returns the object this component is attached too. 
+
+\begin{DoxyReturn}{Returns}
+Parent \mbox{\hyperlink{classEclipse_1_1Object}{Object}}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Eclipse\+Engine/include/Component.\+h\item 
+Eclipse\+Engine/src/Component.\+cpp\end{DoxyCompactItemize}

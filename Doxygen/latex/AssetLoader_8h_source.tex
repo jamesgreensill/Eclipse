@@ -1,0 +1,51 @@
+\hypertarget{AssetLoader_8h_source}{}\doxysection{Asset\+Loader.\+h}
+\label{AssetLoader_8h_source}\index{EclipseEngine/include/AssetLoader.h@{EclipseEngine/include/AssetLoader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}ResourceManager.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}typedefs.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{    DEPRECATED.}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{*/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }Eclipse}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{namespace }Engine}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{keyword}{struct }\mbox{\hyperlink{structEclipse_1_1Engine_1_1AssetCall}{AssetCall}}}
+\DoxyCodeLine{20         \{}
+\DoxyCodeLine{21             std::function<bool()> functionCall = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22         \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keyword}{class }\mbox{\hyperlink{classEclipse_1_1Engine_1_1AssetLoader}{AssetLoader}}}
+\DoxyCodeLine{25         \{}
+\DoxyCodeLine{26         \textcolor{keyword}{public}:}
+\DoxyCodeLine{27             \textcolor{keyword}{static} std::queue<AssetCall> AssetCalls;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29             \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{30             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Load(ResourceDirectories directories, \mbox{\hyperlink{structEclipse_1_1Engine_1_1ResourceKey}{ResourceKey}}\& key)}
+\DoxyCodeLine{31             \{}
+\DoxyCodeLine{32                 \textcolor{comment}{//AssetCall call =}}
+\DoxyCodeLine{33                 \textcolor{comment}{//\{}}
+\DoxyCodeLine{34                 \textcolor{comment}{//  [\&]}}
+\DoxyCodeLine{35                 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{36                 \textcolor{comment}{//      ResourceManager::Load<T>(directories, key);}}
+\DoxyCodeLine{37                 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{38                 \textcolor{comment}{//\};}}
+\DoxyCodeLine{39                 \textcolor{comment}{//AssetCalls.emplace(call);}}
+\DoxyCodeLine{40             \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{keyword}{static} \textcolor{keywordtype}{void} Awake();}
+\DoxyCodeLine{43         \};}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 \}}
+
+\end{DoxyCode}
