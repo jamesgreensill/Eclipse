@@ -38,7 +38,7 @@ namespace Eclipse
 
 		void Debug(const char* str)
 		{
-			//std::cout << termcolor::yellow << "[DEBUG] " << GetTime() << termcolor::green << " " << str << termcolor::reset << std::endl;
+			std::cout << termcolor::yellow << "[DEBUG] " << GetTime() << termcolor::green << " " << str << termcolor::reset << std::endl;
 		}
 
 		void Error(const char* str)

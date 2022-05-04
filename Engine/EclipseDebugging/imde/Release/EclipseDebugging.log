@@ -1,16 +1,11 @@
 ﻿  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\Core.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\DebugApi.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\DebugModule.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\DebugSystem.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\framework.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\include\pch.h
-          5 file(s) copied.
-  pch.cpp
-  Core.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-D:\dev\C++\ComplexGameSystems\Eclipse\Engine\vendors\include\GLFW\glfw3.h(123): message : see previous definition of 'APIENTRY'
-  DebugApi.cpp
+          6 file(s) copied.
   DebugModule.cpp
-  EclipseDebugging.cpp
   EclipseDebugging.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\build\Release\EclipseDebugging.lib
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\build\Release\\EclipseDebugging.lib
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseDebugging\build\Release\\EclipseDebugging.pdb
