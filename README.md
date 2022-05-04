@@ -76,7 +76,7 @@ public:
 ```
 
 Eclipse Engine has been designed to be modular to its very core. So creating an application is different to most other engines you will find out there.
-To create an Application using Eclipse you will need add a list of modules to the engine. You can achieve this as follows. Please see [Native Modules](#native-modules)
+To create an Application using Eclipse you will need add a list of modules to the engine. You can achieve this as follows. Please see [Native Modules](#native-modules) for a list of natively supported engine modules.
 * ### Running the application
 ```cpp
 int main()
