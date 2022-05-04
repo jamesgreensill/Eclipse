@@ -10,5 +10,9 @@ class NetworkServerApplication :
 {
 public:
 	void OnEngineInit() override;
+	void OnCreated() override;
+	void OnBoot() override;
+	void OnAwake() override;
+	void OnDisposed() override;
 };
 
