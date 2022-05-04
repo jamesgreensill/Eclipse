@@ -1,10 +1,10 @@
 #pragma once
+#include <EclipseEngine/include/EngineMacros.h>
 #include <string>
 #include <vector>
 
 #include "Material.h"
 #include "Mesh.h"
-#include <EclipseEngine/include/EngineMacros.h>
 
 struct aiMaterial;
 struct aiMesh;

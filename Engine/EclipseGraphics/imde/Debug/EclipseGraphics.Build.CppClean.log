@@ -2,6 +2,7 @@ d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\build\debug\eclipse
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\build\debug\eclipsegraphics.idb
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\vertex.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\texture.obj
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\shaderprogram.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\shader.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\renderer.obj
@@ -14,6 +15,11 @@ d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\camera.o
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\core.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\graphicsapi.obj
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\graphicsmodule.obj
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\glad.obj
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\build\debug\eclipsegraphics.lib
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\cl.command.1.tlog
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\cl.read.1.tlog
 d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\cl.write.1.tlog
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\lib-link.read.1.tlog
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\lib-link.write.1.tlog
+d:\dev\c++\complexgamesystems\eclipse\engine\eclipsegraphics\imde\debug\eclipsegraphics.tlog\lib.command.1.tlog

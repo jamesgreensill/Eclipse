@@ -35,6 +35,8 @@ namespace Eclipse
 				// if there is no camera, then break out of this loop.
 				if (!renderCamera)
 				{
+					// remove draw call from drawCalls.
+					DrawCalls.pop();
 					break;
 				}
 				// fetch shader program resource.

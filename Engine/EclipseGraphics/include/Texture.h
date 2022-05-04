@@ -1,6 +1,5 @@
 #pragma once
 #include <EclipseEngine/include/Resource.h>
-
 #include <string>
 
 #include "ShaderProgram.h"
@@ -26,7 +25,6 @@ namespace Eclipse
 			unsigned int m_format = 0;
 			unsigned char* m_loadedPixels = nullptr;
 			int m_composition = -1;
-
 
 			/// <summary>
 			///	Bind this texture to the render pipeline's shader.

@@ -1,9 +1,7 @@
 #pragma once
-#include <memory>
-#include <unordered_map>
 #include <glm/glm.hpp>
-
 #include "Shader.h"
+
 
 namespace Eclipse
 {
@@ -121,7 +119,7 @@ namespace Eclipse
 			/// <summary>
 			///	Bind float Uniform
 			/// </summary>
-			bool BindUniform((std::string name, float value);
+			bool BindUniform(std::string name, float value);
 			/// <summary>
 			///	Bind vec2 Uniform
 			/// </summary>
@@ -149,35 +147,35 @@ namespace Eclipse
 			/// <summary>
 			///	Bind int* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, int* value);
+			bool BindUniform(std::string name, int count, int* value);
 			/// <summary>
 			///	Bind float* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, float* value);
+			bool BindUniform(std::string name, int count, float* value);
 			/// <summary>
 			///	Bind vec2* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::vec2* value);
+			bool BindUniform(std::string name, int count, const glm::vec2* value);
 			/// <summary>
 			///	Bind vec3* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::vec3* value);
+			bool BindUniform(std::string name, int count, const glm::vec3* value);
 			/// <summary>
 			///	Bind vec4* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::vec4* value);
+			bool BindUniform(std::string name, int count, const glm::vec4* value);
 			/// <summary>
 			///	Bind mat2x2* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::mat2* value);
+			bool BindUniform(std::string name, int count, const glm::mat2* value);
 			/// <summary>
 			///	Bind mat3x3* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::mat3* value);
+			bool BindUniform(std::string name, int count, const glm::mat3* value);
 			/// <summary>
 			///	Bind mat4x4* Uniform
 			/// </summary>
-			bool BindUniform(std::string name, const glm::mat4* value);
+			bool BindUniform(std::string name, int count, const glm::mat4* value);
 
 
 			/// <summary>

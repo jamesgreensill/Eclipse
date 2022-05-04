@@ -49,9 +49,13 @@ namespace Eclipse
 			SET(Indices, std::vector<unsigned int>, m_Indices = value; );
 			SET(Vertices, std::vector<Vertex>, m_Vertices = value; );
 
-			Material material
+			//Material material =
+			//{
+			//	Eclipse::Engine::ResourceManager::GetDefault<ShaderProgram>(),
+			//};
+
+			Material material = 
 			{
-				// ShaderKey
 				Eclipse::Engine::ResourceManager::GetDefault<ShaderProgram>(),
 				Eclipse::Engine::ResourceManager::GetDefault<Texture>(),
 				Eclipse::Engine::ResourceManager::GetDefault<Texture>(),

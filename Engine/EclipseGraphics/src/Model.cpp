@@ -7,8 +7,10 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb/stb_image.h>
-
 #include <EclipseEngine/include/Core.h>
+
+#include <EclipseEngine/include/EngineMacros.h>
+
 namespace Eclipse
 {
 	/*
