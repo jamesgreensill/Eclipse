@@ -1,10 +1,23 @@
-﻿  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\framework.h
-  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\pch.h
-  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\TestObject.h
-          3 file(s) copied.
-  EclipseNetworking.cpp
-  pch.cpp
-  TestObject.cpp
+﻿  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\ClientHandler.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\EclipseClient.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\EclipsePacket.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\EclipseServer.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\INetworkHandle.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\MessageHandler.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkAuthenticator.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkClient.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkHandler.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkingApi.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkingBus.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkingModule.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkInterface.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkManager.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\NetworkServer.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\include\ServerHandler.h
+         16 file(s) copied.
+  NetworkClient.cpp
+  NetworkManager.cpp
+  NetworkServer.cpp
   Generating Code...
   EclipseNetworking.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\build\Debug\EclipseNetworking.lib
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseNetworking\build\Debug\\EclipseNetworking.idb

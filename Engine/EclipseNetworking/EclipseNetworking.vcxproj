@@ -19,14 +19,40 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\EclipseNetworking.cpp" />
-    <ClCompile Include="src\pch.cpp" />
-    <ClCompile Include="src\TestObject.cpp" />
+    <ClCompile Include="src\NetworkInterface.cpp" />
+    <ClCompile Include="src\NetworkClient.cpp" />
+    <ClCompile Include="src\NetworkServer.cpp" />
+    <ClCompile Include="src\NetworkManager.cpp" />
+    <ClCompile Include="src\NetworkingApi.cpp" />
+    <ClCompile Include="src\NetworkingBus.cpp" />
+    <ClCompile Include="src\NetworkAuthenticator.cpp" />
+    <ClCompile Include="src\INetworkHandle.cpp" />
+    <ClCompile Include="src\ClientHandler.cpp" />
+    <ClCompile Include="src\ServerHandler.cpp" />
+    <ClCompile Include="src\EclipsePacket.cpp" />
+    <ClCompile Include="src\MessageHandler.cpp" />
+    <ClCompile Include="src\NetworkHandler.cpp" />
+    <ClCompile Include="src\NetworkingModule.cpp" />
+    <ClCompile Include="src\EclipseClient.cpp" />
+    <ClCompile Include="src\EclipseServer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\framework.h" />
-    <ClInclude Include="include\pch.h" />
-    <ClInclude Include="include\TestObject.h" />
+    <ClInclude Include="include\NetworkInterface.h" />
+    <ClInclude Include="include\ClientHandler.h" />
+    <ClInclude Include="include\EclipsePacket.h" />
+    <ClInclude Include="include\EclipseClient.h" />
+    <ClInclude Include="include\EclipseServer.h" />
+    <ClInclude Include="include\NetworkingApi.h" />
+    <ClInclude Include="include\NetworkHandler.h" />
+    <ClInclude Include="include\NetworkingModule.h" />
+    <ClInclude Include="include\MessageHandler.h" />
+    <ClInclude Include="include\ServerHandler.h" />
+    <ClInclude Include="include\INetworkHandle.h" />
+    <ClInclude Include="include\NetworkAuthenticator.h" />
+    <ClInclude Include="include\NetworkingBus.h" />
+    <ClInclude Include="include\NetworkManager.h" />
+    <ClInclude Include="include\NetworkClient.h" />
+    <ClInclude Include="include\NetworkServer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -121,6 +147,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -148,6 +175,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -175,6 +203,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -202,6 +231,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
