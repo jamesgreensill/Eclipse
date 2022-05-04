@@ -29,6 +29,7 @@ namespace Eclipse {
 			}
 			~Shader();
 
+			// deprecated.
 			void LoadShader(unsigned int stage, const char* path);
 
 			unsigned int GetStage() const { return shaderStage; }
@@ -37,7 +38,15 @@ namespace Eclipse {
 			const char* GetLastError() const { return lastShaderError; }
 			std::string shaderName;
 
+			
+			/// <summary>
+			///	Load shader from file.
+			/// </summary>
 			bool Load(const Engine::ResourceDirectories& directories) override;
+
+			/// <summary>
+			///	Link shader with openGL.
+			/// </summary>
 			bool Setup() override;
 
 		protected:

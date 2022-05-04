@@ -39,6 +39,12 @@ namespace Eclipse
 
 			static std::vector<Light*> Lights;
 
+
+			/*
+			
+				Getter & Setter wrappers.
+			
+			*/
 			GET(Type, return m_Type; );
 			SET(Type, LightType, m_Type = value; );
 			GET(AmbientColor, return m_AmbientColor; );
@@ -50,15 +56,18 @@ namespace Eclipse
 			GET(Intensity, return m_Intensity; );
 			SET(Intensity, float, m_Intensity = value; );
 
-
-
 			auto Bind(unsigned int index, Graphics::ShaderProgram* shader) const -> void;
 		private:
+
+			/*
+			
+				Base class overrides.
+			
+			*/
 			auto RetrieveGuiData() -> void override;
 			auto Created() -> void override;
 			auto Awake() -> void override;
 			auto Dispose() -> void override;
-
 			auto Deleted() -> void override;
 			auto Reset() -> void override;
 

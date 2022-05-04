@@ -5,10 +5,21 @@ namespace Eclipse
 {
 	namespace Engine
 	{
+
+		/// <summary>
+		/// This class provides window support to the engine.
+		/// This is a wrapper around majority of GLFW and is used for ease access to choose if the engine
+		/// should be window'd or not. 
+		/// </summary>
 		class WindowModule :
 			public EngineModule
 		{
 		public:
+			/*
+
+			Comments same as base.
+
+			*/
 			void Created() override;
 			void Deleted() override;
 			void RetrieveGuiData() override;

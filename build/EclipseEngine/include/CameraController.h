@@ -6,6 +6,11 @@ namespace Eclipse
 	namespace Components
 	{
 		class Camera;
+
+		
+		/// <summary>
+		/// Camera Controller Component for Demo Application.
+		/// </summary>
 		class CameraController :
 			public Component
 		{

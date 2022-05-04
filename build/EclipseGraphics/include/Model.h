@@ -1,10 +1,10 @@
 #pragma once
+#include <EclipseEngine/include/EngineMacros.h>
 #include <string>
 #include <vector>
 
 #include "Material.h"
 #include "Mesh.h"
-#include <EclipseEngine/include/EngineMacros.h>
 
 struct aiMaterial;
 struct aiMesh;
@@ -27,10 +27,24 @@ namespace Eclipse
 		public:
 			std::vector<Mesh> m_Meshes{};
 
+			
+			/// <summary>
+			///	Load Model from file.
+			/// </summary>
 			auto Load(const Engine::ResourceDirectories& directories) -> bool override;
+			/// <summary>
+			///	Get Material.
+			/// </summary>
 			auto GetMaterial(size_t index) -> Material& { return m_Materials.at(index); }
 
 			auto Setup() -> bool override;
+
+
+			/*
+			
+				Getter & Setter wrappers.
+
+			*/
 
 			GET(MaterialCount, return m_Materials.size(););
 			GET(FileName, return m_FileName;);

@@ -1,6 +1,5 @@
 #pragma once
 #include <EclipseEngine/include/Resource.h>
-
 #include <string>
 
 #include "ShaderProgram.h"
@@ -27,9 +26,18 @@ namespace Eclipse
 			unsigned char* m_loadedPixels = nullptr;
 			int m_composition = -1;
 
+			/// <summary>
+			///	Bind this texture to the render pipeline's shader.
+			/// </summary>
 			void Bind(ShaderProgram* shader, unsigned int slot);
 
+			/// <summary>
+			///	Load Texture from file.
+			/// </summary>
 			bool Load(const Engine::ResourceDirectories& directories) override;
+			/// <summary>
+			///	Link the Texture to OpenGL.
+			/// </summary>
 			bool Setup() override;
 		};
 	}

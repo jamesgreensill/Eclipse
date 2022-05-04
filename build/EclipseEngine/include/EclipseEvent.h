@@ -18,17 +18,26 @@ namespace Eclipse
 			typedef std::function<void(TArgs...)> EventAction;
 			typedef EventAction* EventHandle;
 
+			/// <summary>
+			/// Adds a named listener to this event with the signature of <TArgs...>
+			/// </summary>
 			void AddListener(std::string&& name, EventAction callback)
 			{
 				std::lock_guard<std::mutex> lock(m_eventLock);
 				namedEventHandles[name] = AddCallback(callback);
 			}
 
+			/// <summary>
+			/// Adds a listener to this event with the signature of <TArgs...>
+			/// </summary>
 			EventHandle AddListener(EventAction callback)
 			{
 				return AddCallback(callback);
 			}
 
+			/// <summary>
+			/// Removes a named listener.
+			/// </summary>
 			bool RemoveListener(const std::string& name)
 			{
 				std::lock_guard<std::mutex> lock(m_eventLock);
@@ -49,6 +58,10 @@ namespace Eclipse
 				return false;
 			}
 
+
+			/// <summary>
+			/// Removed a listener with an EventHandle.
+			/// </summary>
 			bool RemoveListener(const EventHandle& handle)
 			{
 				std::lock_guard<std::mutex> lock(m_eventLock);
@@ -65,6 +78,10 @@ namespace Eclipse
 				return false;
 			}
 
+
+			/// <summary>
+			/// Invokes all Event Listeners.
+			/// </summary>
 			void Invoke(TArgs ... args)
 			{
 				for (EventHandle handle : EventListeners)
@@ -73,12 +90,21 @@ namespace Eclipse
 				}
 			}
 
+
+			/// <summary>
+			/// invokes all Event Listeners asynchronously.
+			/// </summary>
 			std::future<void> InvokeAsync(TArgs... args)
 			{
 				return std::async(std::launch::async, [this](TArgs... asyncParams)
-					{Invoke(asyncParams); }, args...);
+					{Invoke(asyncParams...); }, args...);
 			}
-
+			
+			/*
+			
+				OPERATOR OVERLOADS.
+			
+			*/
 			void operator()(TArgs ... args)
 			{
 				Invoke(args...);

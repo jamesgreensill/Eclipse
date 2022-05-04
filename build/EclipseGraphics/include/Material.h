@@ -1,13 +1,9 @@
 #pragma once
-#include <vector>
+#include <glm/glm.hpp>
+#include <EclipseEngine/include/EngineMacros.h>
 
 #include "ShaderProgram.h"
-#include "glm/glm.hpp"
-
-#include "assimp/texture.h"
 #include "Texture.h"
-
-#include <EclipseEngine/include/EngineMacros.h>
 
 namespace Eclipse
 {
@@ -29,6 +25,10 @@ namespace Eclipse
 		struct Material
 		{
 			auto Bind() const ->void;
+
+			/*
+				Getter & Setter Wrappers.
+			*/
 
 			GET(AmbientColor, return ambientColor;);
 			SET(AmbientColor, glm::vec4, ambientColor = value; );

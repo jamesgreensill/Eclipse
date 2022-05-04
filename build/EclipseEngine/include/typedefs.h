@@ -29,5 +29,4 @@ namespace Eclipse
 		}ResourceKey;
 #define INVALID_RESOURCE_KEY Eclipse::Engine::ResourceKey({typeid(this), INVALID_RESOURCE})
 	}
-
 }

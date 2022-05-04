@@ -11,6 +11,7 @@ namespace Eclipse
 		class Application;
 		class System;
 
+		// DEPRECATED
 		class SystemManager
 		{
 			friend class Engine;

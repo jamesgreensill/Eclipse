@@ -12,8 +12,17 @@ namespace Eclipse
 			public Engine::EngineModule
 		{
 		public:
+
+			/// <summary>
+			///	This event will be called when OpenGL has successfully been initialized.
+			/// </summary>
 			static Engine::EclipseEvent<> OnOpenGLLoad;
 
+			/*
+
+				Base class overrides.
+			
+			*/
 			void EngineInit() override;
 			void PostEngineInit() override;
 			void Created() override;

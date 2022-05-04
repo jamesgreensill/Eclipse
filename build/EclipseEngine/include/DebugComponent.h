@@ -1,6 +1,10 @@
 #pragma once
 #include "Component.h"
 
+/*
+	DEPRECATED
+*/
+
 namespace Eclipse
 {
 	namespace Components

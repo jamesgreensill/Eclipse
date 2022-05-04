@@ -1,5 +1,7 @@
 #pragma once
 
+// DEPRECATED
+
 namespace Eclipse
 {
 	namespace Gui

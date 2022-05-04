@@ -6,12 +6,18 @@ namespace Eclipse
 	class Object;
 
 	namespace Components {
+		
 		/*
 		 *
 		 *	Forward declarations
 		 *
 		 */
 
+		/// <summary>
+		/// Component Class.
+		/// The Component class is the base class for all behaviours.
+		/// It allows for easy object creation and composition and follows the ECS paradigm
+		/// </summary>
 		class Component : public Engine::BaseModel
 		{
 			/**

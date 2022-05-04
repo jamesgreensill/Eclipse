@@ -21,6 +21,8 @@ namespace Eclipse
 		 */
 
 	public:
+		/// <summary>
+		/// Cusotm ECS container following a modified ECS pattern.
 		EntityContainer<Components::Component> m_ComponentContainer = EntityContainer<Components::Component>
 			(
 				[&](Components::Component* component)
@@ -36,6 +38,9 @@ namespace Eclipse
 
 		Components::Transform* transform;
 
+		/*
+			Same comments as base. Re-Commenting would be boilerplate.
+		*/
 		void Update() override;
 		void LateUpdate() override;
 		void FixedUpdate() override;
