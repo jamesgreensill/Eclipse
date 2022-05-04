@@ -1,4 +1,4 @@
-# Eclipse Engine
+# Eclipse
 Author - [@jwrmg](https://www.github.com/jwrmg) | [GitHub](https://www.github.com/jwrmg) | [Discord]() 
 * Started on 9th of March 2022
 * Last Update on 4th of May 2022  
