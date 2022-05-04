@@ -2,6 +2,7 @@
 
 #include "EclipseEngine/include/Object.h"
 #include "EclipseEngine/include/Transform.h"
+#include "EclipseEngine/include/EclipseTime.h"
 
 void ObjectRotator::Reset()
 {
