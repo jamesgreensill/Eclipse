@@ -98,6 +98,8 @@ namespace Eclipse
 				//Debug::Log("Setting to the current context.");
 				glfwMakeContextCurrent(Data::CORE.Window.currentContext);
 
+				glfwSwapInterval(0);
+
 
 				/*
 					TODO: Merge GUI calls to EclipseGUI.

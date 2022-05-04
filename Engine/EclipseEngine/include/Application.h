@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Engine.h"
 #include "EclipseEvent.h"
+#include "EclipseFunction.h"
 
 namespace Eclipse {
 	namespace Engine
@@ -25,29 +26,28 @@ namespace Eclipse {
 		class Application
 		{
 		public:
-		// Singleton Reference to application.
+			// Singleton Reference to application.
 			static Application* Instance;
+
+			EclipseFunction<Application, void> fp;
 
 			Engine* m_Engine = nullptr;
 			ApplicationSettings settings;
 			bool m_shouldClose = false;
 
-		// Stops the application and Engine.
+			// Stops the application and Engine.
 			void Stop();
-		// Checks if the application should close.
+			// Checks if the application should close.
 			bool ShouldClose() const;
-		// Sets the application's refresh color.
+			// Sets the application's refresh color.
 			void SetBackgroundColor(Core::Data::ECC color);
 
-		/*
-			Run the Application and Engine.
-		*/
-			static void Run(SceneManagement::Scene* mainScene = nullptr);
+			/*
+				Run the Application and Engine.
+			*/
+			static void Run();
 
-		/*
-			Use variadic templates to load Engine Modules and External API's.
-		*/
-			template<typename... Args>
+			template<typename TApplication>
 			static Application* Create(ApplicationSettings settings)
 			{
 				if (Instance)
@@ -55,7 +55,7 @@ namespace Eclipse {
 					// debug instance already defined.
 					return Instance;
 				}
-				Instance = new Application();
+				Instance = static_cast<Application*>(new TApplication());
 
 				if (!Instance)
 				{
@@ -63,11 +63,25 @@ namespace Eclipse {
 					return nullptr;
 				}
 
-				Instance->settings = settings;
-
-				CompositeCall(TypeList<Args...>(), *Instance);
 				return Instance;
 			}
+
+			/*
+				Use variadic templates to load Engine Modules and External API's.
+			*/
+			template<typename... Args>
+			static void Initialize(Application* application)
+			{
+				if (application)
+					CompositeCall(TypeList<Args...>(), *application);
+			}
+
+			virtual void OnCreated();
+			virtual void OnBoot();
+			virtual void OnEngineInit();
+			virtual void OnAwake();
+			virtual void OnDisposed();
+
 			Application();
 			~Application();
 		private:

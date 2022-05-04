@@ -77,7 +77,7 @@
 #   define ASSERT(Expr, Msg) \
     Assert(#Expr, Expr, __FILE__, __LINE__, #Msg)
 #else
-#   define M_Assert(Expr, Msg) ;
+#   define ASSERT(Expr, Msg)
 #endif
 
 inline void Assert(const char* expr_str, bool expr, const char* file, int line, const char* msg)
@@ -97,4 +97,5 @@ inline void Assert(const char* expr_str, bool expr, const char* file, int line, 
 #define GET(name, customCall) inline auto Get##name() const { customCall }
 // Custom Setter Macro inspired by C#.
 #define SET(name, type, customCall) inline void Set##name(const type##& value) { customCall }
+#define SET_POINTER(name, type, customCall) inline void Set##name(type##* value) { customCall }
 

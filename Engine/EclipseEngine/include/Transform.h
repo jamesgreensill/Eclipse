@@ -1,8 +1,6 @@
 #pragma once
 
 #include <vector>
-//#include <EclipseEngine/include/Component.h>
-
 #include <glm/vec4.hpp>
 #include <glm/vec3.hpp>
 #include <glm/gtx/quaternion.hpp>

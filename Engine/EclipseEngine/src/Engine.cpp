@@ -11,7 +11,7 @@ namespace Eclipse
 	{
 		std::unordered_map<std::string, bool> Engine::EngineConditions = {};
 
-		void Engine::Run(SceneManagement::Scene* mainScene)
+		void Engine::Run()
 		{
 			Created();
 			Boot();
@@ -19,22 +19,6 @@ namespace Eclipse
 			PreEngineInit();
 			EngineInit();
 			PostEngineInit();
-
-			/*
-			 *
-			 *	If there is a valid scene. Then load it.
-			 *
-			 */
-			if (mainScene)
-			{
-				SceneManagement::SceneManager::Instance->AddScene(mainScene);
-			}
-			else
-			{
-				SceneManagement::SceneManager::Instance->AddScene(new SceneManagement::Scene());
-			}
-			SceneManagement::SceneManager::Instance->Load(0);
-
 			Awake();
 			Start();
 			LateStart();
@@ -64,7 +48,11 @@ namespace Eclipse
 
 		void Engine::EngineInit()
 		{
-			FFMCP(EngineInit, m_ModuleContainer.m_Components)
+			for(const auto& item : (m_ModuleContainer.m_Components))
+			{
+				item.second->EngineInit();
+			}
+				Application::Instance->OnEngineInit();
 		}
 
 		void Engine::PostEngineInit()
@@ -135,15 +123,18 @@ namespace Eclipse
 				m_Core = coreModule;
 			}
 			FFMCP(Boot, m_ModuleContainer.m_Components)
+				Application::Instance->OnBoot();
 		}
 
 		void Engine::Created()
 		{
+			Application::Instance->OnCreated();
 		}
 
 		void Engine::Awake()
 		{
 			FFMCP(Awake, m_ModuleContainer.m_Components)
+				Application::Instance->OnAwake();
 		}
 
 		void Engine::Start()
@@ -179,6 +170,7 @@ namespace Eclipse
 		void Engine::Dispose()
 		{
 			FFMCP(Dispose, m_ModuleContainer.m_Components)
+				Application::Instance->OnDisposed();
 		}
 
 		void Engine::Deleted()
@@ -189,7 +181,7 @@ namespace Eclipse
 		{
 			// iterate over map to get condition.
 			const auto it = EngineConditions.find(name);
-			if(it != EngineConditions.end())
+			if (it != EngineConditions.end())
 			{
 				return it->second;
 			}

@@ -23,7 +23,7 @@ namespace Eclipse
 					[](EngineModule* engineModule) {engineModule->Deleted(); }
 			);
 
-			void Run(SceneManagement::Scene* mainScene = nullptr);
+			void Run();
 			
 			/// <summary>
 			/// This function is called when the engine is created.

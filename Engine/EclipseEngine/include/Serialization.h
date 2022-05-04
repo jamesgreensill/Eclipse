@@ -21,7 +21,7 @@ namespace Eclipse
 			/// <summary>
 			/// Saves an std::vector<char> to a file.
 			/// </summary>
-			static auto SaveData(const std::string& name, const std::vector<char>& data) -> void;
+			static auto SaveData(const std::string& name, const std::vector<char*>& data) -> void;
 		};
 	}
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include "BaseModel.h"
+#include "ESingle.h"
+
 namespace Eclipse
 {
 	namespace Engine

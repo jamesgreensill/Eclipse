@@ -97,9 +97,9 @@ namespace Eclipse
 			std::future<void> InvokeAsync(TArgs... args)
 			{
 				return std::async(std::launch::async, [this](TArgs... asyncParams)
-					{Invoke(asyncParams); }, args...);
+					{Invoke(asyncParams...); }, args...);
 			}
-
+			
 			/*
 			
 				OPERATOR OVERLOADS.

@@ -8,11 +8,10 @@ namespace Eclipse
 	{
 		Application* Application::Instance = nullptr;
 
-
-		auto Application::Run(SceneManagement::Scene* mainScene) -> void
+		auto Application::Run() -> void
 		{
 			if (Instance->m_Engine)
-				Instance->m_Engine->Run(mainScene);
+				Instance->m_Engine->Run();
 			else
 			{
 				// TODO: Debug: Failed To Run Engine.
@@ -47,5 +46,11 @@ namespace Eclipse
 		{
 			delete m_Engine;
 		}
+
+		void Application::OnCreated(){}
+		void Application::OnDisposed(){}
+		void Application::OnBoot(){}
+		void Application::OnEngineInit(){}
+		void Application::OnAwake(){}
 	}
 }

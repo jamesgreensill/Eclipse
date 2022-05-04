@@ -31,7 +31,10 @@ namespace Eclipse
 
 		void EngineModule::Awake()
 		{
-			FFMCP(Awake, m_SystemsContainer.m_Components)
+			for(const auto& item : (m_SystemsContainer.m_Components))
+			{
+				item.second->Awake();
+			}
 				OnAwake();
 		}
 

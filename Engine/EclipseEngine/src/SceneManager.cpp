@@ -16,16 +16,9 @@ namespace Eclipse
 			{
 				if (scene)
 				{
-					if (!activeScene)
-					{
-						activeScene = scene;
-						activeScene->Awake();
-						activeScene->Start();
-					}
-					else
-					{
-						nextScene = scene;
-					}
+					activeScene = scene;
+					activeScene->Awake();
+					activeScene->Start();
 				}
 				else
 				{
@@ -206,6 +199,8 @@ namespace Eclipse
 			{
 				if (!Instance)
 					Instance = this;
+				if (!Instance->activeScene)
+					Instance->activeScene = new Scene();
 			}
 
 			void SceneManager::Deleted()

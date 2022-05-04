@@ -111,6 +111,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -138,6 +139,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -165,6 +167,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -192,6 +195,7 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)vendors\</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -211,6 +215,9 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\ESingle.h" />
+    <ClInclude Include="include\EclipseTime.h" />
+    <ClInclude Include="include\EclipseFunction.h" />
     <ClInclude Include="include\EclipseEvent.h" />
     <ClInclude Include="include\AssetLoader.h" />
     <ClInclude Include="include\ApiLoader.h" />
@@ -244,8 +251,13 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
     <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\typedefs.h" />
     <ClInclude Include="include\Resource.h" />
+    <ClInclude Include="include\TimeModule.h" />
+    <ClInclude Include="include\TimeSystem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ESingle.cpp" />
+    <ClCompile Include="src\EclipseTime.cpp" />
+    <ClCompile Include="src\EclipseFunction.cpp" />
     <ClCompile Include="src\EclipseEvent.cpp" />
     <ClCompile Include="src\AssetLoader.cpp" />
     <ClCompile Include="src\Resource.cpp" />
@@ -282,6 +294,8 @@ copy /Y "$(ProjectDir)include\" "$(SolutionDir)build\$(ProjectName)\include\"</C
     <ClCompile Include="src\SystemManager.cpp" />
     <ClCompile Include="src\Transform.cpp" />
     <ClCompile Include="src\WindowModule.cpp" />
+    <ClCompile Include="src\TimeModule.cpp" />
+    <ClCompile Include="src\TimeSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

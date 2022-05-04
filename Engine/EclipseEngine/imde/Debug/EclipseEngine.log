@@ -9,10 +9,13 @@
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\CoreModule.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\DebugComponent.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EclipseEvent.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EclipseFunction.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EclipseTime.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Engine.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EngineMacros.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EngineModule.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\EntityContainer.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\ESingle.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\framework.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\glad.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\GuiModel.h
@@ -28,28 +31,40 @@
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Serialization.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\System.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\SystemManager.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\TimeModule.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\TimeSystem.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\Transform.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\typedefs.h
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\WindowModule.h
-         33 file(s) copied.
-  Application.cpp
+         38 file(s) copied.
+  ESingle.cpp
   AssetLoader.cpp
-  CameraController.cpp
-  Core.cpp
-  CoreModule.cpp
-  DebugComponent.cpp
-  Engine.cpp
-  EngineModule.cpp
-  Object.cpp
   ResourceManager.cpp
+  CoreModule.cpp
+  EntityContainer.cpp
+  EngineModule.cpp
+  Application.cpp
+  CameraController.cpp
+  DebugComponent.cpp
+  Core.cpp
+  Engine.cpp
+  Object.cpp
+  ObjectFactory.cpp
+  ObjectRotator.cpp
   Resources.cpp
   Scene.cpp
   SceneManager.cpp
-D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\SceneManager.cpp(145,32): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\SceneManager.cpp(138,32): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
   Serialization.cpp
-D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\Serialization.cpp(27,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\src\Serialization.cpp(32,54): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  System.cpp
+  SystemManager.cpp
+  Generating Code...
+  Compiling...
   Transform.cpp
   WindowModule.cpp
+  TimeModule.cpp
+  TimeSystem.cpp
   Generating Code...
   EclipseEngine.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\build\Debug\EclipseEngine.lib
   D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\build\Debug\\EclipseEngine.idb
