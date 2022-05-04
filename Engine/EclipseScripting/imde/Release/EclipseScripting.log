@@ -1,11 +1,9 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  EclipseScripting.cpp
-  pch.cpp
-  EclipseScripting.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseScripting\build\Release\EclipseScripting.lib
-  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseScripting\build\Release\\EclipseScripting.lib
-  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseScripting\build\Release\\EclipseScripting.pdb
+﻿  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseScripting\include\framework.h
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseScripting\include\pch.h
           2 file(s) copied.
-  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseScripting\include\framework.h
-  D:\dev\C++\ComplexGameSystems\Eclipse\projects\EclipseScripting\include\pch.h
+  pch.cpp
+  EclipseScripting.cpp
+  EclipseScripting.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseScripting\build\Release\EclipseScripting.lib
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseScripting\build\Release\\EclipseScripting.lib
+  D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseScripting\build\Release\\EclipseScripting.pdb
           2 file(s) copied.
