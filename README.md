@@ -81,12 +81,12 @@ To create an Application using Eclipse you will need add a list of modules to th
 ```cpp
 int main()
 {
-	// Create an instance of DemoApplication with the specified settings.
-    Application::Create<DemoApplication>(settings);
-    // Use a variadic function to add a list of module types.
-    Application::Initialize<Debug::DebugModule, Graphics::GraphicsModule, Gui::GuiModule>(Application::Instance);
-    // Run the Application.
-    Application::Run();
+    	// Create an instance of DemoApplication with the specified settings.
+    	Application::Create<DemoApplication>(settings);
+    	// Use a variadic function to add a list of module types.
+    	Application::Initialize<Debug::DebugModule, Graphics::GraphicsModule, Gui::GuiModule>(Application::Instance);
+    	// Run the Application.
+    	Application::Run();
 }
   ```
 Native Modules
