@@ -1,8 +1,8 @@
 #include "EclipseClient.h"
 
 #include <iostream>
-#include <raknet/MessageIdentifiers.h>
-#include <raknet/RakString.h>
+#include <MessageIdentifiers.h>
+#include <RakString.h>
 
 namespace Eclipse
 {

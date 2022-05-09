@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
-#include <raknet/RakNetTypes.h>
-#include <raknet/BitStream.h>
-#include <raknet/RakPeerInterface.h>
-#include <raknet/PacketPriority.h>
-#include <raknet/ReliabilityLayer.h>
+#include <RakNetTypes.h>
+#include <BitStream.h>
+#include <RakPeerInterface.h>
+#include <PacketPriority.h>
+#include <ReliabilityLayer.h>
 
 #include "EclipseEngine/include/EngineMacros.h"
 

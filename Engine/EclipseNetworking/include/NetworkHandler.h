@@ -2,7 +2,7 @@
 
 #include <functional>
 #include <unordered_map>
-#include <raknet/MessageIdentifiers.h>
+#include <MessageIdentifiers.h>
 #include <EclipseEngine/include/EclipseEvent.h>
 #include "EclipsePacket.h"
 

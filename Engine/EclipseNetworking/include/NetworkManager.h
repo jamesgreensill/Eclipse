@@ -1,7 +1,7 @@
 #pragma once
 #include <EclipseEngine/include/Component.h>
 #include <EclipseEngine/include/EclipseEvent.h>
-#include <raknet/RakPeerInterface.h>
+#include <RakPeerInterface.h>
 
 #include "NetworkHandler.h"
 

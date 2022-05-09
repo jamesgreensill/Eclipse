@@ -34,7 +34,7 @@ namespace Eclipse
 			Transform* transform = object->transform;
 			const std::string prefix = "lights[" + std::to_string(index) + "].";
 
-			External::Debug::DebugAPI::Debug("Binding Light");
+			// External::Debug::DebugAPI::Debug("Binding Light");
 
 			shader->BindUniform(prefix + uniLightDirection, transform->GetForward());
 			shader->BindUniform(prefix + uniLightPosition, transform->GetGlobalPosition());

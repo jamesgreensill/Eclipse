@@ -1,7 +1,7 @@
 #pragma once
 #include <queue>
 #include <EclipseEngine/include/System.h>
-#include <raknet/RakPeerInterface.h>
+#include <RakPeerInterface.h>
 #include "EclipsePacket.h"
 
 namespace Eclipse

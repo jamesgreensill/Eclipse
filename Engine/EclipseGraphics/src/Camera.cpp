@@ -1,9 +1,9 @@
 #include "Camera.h"
 #include <glm/ext/matrix_transform.hpp>
 
-#include "ShaderProgram.h"
+#include "../include/ShaderProgram.h"
 
-#include <EclipseEngine/include/Scene.h>
+// #include <Eclipse/include/Scene.h>
 #include <EclipseEngine/include/SceneManager.h>
 #include <EclipseEngine/include/Core.h>
 #include <EclipseEngine/include/Transform.h>

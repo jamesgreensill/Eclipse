@@ -1,5 +1,5 @@
 #include <pch.h>
-#include <EclipseEngine/include/Core.h>
+#include <EclipseDebugging/include/Core.h>
 
 #include "ImGuiCall.h"
 #include "ImType.h"
@@ -14,7 +14,8 @@ namespace Eclipse
 			{
 				if (!element)
 				{
-					Core::Debug::Error("Element not defined - ImGuiBuffer.");
+					Debug::Error("Element not defined - ImGuiBuffer.");
+					
 					return;
 				}
 

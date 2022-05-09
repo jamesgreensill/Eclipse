@@ -1,7 +1,7 @@
 #include "EclipseServer.h"
 
-#include <raknet/BitStream.h>
-#include <raknet/MessageIdentifiers.h>
+#include <BitStream.h>
+#include <MessageIdentifiers.h>
 #include <iostream>
 #include <EclipseEngine/include/EclipseTime.h>
 

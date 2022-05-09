@@ -1,4 +1,0 @@
-﻿  NetworkServerApplication.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-D:\dev\C++\ComplexGameSystems\Eclipse\Engine\EclipseEngine\include\glad.h(32): message : see previous definition of 'APIENTRY'
-  NetworkServer.vcxproj -> D:\dev\C++\ComplexGameSystems\Eclipse\projects\NetworkServer\build\Debug\NetworkServer.exe

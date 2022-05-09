@@ -1,0 +1,1 @@
+CreateProject("Eclipse Editor")

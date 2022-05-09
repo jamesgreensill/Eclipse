@@ -1,0 +1,1 @@
+CreateProject("Test Application")

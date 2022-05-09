@@ -1,0 +1,22 @@
+[submodule "Vendors/glm"]
+	path = Vendors/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "Vendors/glfw"]
+	path = Vendors/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "Vendors/stb"]
+	path = Vendors/stb
+	url = https://github.com/nothings/stb.git
+[submodule "Vendors/imgui"]
+	path = Vendors/imgui
+	url = https://github.com/ocornut/imgui.git
+	branch = docking
+[submodule "Vendors/assimp"]
+	path = Vendors/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "Vendors/termcolor"]
+	path = Vendors/termcolor
+	url = https://github.com/ikalnytskyi/termcolor.git
+[submodule "Vendors/raknet"]
+	path = Vendors/raknet
+	url = https://github.com/facebookarchive/RakNet.git

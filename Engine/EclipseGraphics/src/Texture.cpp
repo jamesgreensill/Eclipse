@@ -1,7 +1,7 @@
 #include "Texture.h"
 
 #include <glad/glad.h>
-#include <stb/stb_image.h>
+#include <stb_image.h>
 
 #include "GraphicsModule.h"
 #include "EclipseEngine/include/Engine.h"

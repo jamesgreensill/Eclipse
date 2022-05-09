@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <glm/fwd.hpp>
-#include <imgui/imgui.h>
+#include <imgui.h>
 
 #include <EclipseEngine/include/Object.h>
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <EclipseEngine/include/Component.h>
-#include <raknet/RakPeerInterface.h>
+#include <RakPeerInterface.h>
 
 #include "ServerHandler.h"
 
