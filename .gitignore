@@ -29,3 +29,5 @@ Build/**
 *.la
 *.a
 *.lib
+
+submit.bat
