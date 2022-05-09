@@ -20,3 +20,21 @@
 [submodule "Vendors/raknet"]
 	path = Vendors/raknet
 	url = https://github.com/facebookarchive/RakNet.git
+[submodule "Engine/EclipseNetworking"]
+	path = Engine/EclipseNetworking
+	url = https://github.com/jwrmg/EclipseNetworking
+[submodule "Engine/EclipseDebugging"]
+	path = Engine/EclipseDebugging
+	url = https://github.com/jwrmg/EclipseDebugging
+[submodule "Engine/EclipseScripting"]
+	path = Engine/EclipseScripting
+	url = https://github.com/jwrmg/EclipseScripting
+[submodule "Engine/EclipseGui"]
+	path = Engine/EclipseGui
+	url = https://github.com/jwrmg/EclipseGui
+[submodule "Engine/EclipseChat"]
+	path = Engine/EclipseChat
+	url = https://github.com/jwrmg/EclipseChat
+[submodule "Engine/EclipseGraphics"]
+	path = Engine/EclipseGraphics
+	url = https://github.com/jwrmg/EclipseGraphics
