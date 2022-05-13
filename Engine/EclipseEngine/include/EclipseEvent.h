@@ -127,7 +127,7 @@ namespace Eclipse
 		private:
 			std::vector<EventHandle> EventListeners = std::vector<EventHandle>();
 			std::unordered_map<std::string, EventHandle> namedEventHandles = std::unordered_map<std::string, EventHandle>();
-			mutable std::mutex m_eventLock;
+			mutable std::mutex m_eventLock = {};
 
 			EventHandle AddCallback(EventAction& callback)
 			{
