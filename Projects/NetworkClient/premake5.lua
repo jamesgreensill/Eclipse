@@ -5,6 +5,7 @@ CreateProject(
         "EclipseDebugging",
         "EclipseGraphics",
         "EclipseNetworking",
+        "EclipseChat",
         "assimp",
         "glfw",
         "raknet",
