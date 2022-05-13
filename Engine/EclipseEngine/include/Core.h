@@ -10,7 +10,7 @@
  *	TODO: Move relevant vendors to EclipseGraphics.
  *
  */
-#include "glad.h"
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
@@ -470,12 +470,6 @@ namespace Eclipse {
 
 #pragma endregion
 	}
-
-	namespace Utilities
-	{
-		ECAPI auto GetTime()->std::string;
-	}
-
 	namespace External
 	{
 		/*

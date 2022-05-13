@@ -1,4 +1,7 @@
 #pragma once
+#include <ctime>
+#include <string>
+
 namespace Eclipse
 {
 	namespace Engine
@@ -15,6 +18,12 @@ namespace Eclipse
 
 			static void Init();
 			static void Tick();
+
+			static std::string GetTimeAsString();
+			static time_t GetTime();
+			static tm TimeDataFromTime(time_t);
+			static std::string StringFromTime(tm);
+
 		};
 	}
 }

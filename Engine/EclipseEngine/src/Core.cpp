@@ -691,32 +691,6 @@ namespace Eclipse
 				return "";
 			}
 		}
-
-		namespace Debug
-		{
-		}
-
-		namespace Utilities
-		{
-			std::string GetTime()
-			{
-				// I C U
-				// why did i comment ICU - 3/7/2022 - james.
-				// I still have no clue why i wrote I C U - 3/17/2022 - james.
-				// Still have 0 recollection of why i commented I C U - 3/23/2022 - james.
-				// ¯\_(ツ)_/¯
-				// ¯\_(ツ)_/¯
-				// ¯\_(ツ)_/¯
-				time_t now = time(nullptr);
-				tm timeStruct{};
-				char buffer[80];
-				localtime_s(&timeStruct, &now);
-
-				strftime(buffer, sizeof(buffer), "%Y-%m-%d.%X", &timeStruct);
-
-				return buffer;
-			}
-		}
 	}
 	namespace External
 	{

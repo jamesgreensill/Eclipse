@@ -38,5 +38,31 @@ namespace Eclipse
 
 			LastTime = CurrentTime;
 		}
+
+		std::string EclipseTime::GetTimeAsString()
+		{
+			time_t time = GetTime();
+			tm timeStruct = TimeDataFromTime(time);
+			return StringFromTime(timeStruct);
+		}
+
+		time_t EclipseTime::GetTime()
+		{
+			return time(nullptr);
+		}
+
+		tm EclipseTime::TimeDataFromTime(time_t time)
+		{
+			tm timeStruct{};
+			localtime_s(&timeStruct, &time);
+			return timeStruct;
+		}
+
+		std::string EclipseTime::StringFromTime(tm time)
+		{
+			char buffer[80];
+			strftime(buffer, sizeof(buffer), "%Y-%m-%d.%X", &time);
+			return buffer;
+		}
 	}
 }
