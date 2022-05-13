@@ -56,7 +56,7 @@ workspace "Eclipse"
     filter "configurations:Release"
         defines {"NDEBUG"}
     filter {}
-    
+
     include "vendors.lua"
     IncludeDir["EclipseEngine"] = "%{wks.location}/../Engine/"
 
