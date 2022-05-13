@@ -4,6 +4,11 @@
 #include <EclipseEngine/include/ObjectFactory.h>
 #include <EclipseNetworking/include/NetworkClient.h>
 
+#include "EclipseChat/include/ConsoleChatWriter.h"
+#include "EclipseChat/include/NetworkChatInterface.h"
+
+#include "ChatSender.h"
+
 using namespace Eclipse;
 using namespace Engine;
 using namespace Networking;
@@ -22,7 +27,7 @@ void NetworkClientApplication::OnEngineInit()
 {
 	// create object
 	const auto clientObject = new Object();
-	ObjectFactory::CompositeObject<NetworkClient>(*clientObject);
+	ObjectFactory::CompositeObject<Eclipse::Application::ChatSender, NetworkClient, Chat::NetworkChatInterface, Chat::ChatManager, Chat::ConsoleChatWriter>(*clientObject);
 	// add to scene.
 	SceneManagement::SceneManager::Instance->GetActiveScene()->AddObject(clientObject);
 
