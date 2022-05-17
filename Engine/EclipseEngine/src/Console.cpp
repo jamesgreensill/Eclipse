@@ -17,6 +17,11 @@ namespace Eclipse
 			std::cout << message.str() << std::endl;
 		}
 
+		void Console::WriteLine(const std::string& message)
+		{
+			std::cout << message << std::endl;
+		}
+
 		void Console::Write(const std::string& message)
 		{
 			std::cout << message;
@@ -25,6 +30,11 @@ namespace Eclipse
 		void Console::ResetColor()
 		{
 			// deprecated.
+		}
+
+		HWND Console::GetHandle()
+		{
+			return GetConsoleWindow();
 		}
 
 		int Console::Read()
@@ -47,7 +57,7 @@ namespace Eclipse
 		void Console::ConsoleBeep()
 		{
 			Console::ConsoleBeep(420, 1000);
-		}
+	}
 
 		/**
 		 * \brief Beeps the console at a specific frequency for a specific duration.
@@ -62,5 +72,5 @@ namespace Eclipse
 			system("echo -e "\007" >/dev/tty19");
 #endif
 		}
-	}
+}
 }
