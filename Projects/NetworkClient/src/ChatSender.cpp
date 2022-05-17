@@ -16,14 +16,22 @@ namespace Eclipse
 			netInterface = object->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
 		}
 
-		void ChatSender::ThreadedCin(std::atomic<bool>& run)
+		void ChatSender::ThreadedCin()
 		{
-			
+			while(true)
+			{
+				netInterface->Send(Engine::Console::ReadLine());
+			}
+		}
+
+		void ChatSender::Awake()
+		{
+			_fetchCaches();
+			inputThread = std::thread([this] {this->ThreadedCin(); });
 		}
 
 		void ChatSender::Update()
-		{
-		}
+		{}
 
 		void ChatSender::Reset()
 		{
@@ -31,12 +39,10 @@ namespace Eclipse
 
 		void ChatSender::Start()
 		{
-			_fetchCaches();
 		}
 
 		void ChatSender::Dispose()
 		{
-			
 		}
 	}
 }

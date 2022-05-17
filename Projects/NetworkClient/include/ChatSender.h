@@ -12,12 +12,13 @@ namespace Eclipse
 		private:
 			Chat::NetworkChatInterface* netInterface = nullptr;
 			void _fetchCaches();
+			void ThreadedCin();
 
-			void ThreadedCin(std::atomic<bool>& run);
+			std::thread inputThread;
 
-			std::atomic<bool> Run;
 
 		protected:
+			void Awake() override;
 			void Update() override;
 			void Reset() override;
 			void Start() override;
