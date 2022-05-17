@@ -32,7 +32,7 @@ void NetworkServerApplication::OnEngineInit()
 
 	auto chatInterface = serverObject->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
 
-	server->handler.OnPacketReceived.emplace((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<EclipsePacket&>);
+	server->handler.OnPacketReceived.AddEvent((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<EclipsePacket&>);
 	//server->handler.GetReceivedHandle(TEST)->AddListener([](auto packet)
 	//	{
 	//		External::Debug::DebugAPI::Debug("Packet Received!");

@@ -8,6 +8,7 @@
 #include "EclipseChat/include/NetworkChatInterface.h"
 
 #include "ChatSender.h"
+#include "EclipseNetworking/include/NetworkIdentifiers.h"
 
 using namespace Eclipse;
 using namespace Engine;
@@ -30,9 +31,16 @@ void NetworkClientApplication::OnEngineInit()
 	ObjectFactory::CompositeObject<Eclipse::Application::ChatSender, NetworkClient, Chat::NetworkChatInterface, Chat::ChatManager, Chat::ConsoleChatWriter>(*clientObject);
 	// add to scene.
 	SceneManagement::SceneManager::Instance->GetActiveScene()->AddObject(clientObject);
+	const auto client = clientObject->m_ComponentContainer.GetComponent<NetworkClient>();
+
+	auto chatInterface = clientObject->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
+
+	client->handler.OnPacketReceived.AddEvent((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<EclipsePacket&>);
+
+	if (chatInterface)
+		chatInterface->StartInterface();
 
 	// get client component
-	const auto client = clientObject->m_ComponentContainer.GetComponent<NetworkClient>();
 	if (client)
 	{
 		client->networkPort = 5456;
