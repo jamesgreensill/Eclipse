@@ -50,7 +50,7 @@ void ApplicationDemo::OnEngineInit()
 	Eclipse::Engine::ObjectFactory::CompositeObject<Eclipse::Components::Camera>(*camera);
 
 
-	for (int i = 0; i < 2500; i++)
+	for (int i = 0; i < 250; i++)
 	{
 		auto dragon = new Eclipse::Object();
 		Eclipse::Engine::ObjectFactory::CompositeObject<Eclipse::Components::MeshRenderer, ObjectRotator>(*dragon);
