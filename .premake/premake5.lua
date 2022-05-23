@@ -43,7 +43,8 @@ OutDir = "../Build/"
 
 include "./Modules/Eclipse/EclipseProject.lua"
 include "./Modules/Eclipse/EclipseModule.lua"
-    
+include "./Modules/Eclipse/EclipseDemo.lua"
+
 workspace "Eclipse"
     location("../Build")
     architecture("x86_64")
@@ -63,6 +64,8 @@ workspace "Eclipse"
     -- Projects File (This will load all projects defined.)
     group "Projects"
         include "../Projects/Projects.lua"
+    group "Demos"
+        include "../Demos/Demos.lua"
     -- Modules File (This will load all modules defined.)
     group "Modules"
         include "../Engine/Modules.lua"
