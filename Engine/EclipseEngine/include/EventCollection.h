@@ -20,8 +20,8 @@ namespace Eclipse
 			// operator overloads
 			GenericEvent* operator[](TKey key);
 		private:
-			GenericEvent* _getEvent(TKey key);
 
+			GenericEvent* _getEvent(TKey key);
 			bool _addEvent(TKey key, GenericEvent* event);
 		};
 
@@ -46,6 +46,8 @@ namespace Eclipse
 		template <typename TKey, typename ... TArgs>
 		typename EventCollection<TKey, TArgs...>::GenericEvent* EventCollection<TKey, TArgs...>::_getEvent(TKey key)
 		{
+			if (!eventCollection[key])
+				_addEvent(key, new EclipseEvent<TArgs...>());
 			return eventCollection[key];
 		}
 

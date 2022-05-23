@@ -8,7 +8,7 @@ namespace Eclipse
 		{
 		public:
 
-		// Templated function to hot-load an API.
+			// Template function to hot-load an API.
 			template<typename T>
 			static void Load()
 			{

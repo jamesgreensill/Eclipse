@@ -1,11 +1,12 @@
 #pragma once
+#include "BaseModel.h"
 
 namespace Eclipse
 {
 	namespace Engine
 	{
 		template<typename T>
-		class ESingle
+		class EclipseSingleton
 		{
 		public:
 			static T& Instance()
@@ -14,11 +15,11 @@ namespace Eclipse
 				return Instance;
 			}
 
-			ESingle(const ESingle&) = delete;
-			ESingle operator= (const ESingle) = delete;
+			EclipseSingleton(const EclipseSingleton&) = delete;
+			EclipseSingleton operator= (const EclipseSingleton) = delete;
 		protected:
 			struct token {};
-			ESingle() {}
+			EclipseSingleton() {}
 		};
 	}
 }

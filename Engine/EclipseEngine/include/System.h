@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseModel.h"
-#include "ESingle.h"
+#include "EclipseSingleton.h"
 
 namespace Eclipse
 {
@@ -9,9 +9,9 @@ namespace Eclipse
 		class EngineModule;
 		class System :
 			public BaseModel {
-		public:
+        public:
 
-			/// <summary>
+            /// <summary>
 			/// Pointer to the module this system is linked too.
 			/// </summary>
 			EngineModule* engineModule = nullptr;

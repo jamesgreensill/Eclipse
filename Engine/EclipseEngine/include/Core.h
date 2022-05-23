@@ -18,6 +18,7 @@
 #include <functional>
 #include <iostream>
 #include <stdexcept>
+#include <typeindex>
 #include <vcruntime_typeinfo.h>
 
 #include "EngineMacros.h"
@@ -101,7 +102,6 @@ namespace Eclipse {
 
 		namespace Window
 		{
-			
 			/// <summary>
 			/// This function is required at the begining of a window frame.
 			/// </summary>
@@ -168,7 +168,7 @@ namespace Eclipse {
 			/// </summary>
 			ECAPI auto SetWindowState(unsigned int flags) -> void;
 			/// <summary>
-			/// This function is not implemented. 
+			/// This function is not implemented.
 			/// It will be used for state based windowing.
 			/// </summary>
 			ECAPI auto ClearWindowState(unsigned int flags) -> void;
@@ -443,7 +443,6 @@ namespace Eclipse {
 
 		namespace IO
 		{
-
 			/// <summary>
 			/// This function returns the current working directory.
 			/// </summary>
@@ -481,7 +480,7 @@ namespace Eclipse {
 			{
 			public:
 				static ECAPI std::function<void(int, int, unsigned int, unsigned int)> Viewport_Pointer;
-				static inline ECAPI void Viewport(int x, int y, unsigned int width, unsigned int height) { if (Viewport_Pointer) { Viewport_Pointer(x,y,width,height); } }
+				static inline ECAPI void Viewport(int x, int y, unsigned int width, unsigned int height) { if (Viewport_Pointer) { Viewport_Pointer(x, y, width, height); } }
 			};
 		}
 
@@ -510,6 +509,19 @@ namespace Eclipse {
 				{
 					if (Log_Pointer) { Log_Pointer(message); }
 					else std::cout << message << std::endl;
+				}
+			};
+		}
+		namespace Gui
+		{
+			class GuiAPI
+			{
+			public:
+				static ECAPI std::function<void(std::type_index, void*)> GuiCall_Pointer;
+				static ECAPI void GuiCall(std::type_index id, void* data)
+				{
+					if (GuiCall_Pointer) { GuiCall_Pointer(id, data); }
+					else Debug::DebugAPI::Error("GuiCall api call has not been loaded");
 				}
 			};
 		}
