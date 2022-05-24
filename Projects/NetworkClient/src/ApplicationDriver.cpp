@@ -1,5 +1,5 @@
 #include <EclipseDebugging/include/DebugModule.h>
-#include "NetworkClientApplication.h"
+#include "ApplicationDemo.h"
 
 
 using namespace Eclipse;
@@ -7,7 +7,7 @@ using namespace Engine;
 
 int main()
 {
-	Application::Create<NetworkClientApplication>({});
+	Application::Create<ApplicationDemo>({});
 	Application::Initialize<Eclipse::Debug::DebugModule>(Application::Instance);
 	Application::Run();
 }
