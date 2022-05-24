@@ -2,4 +2,5 @@
 
 void ApplicationDemo::OnEngineInit()
 {
+    /*void*/
 }
