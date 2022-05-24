@@ -1,9 +1,15 @@
 #pragma once
+
 #include <EclipseEngine/include/Application.h>
 
-class ApplicationDemo : public Eclipse::Engine::Application
+class ApplicationDemo :
+	public Eclipse::Engine::Application
 {
-protected:
+public:
+	void OnCreated() override;
+	void OnBoot() override;
 	void OnEngineInit() override;
+	void OnAwake() override;
+	void OnDisposed() override;
 };
 
