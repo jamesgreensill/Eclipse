@@ -1,13 +1,14 @@
-// Core Engine
-#include <EclipseEngine/include/Application.h>
-
+#include <EclipseDebugging/include/DebugModule.h>
 #include "ApplicationDemo.h"
+
+
+using namespace Eclipse;
+using namespace Engine;
 
 int main()
 {
-	Eclipse::Engine::Application::Create<ApplicationDemo>({});
-
-	Eclipse::Engine::Application::Initialize</*INSERT MODULES HERE*/>(Eclipse::Engine::Application::Instance);
-
-	Eclipse::Engine::Application::Run();
+	Application::Create<ApplicationDemo>({});
+	Application::Initialize<Eclipse::Debug::DebugModule>(Application::Instance);
+	Application::Run();
 }
+
