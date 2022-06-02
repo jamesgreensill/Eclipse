@@ -1,1 +1,0 @@
-CreateProject("Test Application")

@@ -8,6 +8,7 @@
 #include "EclipseChat/include/NetworkChatInterface.h"
 
 #include "ChatSender.h"
+#include "EclipseEngine/include/Console.h"
 #include "EclipseNetworking/include/NetworkIdentifiers.h"
 
 using namespace Eclipse;
@@ -26,6 +27,29 @@ void NetworkClientApplication::OnBoot()
 
 void NetworkClientApplication::OnEngineInit()
 {
+
+
+	Console::WriteLine("Enter the server IP.");
+	std::string ipString;
+	std::getline(std::cin, ipString);
+
+	Console::WriteLine("Enter port to start server.");
+	std::string portString;
+	std::getline(std::cin, portString);
+
+	short port;
+	try
+	{
+		port = static_cast<short>(std::stoi(portString));
+	}
+	catch (...)
+	{
+		External::Debug::DebugAPI::Error("Port input was invalid.");
+		// query the engine to stop.
+		Application::Stop();
+		return;
+	}
+
 	// create object
 	const auto clientObject = new Object();
 	ObjectFactory::CompositeObject<Eclipse::Application::ChatSender, NetworkClient, Chat::NetworkChatInterface, Chat::ChatManager, Chat::ConsoleChatWriter>(*clientObject);
@@ -43,8 +67,8 @@ void NetworkClientApplication::OnEngineInit()
 	// get client component
 	if (client)
 	{
-		client->networkPort = 5456;
-		client->networkAddress = "localhost";
+		client->networkPort = port;
+		client->networkAddress = ipString;
 		client->StartProcess();
 	}
 }

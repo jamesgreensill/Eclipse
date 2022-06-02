@@ -5,6 +5,7 @@
 #include <EclipseDebugging/include/DebugModule.h>
 #include <EclipseEngine/include/TimeModule.h>
 #include <EclipseEngine/include/Application.h>
+#include <EclipseNetworking/include/NetworkingModule.h>
 
 #include "NetworkServerApplication.h"
 
@@ -14,7 +15,7 @@ using namespace Engine;
 int main()
 {
     Application::Create<NetworkServerApplication>({});
-    Application::Initialize<Debug::DebugModule>(Application::Instance);
+    Application::Initialize<Debug::DebugModule, Networking::NetworkingModule>(Application::Instance);
     Application::Run();
 }
 
