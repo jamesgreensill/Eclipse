@@ -32,3 +32,4 @@ Docs/.obsidian/**
 *.lib
 
 submit.bat
+Engine/update_submodules.bat
