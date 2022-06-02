@@ -99,3 +99,5 @@ inline void Assert(const char* expr_str, bool expr, const char* file, int line, 
 #define SET(name, type, customCall) inline void Set##name(const type##& value) { customCall }
 #define SET_POINTER(name, type, customCall) inline void Set##name(type##* value) { customCall }
 
+#define INSTANCE_CHECK GetInstance(__FUNCTION__) 
+
