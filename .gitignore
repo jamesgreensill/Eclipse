@@ -1,6 +1,7 @@
 # Folders
 /.vs/
 Build/**
+Docs/.obsidian/**
 
 # Prerequisites
 *.d
