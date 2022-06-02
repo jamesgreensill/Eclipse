@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "termcolor/termcolor.hpp"
+
 #ifdef _WIN64
 #include <windows.h>
 #else
@@ -10,67 +12,69 @@
 
 namespace Eclipse
 {
-	namespace Engine
-	{
-		void Console::WriteLine(const std::stringstream& message)
-		{
-			std::cout << message.str() << std::endl;
-		}
+    namespace Engine
+    {
+        void Console::WriteLine(const std::string& message, ConsoleColor color)
+        {
+            ChangeColor(color);
+            std::cout << message << std::endl;
+        }
 
-		void Console::WriteLine(const std::string& message)
-		{
-			std::cout << message << std::endl;
-		}
+        void Console::Write(const std::string& message, ConsoleColor color)
+        {
+            ChangeColor(color);
+            std::cout << message;
+        }
 
-		void Console::Write(const std::string& message)
-		{
-			std::cout << message;
-		}
+        void Console::ResetColor()
+        {
+            // deprecated.
+        }
 
-		void Console::ResetColor()
-		{
-			// deprecated.
-		}
+        HANDLE Console::GetHandle()
+        {
+            return GetStdHandle(STD_OUTPUT_HANDLE);
+        }
 
-		HWND Console::GetHandle()
-		{
-			return GetConsoleWindow();
-		}
+        int Console::Read()
+        {
+            return std::cin.get();
+        }
 
-		int Console::Read()
-		{
-			return std::cin.get();
-		}
+        char Console::ReadKey()
+        {
+            return (char)std::cin.get();
+        }
 
-		char Console::ReadKey()
-		{
-			return (char)std::cin.get();
-		}
+        std::string Console::ReadLine()
+        {
+            std::string line = {};
+            std::getline(std::cin, line);
+            return line;
+        }
 
-		std::string Console::ReadLine()
-		{
-			std::string line = {};
-			std::getline(std::cin, line);
-			return line;
-		}
+        void Console::ConsoleBeep()
+        {
+            Console::ConsoleBeep(420, 1000);
+        }
 
-		void Console::ConsoleBeep()
-		{
-			Console::ConsoleBeep(420, 1000);
-	}
-
-		/**
-		 * \brief Beeps the console at a specific frequency for a specific duration.
-		 * \param frequency Not supported on Unix & Linux based OS.
-		 * \param duration Not supported on Unix & Linux based OS.
-		 */
-		void Console::ConsoleBeep(int32_t frequency, int32_t duration)
-		{
+        /**
+         * \brief Beeps the console at a specific frequency for a specific duration.
+         * \param frequency Not supported on Unix & Linux based OS.
+         * \param duration Not supported on Unix & Linux based OS.
+         */
+        void Console::ConsoleBeep(int32_t frequency, int32_t duration)
+        {
 #ifdef _WIN64
-			Beep(frequency, duration);
+            Beep(frequency, duration);
 #elif __linux__
-			system("echo -e "\007" >/dev/tty19");
+            system("echo -e "\007" >/dev/tty19");
 #endif
-		}
-}
+        }
+
+        void Console::ChangeColor(ConsoleColor color)
+        {
+            SetConsoleTextAttribute(GetHandle(), (WORD)color);
+        }
+    }
 }
