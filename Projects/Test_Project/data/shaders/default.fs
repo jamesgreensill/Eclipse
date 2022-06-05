@@ -70,19 +70,18 @@ vec4 calculateSpotLight(Light light){
 }
 
 void main(){
-    vec4 output = vec4(0);
+    vec4 lightingData = vec4(0);
     for(int i = 0; i < min(lightCount, MaxLights); i++)
     {
         if(lights[i].lightType == LIGHT_DIRECTIONAL){
-            output += calculateDirectionalLight(lights[i]);
+            lightingData += calculateDirectionalLight(lights[i]);
         }
         else if(lights[i].lightType == LIGHT_POINT){
-            output += calculatePointLight(lights[i]);
+            lightingData += calculatePointLight(lights[i]);
         }
         else if(lights[i].lightType == LIGHT_SPOT){
-            output += calculateSpotLight(lights[i]);
+            lightingData += calculateSpotLight(lights[i]);
         }
     }
-    //FragColour = vec4(1,0,0,1);
-    FragColour = output * texture(materialAlbedoTexture, TexCoords);
+    FragColour = lightingData * texture(materialAlbedoTexture, TexCoords);
 }
