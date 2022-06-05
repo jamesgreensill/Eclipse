@@ -6,7 +6,6 @@
 #include "EclipseEngine/include/Object.h"
 #include "EclipseEngine/include/ObjectFactory.h"
 
-#include "EclipseNetworking/include/EclipseServer.h"
 #include "EclipseNetworking/include/NetworkIdentifiers.h"
 #include "EclipseNetworking/include/NetworkServer.h"
 
@@ -32,7 +31,7 @@ void NetworkServerApplication::OnEngineInit()
 
     auto chatInterface = serverObject->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
 
-    server->handler.OnPacketReceived.AddEvent(static_cast<unsigned>(EID_MESSAGE), new EclipseEvent<EclipsePacket&>);
+    server->handler.OnPacketReceived.AddEvent(static_cast<unsigned>(EID_MESSAGE), new EclipseEvent<NetworkPacket&>);
 
     Console::WriteLine("Enter port to start server.");
     std::string portString;

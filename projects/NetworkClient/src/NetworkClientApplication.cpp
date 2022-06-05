@@ -59,7 +59,7 @@ void NetworkClientApplication::OnEngineInit()
 
 	auto chatInterface = clientObject->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
 
-	client->handler.OnPacketReceived.AddEvent((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<EclipsePacket&>);
+	client->handler.OnPacketReceived.AddEvent((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<NetworkPacket&>);
 
 	if (chatInterface)
 		chatInterface->StartInterface();
