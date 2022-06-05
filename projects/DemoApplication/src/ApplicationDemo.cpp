@@ -14,8 +14,6 @@
 #include <EclipseGraphics/include/Light.h>
 #include <EclipseGraphics/include/Model.h>
 
-#include "EclipseEngine/include/AssetLoader.h"
-
 #include <EclipseEngine/include/Transform.h>
 
 #include <random>
