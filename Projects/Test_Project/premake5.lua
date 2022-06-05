@@ -4,6 +4,8 @@ CreateProject(
 { 
     "EclipseEngine",
     "EclipseDebugging",
+    "EclipseGraphics",
+    "assimp",
     "glfw",
     "glad",
 }, 
