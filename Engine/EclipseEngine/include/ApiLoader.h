@@ -1,5 +1,8 @@
 #pragma once
 #include "API.h"
+
+#include "Core.h"
+
 namespace Eclipse
 {
 	namespace Engine
@@ -15,6 +18,7 @@ namespace Eclipse
 				const auto api = dynamic_cast<API*>(new T());
 				if (api)
 				{
+					External::Debug::DebugAPI::Log("Loaded API: " + std::string(typeid(T).name()));
 					api->LoadInterface();
 				}
 			}
