@@ -29,8 +29,6 @@ namespace Eclipse {
             // Singleton Reference to application.
             static Application* Instance;
 
-            EclipseFunction<Application, void> fp;
-
             Engine* m_Engine = nullptr;
             ApplicationSettings settings;
             bool m_shouldClose = false;
@@ -53,6 +51,8 @@ namespace Eclipse {
                 if (Instance)
                 {
                     // debug instance already defined.
+                    Instance->settings = settings;
+
                     return Instance;
                 }
                 Instance = static_cast<Application*>(new TApplication());
@@ -95,6 +95,7 @@ namespace Eclipse {
             static void CompositeCall(TypeList<T, TArgs...>, Application& application)
             {
                 Instance->m_Engine->m_ModuleContainer.AddComponent<T>();
+                External::Debug::DebugAPI::Log("Loaded Module: " + std::string(typeid(T).name()));
                 CompositeCall(TypeList<TArgs...>(), application);
             }
             static void CompositeCall(TypeList<>, Application& application) {}
