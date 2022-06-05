@@ -1,4 +1,3 @@
-#include <pch.h>
 #include "SystemManager.h"
 #include "System.h"
 

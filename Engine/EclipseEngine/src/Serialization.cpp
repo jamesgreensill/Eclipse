@@ -1,4 +1,3 @@
-#include <pch.h>
 #include "Serialization.h"
 #include "Core.h"
 #include <fstream>

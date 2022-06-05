@@ -1,7 +1,6 @@
 #include "CoreModule.h"
 #include "Core.h"
 #include "Application.h"
-#include "AssetLoader.h"
 #include "SceneManager.h"
 
 namespace Eclipse
@@ -24,7 +23,6 @@ namespace Eclipse
 
 		void CoreModule::OnAwake()
 		{
-			AssetLoader::Awake();
 		}
 	}
 }

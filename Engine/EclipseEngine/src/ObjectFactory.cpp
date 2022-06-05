@@ -1,4 +1,3 @@
-#include <pch.h>
 #include "ObjectFactory.h"
 #include "Object.h"
 

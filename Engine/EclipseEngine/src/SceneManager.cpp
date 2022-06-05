@@ -1,4 +1,3 @@
-#include <pch.h>
 #include "SceneManager.h"
 
 #include "Core.h"
