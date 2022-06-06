@@ -13,6 +13,7 @@ The libraires required for this tutorial are the following
 |ASSIMP|assimp|ASSIMP handles all the model loading|
 |GLFW|glfw|GLFW handles all the windowing functionality|
 |GLAD|glad|GLAD handles all the communication between the engine & OpenGL|
+
 your `premake5.lua` file under `./Projects/[YOUR_PROJECT_NAME]` shoud look something like this.
 ```lua
 CreateProject(
