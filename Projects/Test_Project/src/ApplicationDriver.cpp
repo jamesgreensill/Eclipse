@@ -8,9 +8,9 @@
 
 int main()
 {
-	Eclipse::Engine::Application::Create<ApplicationDemo>({"Tutorial_3 - Hello There... Window", 1000,1000,100,100});
+    Eclipse::Engine::Application::Create<ApplicationDemo>({});
 
-	Eclipse::Engine::Application::Initialize<Eclipse::Engine::WindowModule, Eclipse::Graphics::GraphicsModule, Eclipse::Debug::DebugModule>(Eclipse::Engine::Application::Instance);
+    Eclipse::Engine::Application::Initialize<>(Eclipse::Engine::Application::Instance);
 
-	Eclipse::Engine::Application::Run();
+    Eclipse::Engine::Application::Run();
 }

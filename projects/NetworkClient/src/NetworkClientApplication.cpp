@@ -1,7 +1,6 @@
 #include "NetworkClientApplication.h"
 
 #include <EclipseEngine/include/Object.h>
-#include <EclipseEngine/include/ObjectFactory.h>
 #include <EclipseNetworking/include/NetworkClient.h>
 
 #include "EclipseChat/include/ConsoleChatWriter.h"
@@ -9,6 +8,7 @@
 
 #include "ChatSender.h"
 #include "EclipseEngine/include/Console.h"
+#include "EclipseEngine/include/SceneManager.h"
 #include "EclipseNetworking/include/NetworkIdentifiers.h"
 
 using namespace Eclipse;
@@ -17,68 +17,68 @@ using namespace Networking;
 
 void NetworkClientApplication::OnCreated()
 {
-	Application::OnCreated();
+    Application::OnCreated();
 }
 
 void NetworkClientApplication::OnBoot()
 {
-	Application::OnBoot();
+    Application::OnBoot();
 }
 
 void NetworkClientApplication::OnEngineInit()
 {
+    Console::WriteLine("Enter the server IP.");
+    std::string ipString = Console::ReadLine();
 
+    Console::WriteLine("Enter port to start server.");
+    std::string portString = Console::ReadLine();
 
-	Console::WriteLine("Enter the server IP.");
-	std::string ipString;
-	std::getline(std::cin, ipString);
+    short port;
+    try
+    {
+        port = static_cast<short>(std::stoi(portString));
+    }
+    catch (...)
+    {
+        External::Debug::DebugAPI::Error("Port input was invalid.");
+        // query the engine to stop.
+        Application::Stop();
+        return;
+    }
 
-	Console::WriteLine("Enter port to start server.");
-	std::string portString;
-	std::getline(std::cin, portString);
+    // create object
+    const auto client_object = new Object();
 
-	short port;
-	try
-	{
-		port = static_cast<short>(std::stoi(portString));
-	}
-	catch (...)
-	{
-		External::Debug::DebugAPI::Error("Port input was invalid.");
-		// query the engine to stop.
-		Application::Stop();
-		return;
-	}
+    client_object->m_ComponentContainer.AddComponent<Eclipse::Application::ChatSender>();
 
-	// create object
-	const auto clientObject = new Object();
-	ObjectFactory::CompositeObject<Eclipse::Application::ChatSender, NetworkClient, Chat::NetworkChatInterface, Chat::ChatManager, Chat::ConsoleChatWriter>(*clientObject);
-	// add to scene.
-	SceneManagement::SceneManager::Instance->GetActiveScene()->AddObject(clientObject);
-	const auto client = clientObject->m_ComponentContainer.GetComponent<NetworkClient>();
+    const auto client = client_object->m_ComponentContainer.AddComponent<NetworkClient>();
+    const auto chatInterface = client_object->m_ComponentContainer.AddComponent<Chat::NetworkChatInterface>();
 
-	auto chatInterface = clientObject->m_ComponentContainer.GetComponent<Chat::NetworkChatInterface>();
+    client_object->m_ComponentContainer.AddComponent<Chat::ChatManager>();
+    client_object->m_ComponentContainer.AddComponent<Chat::ConsoleChatWriter>();
 
-	client->handler.OnPacketReceived.AddEvent((unsigned)NetworkIdentifiers::EID_MESSAGE, new EclipseEvent<NetworkPacket&>);
+    SceneManagement::SceneManager::Instance->GetActiveScene()->AddObject(client_object);
 
-	if (chatInterface)
-		chatInterface->StartInterface();
+    client->handler.OnPacketReceived.AddEvent((unsigned)EID_MESSAGE, new EclipseEvent<NetworkPacket&>);
 
-	// get client component
-	if (client)
-	{
-		client->networkPort = port;
-		client->networkAddress = ipString;
-		client->StartProcess();
-	}
+    if (chatInterface)
+        chatInterface->StartInterface();
+
+    // get client component
+    if (client)
+    {
+        client->networkPort = port;
+        client->networkAddress = ipString;
+        client->StartProcess();
+    }
 }
 
 void NetworkClientApplication::OnAwake()
 {
-	Application::OnAwake();
+    Application::OnAwake();
 }
 
 void NetworkClientApplication::OnDisposed()
 {
-	Application::OnDisposed();
+    Application::OnDisposed();
 }

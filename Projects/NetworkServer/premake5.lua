@@ -3,10 +3,9 @@ CreateProject(
     {
         "EclipseEngine",
         "EclipseDebugging",
-        "EclipseGraphics",
         "EclipseNetworking",
         "EclipseChat",
-        "assimp",
+        "glad",
         "glfw",
         "raknet",
         "Ws2_32.lib",

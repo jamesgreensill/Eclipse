@@ -13,11 +13,6 @@ using namespace Eclipse;
 using namespace Engine;
 using namespace Networking;
 
-enum TID
-{
-    TEST = ID_USER_PACKET_ENUM + 1,
-};
-
 void NetworkServerApplication::OnEngineInit()
 {
     // create object
