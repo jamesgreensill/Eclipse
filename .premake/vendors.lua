@@ -13,6 +13,7 @@ IncludeDir["GLFW"] = VendorDir .. "glfw/include"
 IncludeDir["Assimp"] = VendorDir .. "assimp/include"
 IncludeDir["termcolor"] = VendorDir .. "termcolor/include"
 IncludeDir["RakNet"] = VendorDir .. "raknet/Source"
+IncludeDir["easy_time"] = VendorDir .. "easy_time/include"
 
 group("Vendors")
         include("../Vendors/glm.lua")
@@ -23,4 +24,5 @@ group("Vendors")
         include("../Vendors/assimp.lua")
         include("../Vendors/termcolor.lua")
         include("../Vendors/raknet.lua")
+        include("../Vendors/easy_time.lua")
 group ""

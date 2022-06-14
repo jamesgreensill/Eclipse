@@ -38,3 +38,6 @@
 [submodule "Engine/EclipseGraphics"]
 	path = Engine/EclipseGraphics
 	url = https://github.com/jwrmg/EclipseGraphics
+[submodule "Vendors/easy_time"]
+	path = Vendors/easy_time
+	url = https://www.github.com/jwrmg/easy_time.git
