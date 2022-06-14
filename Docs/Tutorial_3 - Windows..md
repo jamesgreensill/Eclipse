@@ -5,7 +5,7 @@ Due to the nature of the Eclipse Engine being modular, applications do not have 
 
 *Note: This tutorial requires that the project be properly linked to the engine. See the previous tutorial to find out how to do that!*
 
-Windowing in the Eclipse Engine uses the library `GLFW` to handle all windowing functionality, you can read more about the library [here]().
+Windowing in the Eclipse Engine uses the library `GLFW` to handle all windowing functionality, you can read more about the library [here](https://www.glfw.org/).
 
 So, now that you have been briefed, lets begin!
 	

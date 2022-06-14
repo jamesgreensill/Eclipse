@@ -109,13 +109,13 @@ Once your project has been created you will need enter the dependencies for your
 Here is a list of all official modules for the Eclipse Engine.
 |Module Link Code|Description|Repo|Dependencies|
 |-|-|-|-|
-|EclipseEngine|The core engine functionality|[here]()|n/a|
-|EclipseDebugging|Core debugging functionality for the engine|[here]()|EclipseEngine|
-|EclipseNetworking|Core networking functionality for the engine|[here]()|raknet, Ws2_32.lib, Wldap32.lib, Crypt32.lib|
-|EclipseGraphics|Core rendering functionality for the engine|[here]()|glfw, glad, assimp, EclipseEngine|
-|EclipseScripting|Core scripting API for the engine|[here]()|EclipseEngine|
-|EclipseGui|Core Graphical UI|[here]()|glfw, glad, imgui, EclipseEngine|
-|EclipseChat|Chat buffer module for the eclipse engine|[here]()|EclipseEngine|
+|EclipseEngine|The core engine functionality|[here](https://github.com/jwrmg/Eclipse)|n/a|
+|EclipseDebugging|Core debugging functionality for the engine|[here](https://github.com/jwrmg/EclipseDebugging)|EclipseEngine|
+|EclipseNetworking|Core networking functionality for the engine|[here](https://github.com/jwrmg/EclipseNetworking)|raknet, Ws2_32.lib, Wldap32.lib, Crypt32.lib|
+|EclipseGraphics|Core rendering functionality for the engine|[here](https://github.com/jwrmg/EclipseGraphics)|glfw, glad, assimp, EclipseEngine|
+|EclipseScripting|Core scripting API for the engine|[here](https://github.com/jwrmg/EclipseScripting)|EclipseEngine|
+|EclipseGui|Core Graphical UI|[here](https://github.com/jwrmg/EclipseGui)|glfw, glad, imgui, EclipseEngine|
+|EclipseChat|Chat buffer module for the eclipse engine|[here](https://github.com/jwrmg/EclipseChat)|EclipseEngine|
 
 
 

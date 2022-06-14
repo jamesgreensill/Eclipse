@@ -44,8 +44,6 @@ premake5 vs2019 // this will generate a solution for visual studio 2019
 ```
 
 Assuming everything went smoothly, there should be a newly generated Build folder under ./Build/ 
-If there was an error with the project generation please see this [here] for more information on how to get help.
-
 Now that your newly generated engine project has been generated. You're ready to start working with the Eclipse Engine! 
 *See the next tutorial for `Creating a new Project!`*
 
