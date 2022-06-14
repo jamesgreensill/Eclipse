@@ -59,12 +59,11 @@ void NetworkClientApplication::OnEngineInit()
 
     SceneManagement::SceneManager::Instance->GetActiveScene()->AddObject(client_object);
 
-    client->handler.OnPacketReceived.AddEvent((unsigned)EID_MESSAGE, new EclipseEvent<NetworkPacket&>);
+   // client->handler.OnPacketReceived.AddEvent((unsigned)EID_MESSAGE, new EclipseEvent<NetworkPacket&>);
 
     if (chatInterface)
         chatInterface->StartInterface();
 
-    // get client component
     if (client)
     {
         client->networkPort = port;
